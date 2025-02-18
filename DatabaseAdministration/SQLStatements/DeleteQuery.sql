@@ -1,0 +1,5 @@
+USE TestDB
+GO
+
+DELETE from Users WHERE UserID=2;
+GO
