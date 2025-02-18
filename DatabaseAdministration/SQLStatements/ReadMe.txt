@@ -1,0 +1,1 @@
+Folder made to store sql scripts used for learning
