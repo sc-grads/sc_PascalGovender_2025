@@ -21,8 +21,8 @@ jobs:
 
       - name: Lint SQL Server Scripts
         run: |
-          sqlfluff lint --dialect tsql --exclude-rules L016,L031 --ignore parsing SQLStatements/ || true
+          sqlfluff lint --dialect tsql --exclude-rules L016,L031 --ignore parsing DatabaseAdministration/SQLStatements/ || true
 
       - name: Format SQL Server Scripts
         run: |
-          sqlfluff fix --dialect tsql --exclude-rules L016,L031 SQLStatements/
+          sqlfluff fix --dialect tsql --exclude-rules L016,L031 DatabaseAdministration/SQLStatements/
