@@ -26,3 +26,11 @@ jobs:
       - name: Format SQL Server Scripts
         run: |
           sqlfluff fix --dialect tsql --exclude-rules L016,L031 DatabaseAdministration/SQLStatements/
+
+      - name: Commit and Push Fixes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add DatabaseAdministration/SQLStatements/
+          git commit -m "Auto-formatted SQL scripts using SQLFluff" || echo "No changes to commit"
+          git push
