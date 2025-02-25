@@ -1,7 +1,7 @@
 --complete table wipe--
 
-Delete From UserOrders;
-GO
+Delete From USERORDERS;
+Go
 
-Delete From Users;
-GO
+Delete From USERS;
+Go

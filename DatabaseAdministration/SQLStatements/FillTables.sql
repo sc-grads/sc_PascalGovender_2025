@@ -1,9 +1,9 @@
-USE TestDB
+USE TESTDB
 GO
 
 -- Insert Sample Data into Users Table
-INSERT INTO Users (FirstName, LastName, Email, DOB, AmountPaid, PhoneNumber, Country)
-VALUES 
+INSERT INTO USERS (FIRSTNAME, LASTNAME, EMAIL, DOB, AMOUNTPAID, PHONENUMBER, COUNTRY)
+VALUES
 ('John', 'Doe', 'john.doe@example.com', '1985-04-25', 200.50, '123-456-7890', 'USA'),
 ('Jane', 'Smith', 'jane.smith@example.com', '1992-08-15', 150.75, '987-654-3210', 'Canada'),
 ('Michael', 'Johnson', 'michael.johnson@example.com', '1988-07-12', 120.00, '111-222-3333', 'UK'),
@@ -15,7 +15,7 @@ VALUES
 GO
 
 -- Insert Sample Data into UserOrders Table
-INSERT INTO UserOrders (UserID, OrderAmount, OrderDate, OrderStatus)
+INSERT INTO USERORDERS (USERID, ORDERAMOUNT, ORDERDATE, ORDERSTATUS)
 VALUES
 (1, 75.20, '2025-02-20', 'Pending'), -- Order for John Doe (UserID 1)
 (1, 50.00, '2025-02-22', 'Completed'), -- Another order for John

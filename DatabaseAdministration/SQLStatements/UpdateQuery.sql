@@ -1,5 +1,6 @@
-Use TestDB;
-GO
+Use TESTDB;
+Go
 
-Update Users Set AmountPaid = 500000 WHERE UserID=3;
-GO
+Update USERS Set AMOUNTPAID = 500000
+Where USERID = 3;
+Go

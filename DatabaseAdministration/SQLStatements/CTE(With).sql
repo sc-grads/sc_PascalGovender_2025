@@ -1,6 +1,14 @@
-WITH HighValueOrders AS (
-    SELECT UserID, OrderAmount FROM UserOrders WHERE OrderAmount > 300
+WITH HIGHVALUEORDERS AS (
+    SELECT
+        USERID,
+        ORDERAMOUNT
+    FROM USERORDERS
+    WHERE ORDERAMOUNT > 300
 )
-SELECT u.FirstName, u.LastName, h.OrderAmount 
-FROM Users u 
-JOIN HighValueOrders h ON u.UserID = h.UserID;
+
+SELECT
+    U.FIRSTNAME,
+    U.LASTNAME,
+    H.ORDERAMOUNT
+FROM USERS AS U
+INNER JOIN HIGHVALUEORDERS AS H ON U.USERID = H.USERID;

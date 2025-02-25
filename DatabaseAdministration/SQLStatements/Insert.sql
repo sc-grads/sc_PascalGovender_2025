@@ -1,7 +1,7 @@
-Use TestDB;
-GO
+Use TESTDB;
+Go
 
-INSERT into Users(FirstName,LastName,Email,DOB,AmountPaid)
-values ('Vasikan','Govender','verstylinc@gmail.com','1975-02-20',50000.00);
+Insert Into USERS (FIRSTNAME, LASTNAME, EMAIL, DOB, AMOUNTPAID)
+Values ('Vasikan', 'Govender', 'verstylinc@gmail.com', '1975-02-20', 50000.00);
 
-GO
+Go

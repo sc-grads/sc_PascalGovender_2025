@@ -1,7 +1,11 @@
 --Users Who Placed Orders and Have Paid More Than $100--
 
-SELECT U.FirstName, U.LastName, U.Email, SUM(O.OrderAmount) AS TotalSpent
-FROM Users U
-JOIN UserOrders O ON U.UserID = O.UserID
-WHERE U.AmountPaid > 100
-GROUP BY U.FirstName, U.LastName, U.Email;
+SELECT
+    U.FIRSTNAME,
+    U.LASTNAME,
+    U.EMAIL,
+    SUM(O.ORDERAMOUNT) AS TOTALSPENT
+FROM USERS AS U
+INNER JOIN USERORDERS AS O ON U.USERID = O.USERID
+WHERE U.AMOUNTPAID > 100
+GROUP BY U.FIRSTNAME, U.LASTNAME, U.EMAIL;

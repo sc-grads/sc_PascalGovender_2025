@@ -1,5 +1,6 @@
-Use TestDB;
-GO
+Use TESTDB;
+Go
 
-Select * from Users WHERE AmountPaid>20000;
-GO
+Select * From USERS
+Where AMOUNTPAID > 20000;
+Go

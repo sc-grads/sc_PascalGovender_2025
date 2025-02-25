@@ -2,35 +2,35 @@
 
 -- Drop the UserOrders Table if It Exists
 IF OBJECT_ID('dbo.UserOrders', 'U') IS NOT NULL
-    DROP TABLE dbo.UserOrders;
+    DROP TABLE dbo.userorders;
 GO
 
 -- Drop the Users Table if It Exists
 IF OBJECT_ID('dbo.Users', 'U') IS NOT NULL
-    DROP TABLE dbo.Users;
+    DROP TABLE dbo.users;
 GO
 
 -- Create the Users Table
-CREATE TABLE Users (
-    UserID INT IDENTITY(1,1) PRIMARY KEY,
-    FirstName NVARCHAR(50),
-    LastName NVARCHAR(50),
-    Email NVARCHAR(50),
-    DOB DATE,
-    AmountPaid DECIMAL(10,2),
-    PhoneNumber NVARCHAR(15),
-    Country NVARCHAR(50),
-    Status NVARCHAR(10) DEFAULT 'Active'
+CREATE TABLE users (
+    userid INT IDENTITY (1, 1) PRIMARY KEY,
+    firstname NVARCHAR(50),
+    lastname NVARCHAR(50),
+    email NVARCHAR(50),
+    dob DATE,
+    amountpaid DECIMAL(10, 2),
+    phonenumber NVARCHAR(15),
+    country NVARCHAR(50),
+    status NVARCHAR(10) DEFAULT 'Active'
 );
 GO
 
 -- Create the UserOrders Table
-CREATE TABLE UserOrders (
-    OrderID INT IDENTITY(1,1) PRIMARY KEY,
-    UserID INT,
-    OrderAmount DECIMAL(10,2),
-    OrderDate DATE,
-    OrderStatus NVARCHAR(20),
-    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+CREATE TABLE userorders (
+    orderid INT IDENTITY (1, 1) PRIMARY KEY,
+    userid INT,
+    orderamount DECIMAL(10, 2),
+    orderdate DATE,
+    orderstatus NVARCHAR(20),
+    FOREIGN KEY (userid) REFERENCES users (userid)
 );
 GO

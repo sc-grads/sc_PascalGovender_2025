@@ -1,7 +1,10 @@
-SELECT FirstName, LastName, AmountPaid, 
-       CASE 
-           WHEN AmountPaid > 300 THEN 'High' 
-           WHEN AmountPaid BETWEEN 100 AND 300 THEN 'Medium' 
-           ELSE 'Low' 
-       END AS PaymentCategory
-FROM Users;
+SELECT
+    FIRSTNAME,
+    LASTNAME,
+    AMOUNTPAID,
+    CASE
+        WHEN AMOUNTPAID > 300 THEN 'High'
+        WHEN AMOUNTPAID BETWEEN 100 AND 300 THEN 'Medium'
+        ELSE 'Low'
+    END AS PAYMENTCATEGORY
+FROM USERS;
