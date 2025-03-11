@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "FLDmIwyTTkdH9/n6c/3HLWnrrCjzT53uxLNCgkHewfo=",
+  "Source": "SqlApi",
+  "BasePath": "_content/SqlApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
