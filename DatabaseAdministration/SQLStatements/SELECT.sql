@@ -2,8 +2,16 @@
 
 SELECT * FROM Person.Address;
 
-SELECT AddressID,city,modifieddate FROM person.Address;
+SELECT
+    Addressid,
+    City,
+    Modifieddate
+FROM Person.Address;
 
-SELECT city,addressid,modifieddate FROM person.Address;
+SELECT
+    City,
+    Addressid,
+    Modifieddate
+FROM Person.Address;
 
 SELECT TOP 10 * FROM Person.Address;

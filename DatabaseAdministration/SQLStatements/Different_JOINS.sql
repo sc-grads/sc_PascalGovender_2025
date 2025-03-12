@@ -1,60 +1,79 @@
-
 --Table creation and select statements--
-CREATE TABLE [dbo].[Course](
-	[CourseID] [int] NULL,
-	[RollNO] [int] NULL
+CREATE TABLE [dbo].[Course] (
+    [CourseID] [int] NULL,
+    [RollNO] [int] NULL
 ) ON [PRIMARY]
 
 GO
 
-CREATE TABLE [dbo].[Student](
-	[RollNo] [int] NOT NULL,
-	[StudentName] [nvarchar](50) NULL,
-	[StudentCity] [nvarchar](20) NULL,
-	[StudentPhoneNo] [nvarchar](50) NULL,
-	[StudentAge] [int] NULL,
- CONSTRAINT [PK_Student] PRIMARY KEY CLUSTERED 
-(
-	[RollNo] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+CREATE TABLE [dbo].[Student] (
+    [RollNo] [int] NOT NULL,
+    [StudentName] [nvarchar](50) NULL,
+    [StudentCity] [nvarchar](20) NULL,
+    [StudentPhoneNo] [nvarchar](50) NULL,
+    [StudentAge] [int] NULL,
+    CONSTRAINT [PK_Student] PRIMARY KEY CLUSTERED
+    (
+        [RollNo] ASC
+    ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
 GO
 --------------------------------------------------------
-select * from [dbo].[Student]
-select * from [dbo].[Course]
+SELECT * FROM [dbo].[Student]
+SELECT * FROM [dbo].[Course]
 
 --INNER JOIN--
-select * from [dbo].[Student] s
-inner join [dbo].[Course] c 
-on s.RollNo = c.RollNO
+SELECT * FROM [dbo].[Student] AS s
+INNER JOIN [dbo].[Course] AS c
+    ON s.rollno = c.rollno
 
 
-select s.RollNo,s.StudentName,c.CourseID from [dbo].[Student] s
-inner join [dbo].[Course] c 
-on s.RollNo = c.RollNO
+SELECT
+    s.rollno,
+    s.studentname,
+    c.courseid
+FROM [dbo].[Student] AS s
+INNER JOIN [dbo].[Course] AS c
+    ON s.rollno = c.rollno
 
 --JOIN--
 
-select s.RollNo,s.StudentName,c.CourseID from [dbo].[Student] s
-join [dbo].[Course] c 
-on s.RollNo = c.RollNO
+SELECT
+    s.rollno,
+    s.studentname,
+    c.courseid
+FROM [dbo].[Student] AS s
+INNER JOIN [dbo].[Course] AS c
+    ON s.rollno = c.rollno
 
 --LEFT JOIN--
 
-select s.RollNo,s.StudentName,c.CourseID from [dbo].[Student] s
-left join [dbo].[Course] c 
-on s.RollNo = c.RollNO
+SELECT
+    s.rollno,
+    s.studentname,
+    c.courseid
+FROM [dbo].[Student] AS s
+LEFT JOIN [dbo].[Course] AS c
+    ON s.rollno = c.rollno
 
 
 --RIGHT JOIN--
 
-select s.RollNo,s.StudentName,c.CourseID from [dbo].[Student] s
-right join [dbo].[Course] c 
-on s.RollNo = c.RollNO
+SELECT
+    s.rollno,
+    s.studentname,
+    c.courseid
+FROM [dbo].[Student] AS s
+RIGHT JOIN [dbo].[Course] AS c
+    ON s.rollno = c.rollno
 
 --FULL JOIN--
 
-select s.RollNo,s.StudentName,c.CourseID from [dbo].[Student] s
-full join [dbo].[Course] c 
-on s.RollNo = c.RollNO
+SELECT
+    s.rollno,
+    s.studentname,
+    c.courseid
+FROM [dbo].[Student] AS s
+FULL JOIN [dbo].[Course] AS c
+    ON s.rollno = c.rollno

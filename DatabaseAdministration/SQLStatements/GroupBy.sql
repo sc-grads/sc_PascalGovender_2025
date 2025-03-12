@@ -1,22 +1,47 @@
 --GROUP BY statements--
 
-SELECT * FROM Person.address WHERE postalcode = '98011'
+SELECT * FROM Person.Address
+WHERE Postalcode = '98011'
 
 
-SELECT count(*) FROM Person.address WHERE postalcode = '98011'
+SELECT count(*) FROM Person.Address
+WHERE Postalcode = '98011'
 
 
-SELECT count(*),postalcode FROM Person.address GROUP BY PostalCode
+SELECT
+    Postalcode,
+    count(*)
+FROM Person.Address
+GROUP BY
+    Postalcode
 
-SELECT count(*) as NoOfAddresses,postalcode FROM Person.address GROUP BY PostalCode --
+    SELECT
+        Postalcode,
+        count(*) AS Noofaddresses
+    FROM Person.Address
+    GROUP BY Postalcode --
 
 
---group by with order by combo--
+    --group by with order by combo--
 
-SELECT count(*) as NoOfAddresses,postalcode FROM Person.address GROUP BY PostalCode ORDER BY PostalCode
+    SELECT
+        Postalcode,
+        count(*) AS Noofaddresses
+    FROM Person.Address
+    GROUP BY Postalcode
+    ORDER BY Postalcode
 
-SELECT count(*),City FROM Person.address GROUP BY City
+    SELECT
+        City,
+        count(*)
+    FROM Person.Address
+    GROUP BY City
 
 
---group by 2 columnns -- 
-SELECT count(*),City,PostalCode FROM Person.address GROUP BY City,PostalCode
+    --group by 2 columnns -- 
+    SELECT
+        City,
+        Postalcode,
+        count(*)
+    FROM Person.Address
+    GROUP BY City, Postalcode

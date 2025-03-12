@@ -5,15 +5,27 @@ SELECT * FROM [dbo].Employee;
 --SUBQUERIES--
 
 SELECT * FROM [HumanResources].[EmployeePayHistory]
-  WHERE [BusinessEntityID] 
-  IN (SELECT BusinessEntityID FROM [HumanResources].[EmployeePayHistory] WHERE Rate > 60)
+WHERE
+    [BusinessEntityID]
+    IN (
+        SELECT Businessentityid FROM [HumanResources].[EmployeePayHistory]
+        WHERE Rate > 60
+    )
 
 
 SELECT * FROM [HumanResources].[EmployeePayHistory]
-  WHERE [BusinessEntityID] 
-  IN (SELECT BusinessEntityID FROM [HumanResources].[EmployeePayHistory] WHERE Rate = 39.06)
+WHERE
+    [BusinessEntityID]
+    IN (
+        SELECT Businessentityid FROM [HumanResources].[EmployeePayHistory]
+        WHERE Rate = 39.06
+    )
 
 
- SELECT * FROM [Production].[Product]
- WHERE ProductID 
- IN ( SELECT ProductID FROM [Production].[ProductInventory] WHERE Quantity > 300)
+SELECT * FROM [Production].[Product]
+WHERE
+    Productid
+    IN (
+        SELECT Productid FROM [Production].[ProductInventory]
+        WHERE Quantity > 300
+    )
