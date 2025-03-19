@@ -1,4 +1,4 @@
-name: Auto Create Pull Request
+name: Auto PR Creation
 
 on:
   push:
@@ -6,44 +6,20 @@ on:
       - main
 
 jobs:
-  notify-attempt:
+  create-pull-request:
     runs-on: ubuntu-latest
     steps:
-      - name: Display Warning
-        run: echo "⚠️ Direct push to 'main' is blocked. Creating a PR instead."
-
-  auto-pr:
-    runs-on: ubuntu-latest
-    needs: notify-attempt
-    steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v4
-
-      - name: Create Temporary Branch
-        run: |
-          git checkout -b temp-branch-${{ github.run_id }}
-          git push origin temp-branch-${{ github.run_id }}
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
-          title: "Auto PR - Temporary Branch for Approval"
-          body: "This pull request was automatically created after attempting to push directly to 'main'."
-          branch: temp-branch-${{ github.run_id }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref_name }}
           base: main
+          title: "Auto-generated PR for ${{ github.ref_name }}"
+          body: |
+            This pull request was created automatically from the branch `${{ github.ref_name }}`.
           labels: |
-            automated
-            needs-review
-          reviewers: ${{ github.actor }}
-          draft: false
-
-  cleanup:
-    runs-on: ubuntu-latest
-    needs: auto-pr
-    steps:
-      - name: Delete Temporary Branch
-        uses: octokit/request-action@v2.x
-        with:
-          route: DELETE /repos/${{ github.repository }}/git/refs/heads/temp-branch-${{ github.run_id }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            auto-pr
