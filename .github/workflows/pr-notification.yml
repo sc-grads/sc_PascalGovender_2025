@@ -1,16 +1,39 @@
-name: Test Teams Notification
+name: Auto PR and Notify on Push to Main
 
 on:
   push:
     branches:
-      - Wed1903
+      - main
 
 jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Create Pull Request
+        id: create-pr
+        uses: peter-evans/create-pull-request@v4
+        with:
+          title: "Auto-generated PR for changes to main"
+          body: "This pull request was automatically created because a direct push to `main` was attempted."
+          branch: "auto-pr-from-main-${{ github.sha }}"
+          base: "main"
+          labels: "auto-generated"
+
   notify:
     runs-on: ubuntu-latest
-    
+    needs: create-pull-request  # Ensure this job runs after the PR is created
+
     steps:
-      - uses: neonidian/teams-notify-build-status@v3
+      - name: Notify Teams
+        uses: neonidian/teams-notify-build-status@v3
         with:
-          webhookUrl: ${{ secrets.PR_WEBHOOKURL }}   # Secret name is "TEAMS_INCOMING_WEBHOOK_URL"
-          message: Workflow run passed !!
+          webhookUrl: ${{ secrets.PR_WEBHOOKURL }}
+          message: |
+            A new pull request has been created!
+            - PR Title: ${{ needs.create-pull-request.outputs.pull-request-title }}
+            - PR URL: ${{ needs.create-pull-request.outputs.pull-request-url }}
+            - Created by: ${{ github.actor }}
