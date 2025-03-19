@@ -3,7 +3,7 @@ name: Test Teams Notification
 on:
   push:
     branches:
-      - main
+      - Wed1903
 
 jobs:
   notify:
