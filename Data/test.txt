@@ -1,1 +1,2 @@
-This document serves as a test for the pull request review
+This document serves as a test for the pull request review. 
+Added workflow to auto create pull request when merge pushing to main on github
