@@ -1,1 +1,1 @@
-This document serves as a test for the pull request review
+A new change to how the messages are sent and the auto creation of a pull request to merge/push to main is done.
