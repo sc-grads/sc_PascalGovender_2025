@@ -1,1 +1,1 @@
-Test PR
+This document serves as a test for the pull request review
