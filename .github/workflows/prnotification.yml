@@ -1,4 +1,4 @@
-name: Teams PR Success Notification
+name: Teams Notification Trigger
 
 on:
   pull_request:
@@ -15,12 +15,25 @@ jobs:
         uses: neonidian/teams-notify-build-status@v3
         with:
           webhookUrl: ${{ secrets.PR_WEBHOOKURL }}
-          title: Pull Request Merged
+          title:  🚨 Pascal's Merge Confirmation 🚨
           titleBackgroundColor: 'success'  # Green for success
           status: 'Approved'
           message: >-
-            A pull request has been approved and merged into the **main** branch by **${{ github.event.pull_request.merged_by.login }}**.
-            [View Pull Request](${{ github.event.pull_request.html_url }})
+            **✅ Merge Confirmation**
+            ---------------------------------
+            📌 **PR Details**
+               - **Title:** ${{ github.event.pull_request.title }}
+               - **Description:** ${{ github.event.pull_request.body || 'No description provided' }}
+
+            🛠️ **Action Summary**
+               - **Author:** ${{ github.event.pull_request.user.login }}
+               - **Approved By:** ${{ github.event.pull_request.merged_by.login }}
+
+            🔀 **Branch Information**
+               - **Source Branch:** ${{ github.event.pull_request.head.ref }}
+               - **Target Branch:** ${{ github.event.pull_request.base.ref }}
+
+            🔗 **[View Pull Request](${{ github.event.pull_request.html_url }})**
         env:
           SHOULD_DISPLAY_ACTOR_LABEL: true
           SHOULD_DISPLAY_VIEW_RUN_BUTTON: true
