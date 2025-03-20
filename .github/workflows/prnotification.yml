@@ -15,8 +15,7 @@ jobs:
         uses: neonidian/teams-notify-build-status@v3
         with:
           webhookUrl: |
-            ${{ secrets.TEAMS_INCOMING_WEBHOOK_URL_1 }}
-            ${{ secrets.TEAMS_INCOMING_WEBHOOK_URL_2 }}
+            ${{ secrets.PR_WEBHOOKURL }}
           title: Pull Request Notification
           titleBackgroundColor: '#0078D7'  # Blue for information
           status: 'Action Required'
