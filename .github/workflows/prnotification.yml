@@ -17,7 +17,7 @@ jobs:
           webhookUrl: |
             ${{ secrets.PR_WEBHOOKURL }}
           title: Pull Request Notification
-          titleBackgroundColor: '#0078D7'  # Blue for information
+          titleBackgroundColor: 'blue'  # Blue for information
           status: 'Action Required'
           message: >-
             Test message for push to github
