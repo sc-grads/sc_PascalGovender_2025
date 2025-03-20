@@ -27,7 +27,7 @@ jobs:
 
             🛠️ **Action Summary**
                - **Author:** ${{ github.event.pull_request.user.login }}
-               - **Approved By:** ${{ github.event.pull_request.merged_by.login }}
+               - **Approved By:** ${{ github.event.review.user.login || 'Unknown' }}
 
             🔀 **Branch Information**
                - **Source Branch:** ${{ github.event.pull_request.head.ref }}
