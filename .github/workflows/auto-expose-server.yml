@@ -1,0 +1,37 @@
+name: SQL Deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      sql_script:
+        description: 'Path to the SQL script'
+        required: true
+        type: string
+
+jobs:
+  deploy-sql:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the repository to access the SQL script
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Install sqlcmd and make it available in the PATH
+      - name: Install sqlcmd
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl gnupg
+          curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+          curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
+          sudo apt-get update
+          sudo apt-get install -y mssql-tools unixodbc-dev
+          # Add mssql-tools to PATH for this session
+          echo "/opt/mssql-tools/bin" >> $GITHUB_PATH
+      # Run the specified SQL script against the master database
+      - name: Execute SQL Script
+        env:
+          SQL_SERVER_URL: ${{ secrets.SQL_SERVER_URL }}  # e.g., tcp.pinggy.io:12345
+          SQL_USERNAME: ${{ secrets.SQL_USER }}      
+          SQL_PASSWORD: ${{ secrets.SQL_PASSWORD }} 
+        run: |
+          sqlcmd -S "$SQL_SERVER_URL" -U "$SQL_USERNAME" -P "$SQL_PASSWORD" -d master -i "${{ github.event.inputs.sql_script }}"
