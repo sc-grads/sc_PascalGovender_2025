@@ -331,3 +331,150 @@ output: (Paginated dir listing; press q to quit)
 
 ftp ftp.example.com # Starts file transfer session (commented; requires setup)
 output: (Interactive session; type bye to quit)
+
+echo "Running my updated command learning script!" # Prints a welcome message
+output: Running my updated command learning script!
+
+# --- Customizing the Shell Prompt ---
+export PS1="[\u@\h \w]\$ " # Sets PS1 to show user@host and directory
+output: (Prompt changes to e.g., [yourusername@machine ~/scripts]$ )
+
+echo 'export PS1="[\u@\h \w]\$ "' >> ~/.bashrc # Persists PS1 change in .bashrc
+output: (No output, appends to ~/.bashrc)
+
+# --- Using Aliases ---
+alias ll='ls -l' # Creates an alias for ls -l
+output: (No output, sets alias)
+
+ll # Runs the alias (assumes ls installed; use dir -l if not)
+output: (e.g., -rw-r--r-- 1 user user 123 Apr 1 file1)
+
+unalias ll # Removes the ll alias
+output: (No output, removes alias)
+
+echo "alias ll='ls -l'" >> ~/.bashrc # Persists alias in .bashrc
+output: (No output, appends to ~/.bashrc)
+
+# --- Installing and Managing Software (Ubuntu/DEB focus for WSL) ---
+apt-cache search nano # Searches for packages matching "nano"
+output: (e.g., nano - small, friendly text editor)
+
+apt-cache show nano # Displays info about the nano package
+output: (e.g., Package: nano Version: 7.2-1 ...)
+
+apt-get install -y nano # Installs nano package (assumes sudo; -y skips prompt)
+output: (Installs nano; requires sudo, e.g., Reading package lists... Done)
+
+apt-get remove nano # Removes nano, leaving config files
+output: (Removes nano; requires sudo)
+
+apt-get purge nano # Removes nano and its config files
+output: (Purges nano; requires sudo)
+
+apt-get update # Updates local package list
+output: (Fetches updates; requires sudo, e.g., Hit:1 http://archive.ubuntu.com ...)
+
+apt-get upgrade -y # Upgrades all installed packages
+output: (Upgrades packages; requires sudo)
+
+dpkg -l # Lists all installed packages
+output: (e.g., ii  nano  7.2-1  amd64  small text editor)
+
+dpkg -S /bin/bash # Lists the package owning /bin/bash
+output: (e.g., bash: /bin/bash)
+
+dpkg -L bash # Lists all files in the bash package
+output: (e.g., /bin/bash /etc/bash.bashrc)
+
+apt autoremove # Removes unused dependencies
+output: (Cleans up; requires sudo, e.g., 0 upgraded, 0 newly installed)
+
+# --- Shell History and Autocompletion ---
+history # Displays shell command history
+output: (e.g., 1 echo "test" 2 ls)
+
+export HISTSIZE=1000 # Sets history size to 1000 commands
+output: (No output, sets HISTSIZE)
+
+!1 # Repeats command line number 1 (adjust based on your history)
+output: (e.g., echo "test" -> test)
+
+!! # Repeats the previous command
+output: (Depends on last command, e.g., history output again)
+
+!echo # Repeats the most recent command starting with "echo"
+output: (e.g., echo "test" -> test)
+
+#:2 # References the second argument of the previous command (example setup)
+echo "one two three" # Setup for next command
+output: one two three
+
+!:2 # References "two" from previous echo
+output: two
+
+!^ # References the first argument of the last command
+output: one
+
+!$ # References the last argument of the last command
+output: three
+
+# --- Switching Users and Running Commands as Others ---
+whoami # Displays the effective username
+output: (e.g., yourusername)
+
+sudo -l # Lists commands allowed with sudo
+output: (e.g., User yourusername may run: (ALL) ALL; requires sudo setup)
+
+sudo whoami # Runs whoami as root
+output: (root; requires sudo privileges)
+
+sudo -u root whoami # Runs whoami as root explicitly
+output: (root; requires sudo)
+
+sudo -s # Starts a shell as root (commented; run manually)
+# output: (Root shell prompt; exit to return)
+
+# visudo # Edits /etc/sudoers (commented; requires sudo and caution)
+# output: (Opens editor; Ctrl+X to exit)
+
+# --- Scheduling Repeated Jobs with Cron ---
+crontab -l # Lists current cron jobs
+output: (e.g., no crontab for yourusername)
+
+echo "0 7 * * 1 echo 'Monday task' > ~/cronlog.txt" | crontab - # Schedules a Monday 7:00 job
+output: (No output, sets crontab)
+
+crontab -e # Edits cron jobs (commented; run manually)
+# output: (Opens editor; Ctrl+X to exit)
+
+# --- Environment Variables ---
+export MYVAR="hello" # Sets an environment variable
+output: (No output, sets MYVAR)
+
+echo $MYVAR # Displays the value of MYVAR
+output: hello
+
+# --- Processes and Job Control ---
+ps -e # Displays all processes
+output: (e.g., PID TTY TIME CMD 1 ? 00:00:01 systemd)
+
+ps -ef # Displays all processes in full format
+output: (e.g., UID PID PPID C STIME TTY TIME CMD yourusername 1234 ...)
+
+pstree # Displays processes in a tree format
+output: (e.g., systemd---bash---pstree)
+
+top # Interactive process viewer (commented; run manually)
+# output: (Interactive display; q to quit)
+
+sleep 10 & # Starts sleep in background
+output: (e.g., [1] 5678)
+
+jobs # Lists background jobs
+output: (e.g., [1]+ Running sleep 10 &)
+
+kill %1 # Kills job number 1
+output: (e.g., [1]+ Terminated sleep 10)
+
+kill -9 5678 # Kills process by PID (adjust PID from jobs)
+output: (No output, kills process)
