@@ -1,0 +1,1 @@
+Insert into [dbo].[tblSecond] Values (678),(156),(478);
