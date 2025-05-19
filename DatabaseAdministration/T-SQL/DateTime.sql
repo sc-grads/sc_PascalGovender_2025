@@ -1,58 +1,59 @@
-declare @mydate as datetime = '2015-06-24 12:34:56.124'
-select @mydate as myDate
+DECLARE @mydate AS DATETIME = '2015-06-24 12:34:56.124';
+SELECT @mydate AS myDate;
 
-declare @mydate2 as datetime2(3) = '20150624 12:34:56.124'
-select @mydate2 as MyDate
+DECLARE @mydate2 AS DATETIME2(3) = '20150624 12:34:56.124';
+SELECT @mydate2 AS MyDate;
 
-select DATEFROMPARTS(2015,06,24) as ThisDate;
-select DATETIME2FROMPARTS(2015,06,24,12,34,56,124,5) as ThatDate;
-select year(@mydate) as myYear, month(@mydate) as myMonth, day(@mydate) as myDay;
+SELECT DATEFROMPARTS(2015, 06, 24) AS ThisDate;
+SELECT DATETIME2FROMPARTS(2015, 06, 24, 12, 34, 56, 124, 5) AS ThatDate;
+SELECT YEAR(@mydate) AS myYear, MONTH(@mydate) AS myMonth, DAY(@mydate) AS myDay;
 
 ----------------------------------------------------------------------------------------------------
 -----------------DATE FUNCTIONS
-SELECT CURRENT_TIMESTAMP as RightNow;
-select getdate() as RightNow;
-select SYSDATETIME() AS RightNow;
-select dateadd(year,1,'2015-01-02 03:04:05') as myYear;
-select datepart(hour,'2015-01-02 03:04:05') as myHour;
-select datename(weekday, getdate()) as myDay;
-select datediff(second,'2015-01-02 03:04:05',getdate()) as SecondsElapsed;
+SELECT CURRENT_TIMESTAMP AS RightNow;
+SELECT GETDATE() AS RightNow;
+SELECT SYSDATETIME() AS RightNow;
+SELECT DATEADD(YEAR, 1, '2015-01-02 03:04:05') AS myYear;
+SELECT DATEPART(HOUR, '2015-01-02 03:04:05') AS myHour;
+SELECT DATENAME(WEEKDAY, GETDATE()) AS myDay;
+SELECT DATEDIFF(SECOND, '2015-01-02 03:04:05', GETDATE()) AS SecondsElapsed;
 
 ----------------------------------------------------------------------------------------------------
 ---------------------DATE OFFSETS
-declare @myDateOffset as datetimeoffset(2) = '2015-06-25 01:02:03.456 +05:30' -- 8-10 bytes
-select @myDateOffset as MyDateOffset
-go
-declare @myDate as datetime2 = '2015-06-25 01:02:03.456'
-select TODATETIMEOFFSET(@myDate,'+05:30') as MyDateOffset;
+DECLARE @myDateOffset AS DATETIMEOFFSET(2) = '2015-06-25 01:02:03.456 +05:30'; -- 8-10 bytes
+SELECT @myDateOffset AS MyDateOffset;
+GO
 
-select DATETIME2FROMPARTS     (2015,06,25,1,2,3,456,     3);
-select DATETIMEOFFSETFROMPARTS(2015,06,25,1,2,3,456,5,30,3) as MyDateOffset;
+DECLARE @myDate AS DATETIME2 = '2015-06-25 01:02:03.456';
+SELECT TODATETIMEOFFSET(@myDate, '+05:30') AS MyDateOffset;
 
-select SYSDATETIMEOFFSET() as TimeNowWithOffset;
-select SYSUTCDATETIME() as TimeNowUTC;
+SELECT DATETIME2FROMPARTS(2015, 06, 25, 1, 2, 3, 456, 3);
+SELECT DATETIMEOFFSETFROMPARTS(2015, 06, 25, 1, 2, 3, 456, 5, 30, 3) AS MyDateOffset;
 
-declare @myDateOffset as datetimeoffset = '2015-06-25 01:02:03.456 +05:30'
-select SWITCHOFFSET(@myDateOffset,'-05:00') as MyDateOffsetTexas
+SELECT SYSDATETIMEOFFSET() AS TimeNowWithOffset;
+SELECT SYSUTCDATETIME() AS TimeNowUTC;
+
+DECLARE @myDateOffset AS DATETIMEOFFSET = '2015-06-25 01:02:03.456 +05:30';
+SELECT SWITCHOFFSET(@myDateOffset, '-05:00') AS MyDateOffsetTexas;
+
 ----------------------------------------------------------------------------------------------------
 ----------------DATES TO STRINGS
-declare @mydate as datetime = '2015-06-25 01:02:03.456'
-select 'The date and time is: ' + @mydate ---won't work...
-go
+DECLARE @mydate AS DATETIME = '2015-06-25 01:02:03.456';
+SELECT 'The date and time is: ' + @mydate; ---won't work...
+GO
 
-declare @mydate as datetime = '2015-06-25 01:02:03.456'
-select 'The date and time is: ' + convert(nvarchar(20),@mydate,104) as MyConvertedDate
-go
+DECLARE @mydate AS DATETIME = '2015-06-25 01:02:03.456';
+SELECT 'The date and time is: ' + CONVERT(NVARCHAR(20), @mydate, 104) AS MyConvertedDate;
+GO
 
-declare @mydate as datetime = '2015-06-25 01:02:03.456'
-select cast(@mydate as nvarchar(20)) as MyCastDate;
+DECLARE @mydate AS DATETIME = '2015-06-25 01:02:03.456';
+SELECT CAST(@mydate AS NVARCHAR(20)) AS MyCastDate;
 
-select try_convert(date,'Thursday, 25 June 2015') as MyConvertedDate;
-select parse('Thursday, 25 June 2015' as date) as MyParsedDate;
-select parse('Jueves, 25 de junio de 2015' as date using 'es-ES') as MySpanishParsedDate;
+SELECT TRY_CONVERT(DATE, 'Thursday, 25 June 2015') AS MyConvertedDate;
+SELECT PARSE('Thursday, 25 June 2015' AS DATE) AS MyParsedDate;
+SELECT PARSE('Jueves, 25 de junio de 2015' AS DATE USING 'es-ES') AS MySpanishParsedDate;
 
-select format(cast('2015-06-25 01:02:03.456' as datetime),'D') as MyFormattedLongDate;
-select format(cast('2015-06-25 01:02:03.456' as datetime),'d') as MyFormattedShortDate;
-select format(cast('2015-06-25 01:59:03.456' as datetime),'dd-MM-yyyy') as MyFormattedBritishDate;
-select format(cast('2015-06-25 01:02:03.456' as datetime),'D','zh-CN') as MyFormattedInternationalLongDate;
-
+SELECT FORMAT(CAST('2015-06-25 01:02:03.456' AS DATETIME), 'D') AS MyFormattedLongDate;
+SELECT FORMAT(CAST('2015-06-25 01:02:03.456' AS DATETIME), 'd') AS MyFormattedShortDate;
+SELECT FORMAT(CAST('2015-06-25 01:59:03.456' AS DATETIME), 'dd-MM-yyyy') AS MyFormattedBritishDate;
+SELECT FORMAT(CAST('2015-06-25 01:02:03.456' AS DATETIME), 'D', 'zh-CN') AS MyFormattedInternationalLongDate;
