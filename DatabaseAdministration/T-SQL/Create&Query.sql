@@ -22,9 +22,6 @@ ALTER TABLE tblEmployee
 DROP COLUMN Department
 
 ALTER TABLE tblEmployee
-ADD Department VARCHAR(15)
-
-ALTER TABLE tblEmployee
 ALTER COLUMN Department VARCHAR(20)
 
 SELECT LEN( 'Customer Relations')
