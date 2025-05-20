@@ -1,5 +1,8 @@
+-- Syntax: ALTER TABLE table_name ADD CONSTRAINT constraint_name UNIQUE (column1, column2, ...);
+
 alter table tblEmployee
-ADD CONSTRAINT unqGovernmentID UNIQUE (EmployeeGovernmentID);  ----Creates a unique indext that makes it unique (only one can exist of it)
+ADD CONSTRAINT unqGovernmentID UNIQUE (EmployeeGovernmentID);  -- Add UNIQUE constraint on a single column
+
 
 select EmployeeGovernmentID, count(EmployeeGovernmentID) as MyCount from tblEmployee
 group by EmployeeGovernmentID
@@ -17,12 +20,11 @@ where EmployeeNumber in (131, 132)
 select * from tblEmployee where EmployeeGovernmentID IN ('HN513777D', 'TX593671R')
 
 commit tran
------------------------------------------------------------------
------multi column set to unique
------The constraint over multi means that as long as either columns have unique values, 
------the others may have repetition
 
----------MEANING : as long as the combination of the columns are unique, it will pass
+-------------------------------------------------
+
+-- Add UNIQUE constraint on multiple columns (composite constraint)
+-- Enforces uniqueness only when all specified column values combined are unique
 alter table tblTransaction
 add constraint unqTransaction UNIQUE (Amount, DateOfTransaction, EmployeeNumber)
 
@@ -34,17 +36,19 @@ VALUES (1,'2015-01-01', 131)
 insert into tblTransaction
 VALUES (1,'2015-01-01', 131)
 
+-- Drop a previously added UNIQUE constraint
 alter table tblTransaction
-Drop constraint unqTransaction ---dropping a constraint
-
+Drop constraint unqTransaction
 
 -------------------------------------------------
------------------------creating a table with constraints already
 
+-- Create a new table with a composite UNIQUE constraint already defined
 create table tblTransaction2
-(Amount smallmoney not null,
-DateOfTransaction smalldatetime not null,
-EmployeeNumber int not null,
-CONSTRAINT unqTransaction2 UNIQUE (Amount,DateOfTransaction,EmployeeNumber))
+(
+  Amount smallmoney not null,
+  DateOfTransaction smalldatetime not null,
+  EmployeeNumber int not null,
+  CONSTRAINT unqTransaction2 UNIQUE (Amount,DateOfTransaction,EmployeeNumber)
+)
 
 drop table tblTransaction2
