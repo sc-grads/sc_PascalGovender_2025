@@ -14,8 +14,7 @@ SELECT DATETIME2FROMPARTS(2015, 06, 24, 12, 34, 56, 124, 5) AS ThatDate;
 
 -- Extracts individual date values from a DATETIME value
 SELECT YEAR(@mydate) AS myYear, MONTH(@mydate) AS myMonth, DAY(@mydate) AS myDay;
-
-----------------------------------------------------------------------------------------------------
+--=========================================================================================
 -----------------DATE FUNCTIONS
 
 -- CURRENT_TIMESTAMP is ANSI SQL; equivalent to GETDATE()
@@ -39,7 +38,7 @@ SELECT DATENAME(WEEKDAY, GETDATE()) AS myDay;
 -- Difference in seconds between two date values
 SELECT DATEDIFF(SECOND, '2015-01-02 03:04:05', GETDATE()) AS SecondsElapsed;
 
-----------------------------------------------------------------------------------------------------
+--=========================================================================================
 ---------------------DATE OFFSETS
 
 -- DATETIMEOFFSET includes time zone offset info (e.g., +05:30)
@@ -67,7 +66,7 @@ SELECT SYSUTCDATETIME() AS TimeNowUTC;
 DECLARE @myDateOffset AS DATETIMEOFFSET = '2015-06-25 01:02:03.456 +05:30';
 SELECT SWITCHOFFSET(@myDateOffset, '-05:00') AS MyDateOffsetTexas;
 
-----------------------------------------------------------------------------------------------------
+--=========================================================================================
 ----------------DATES TO STRINGS
 
 -- Convert DATETIME to NVARCHAR with style 104 (German date format: dd.mm.yyyy)
