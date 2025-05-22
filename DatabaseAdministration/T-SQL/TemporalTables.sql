@@ -66,9 +66,8 @@ ALTER TABLE dbo.tblEmployee
 SET (SYSTEM_VERSIONING = ON (HISTORY_TABLE = dbo.tblEmployeeHistory2));
 
 -- =====================================================
--- 51. Querying System-Versioned Temporal Data
+-- 51. Querying Temporal Data at a Point of Time
 -- =====================================================
-
 -- Query historical data as it existed at a specific point in time
 SELECT * 
 FROM dbo.tblEmployeeTemporal
