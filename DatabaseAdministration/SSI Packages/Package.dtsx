@@ -11,11 +11,136 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{00401934-B621-4817-9AA7-57291D4AE6D7}">
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{0F8B237F-69C5-4CDF-B59B-360E07896FAB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{CAF0C87B-FCD2-42D1-BECF-CC4710F2A0F0}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\scGradsGithub\DatabaseAdministration\SSI Packages\SSIS\Source Files\Input01.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 1]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{8C2BFCAE-2BC1-46BC-890B-C703990532F5}"
+      DTS:ObjectName="Excel Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\scGradsGithub\DatabaseAdministration\SSI Packages\Excel Files\Output01.xls;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{8F864712-0778-4E2E-AE27-FED9BF0467B4}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="7177"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\scGradsGithub\DatabaseAdministration\SSI Packages\SSIS\Source Files\Input02.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CustomerID"
+              DTS:DTSID="{9ED1C3F0-75D5-479D-BA7C-2CAFEEDA6D3B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NameStyle"
+              DTS:DTSID="{E7CBF5BF-7721-4696-9DC6-2588C8E1030C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Title"
+              DTS:DTSID="{D9D53C52-1466-47E4-8F82-9861D5D73398}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstName"
+              DTS:DTSID="{A5F9036E-D12B-4BAD-87A1-A2AD4DB467AA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastName"
+              DTS:DTSID="{26BC5660-D3A2-48B1-B886-45A8ED1F7F0E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CompanyName"
+              DTS:DTSID="{24AD827E-8A6A-434C-9308-07D83ECF53E3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SalesPerson"
+              DTS:DTSID="{F802AEBB-3FD1-44AF-AFC6-73EA6A5E0AD3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmailAddress"
+              DTS:DTSID="{8DD24D95-A04C-4053-B468-AD0E78CA8338}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Phone"
+              DTS:DTSID="{B248C6C6-F003-441B-8F0B-98290A79233E}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[SSIS SQL Server]"
       DTS:CreationName="OLEDB"
@@ -46,73 +171,300 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow\Derived Column"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Derived Column"
+              refId="Package\Data Flow\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Data Flow\Derived Column.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
+                  refId="Package\Data Flow\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow\Derived Column.Inputs[Derived Column Input].Columns[CustomerIDNew]"
-                      cachedDataType="i2"
+                      refId="Package\Data Flow\Data Conversion.Inputs[Data Conversion Input].Columns[CustomerID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
                       cachedName="CustomerID"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]"
-                      name="CustomerIDNew"
-                      truncationRowDisposition="FailComponent"
-                      usageType="readWrite">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">(DT_STR,5,1252)#{Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(DT_STR,5,1252)CustomerIDNew</property>
-                      </properties>
-                    </inputColumn>
+                      lineageId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Data Conversion.Inputs[Data Conversion Input].Columns[NameStyle]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NameStyle"
+                      lineageId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[NameStyle]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Data Conversion.Inputs[Data Conversion Input].Columns[Title]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Title"
+                      lineageId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[Title]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Data Conversion.Inputs[Data Conversion Input].Columns[FirstName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      lineageId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Data Conversion.Inputs[Data Conversion Input].Columns[LastName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      lineageId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Data Conversion.Inputs[Data Conversion Input].Columns[CompanyName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CompanyName"
+                      lineageId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[CompanyName]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Data Conversion.Inputs[Data Conversion Input].Columns[SalesPerson]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SalesPerson"
+                      lineageId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[SalesPerson]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Data Conversion.Inputs[Data Conversion Input].Columns[EmailAddress]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EmailAddress"
+                      lineageId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[EmailAddress]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Data Conversion.Inputs[Data Conversion Input].Columns[Phone]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Phone"
+                      lineageId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[Phone]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow\Derived Column.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
+                  refId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output]"
                   exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Data Flow\Derived Column.Inputs[Derived Column Input]">
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CustomerID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CustomerID]"
+                      name="Copy of CustomerID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[CustomerID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of NameStyle]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of NameStyle]"
+                      name="Copy of NameStyle"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[NameStyle]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Title]"
+                      name="Copy of Title"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[Title]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of FirstName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of FirstName]"
+                      name="Copy of FirstName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[FirstName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of LastName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of LastName]"
+                      name="Copy of LastName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[LastName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CompanyName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CompanyName]"
+                      name="Copy of CompanyName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[CompanyName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SalesPerson]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SalesPerson]"
+                      name="Copy of SalesPerson"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[SalesPerson]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of EmailAddress]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of EmailAddress]"
+                      name="Copy of EmailAddress"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[EmailAddress]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Phone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Phone]"
+                      name="Copy of Phone"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[Phone]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow\Derived Column.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
+                  refId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\Data Flow\Derived Column.Inputs[Derived Column Input]">
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow\Data Conversion.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -121,13 +473,12 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow\OLE DB Destination"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="OLE DB Destination"
-              usesDispositions="true"
-              version="4">
+              refId="Package\Data Flow\Excel Destination"
+              componentClassID="Microsoft.ExcelDestination"
+              contactInfo="Excel Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Excel Destination"
+              name="Excel Destination"
+              usesDispositions="true">
               <properties>
                 <property
                   dataType="System.Int32"
@@ -136,7 +487,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Output02]</property>
+                  name="OpenRowset">Excel_Destination</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -148,17 +499,9 @@
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">3</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -170,7 +513,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                  name="FastLoadOptions"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -178,154 +521,152 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SSIS SQL Server]"
-                  connectionManagerRefId="Package.ConnectionManagers[SSIS SQL Server]"
+                  refId="Package\Data Flow\Excel Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
-                  name="OLE DB Destination Input">
+                  name="Excel Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Title]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="4"
-                      cachedName="Title"
-                      externalMetadataColumnId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[Title]" />
+                      refId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of Title]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Title"
+                      externalMetadataColumnId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Title]"
+                      lineageId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Title]" />
                     <inputColumn
-                      refId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FirstName]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="24"
-                      cachedName="FirstName"
-                      externalMetadataColumnId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]" />
+                      refId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of SalesPerson]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of SalesPerson"
+                      externalMetadataColumnId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[SalesPerson]"
+                      lineageId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SalesPerson]" />
                     <inputColumn
-                      refId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LastName]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="22"
-                      cachedName="LastName"
-                      externalMetadataColumnId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]" />
+                      refId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of Phone]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Phone"
+                      externalMetadataColumnId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Phone]"
+                      lineageId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Phone]" />
                     <inputColumn
-                      refId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CompanyName]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="41"
-                      cachedName="CompanyName"
-                      externalMetadataColumnId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyName]"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]" />
+                      refId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of NameStyle]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of NameStyle"
+                      externalMetadataColumnId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[NameStyle]"
+                      lineageId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of NameStyle]" />
                     <inputColumn
-                      refId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SalesPerson]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="24"
-                      cachedName="SalesPerson"
-                      externalMetadataColumnId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalesPerson]"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesPerson]" />
+                      refId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of FirstName"
+                      externalMetadataColumnId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[LastName]"
+                      lineageId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of FirstName]" />
                     <inputColumn
-                      refId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EmailAddress]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="43"
-                      cachedName="EmailAddress"
-                      externalMetadataColumnId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EmailAddress]"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmailAddress]" />
+                      refId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of EmailAddress]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of EmailAddress"
+                      externalMetadataColumnId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[EmailAddress]"
+                      lineageId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of EmailAddress]" />
                     <inputColumn
-                      refId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Phone]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="19"
-                      cachedName="Phone"
-                      externalMetadataColumnId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Phone]"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phone]" />
+                      refId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of CustomerID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of CustomerID"
+                      externalMetadataColumnId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[CustomerID]"
+                      lineageId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CustomerID]" />
                     <inputColumn
-                      refId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomerID]"
-                      cachedDataType="i2"
-                      cachedName="CustomerID"
-                      externalMetadataColumnId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]" />
+                      refId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of CompanyName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of CompanyName"
+                      externalMetadataColumnId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[CompanyName]"
+                      lineageId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CompanyName]" />
+                    <inputColumn
+                      refId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].Columns[Copy of LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of LastName"
+                      externalMetadataColumnId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[FirstName]"
+                      lineageId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of LastName]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="5"
+                      refId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[CustomerID]"
+                      dataType="wstr"
+                      length="255"
                       name="CustomerID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
-                      codePage="1252"
-                      dataType="str"
-                      length="4"
+                      refId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[NameStyle]"
+                      dataType="wstr"
+                      length="255"
+                      name="NameStyle" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="255"
                       name="Title" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="24"
+                      refId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="255"
                       name="FirstName" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="22"
+                      refId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="255"
                       name="LastName" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="41"
+                      refId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[CompanyName]"
+                      dataType="wstr"
+                      length="255"
                       name="CompanyName" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalesPerson]"
-                      codePage="1252"
-                      dataType="str"
-                      length="24"
+                      refId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[SalesPerson]"
+                      dataType="wstr"
+                      length="255"
                       name="SalesPerson" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EmailAddress]"
-                      codePage="1252"
-                      dataType="str"
-                      length="43"
+                      refId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[EmailAddress]"
+                      dataType="wstr"
+                      length="255"
                       name="EmailAddress" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Phone]"
-                      codePage="1252"
-                      dataType="str"
-                      length="19"
+                      refId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Phone]"
+                      dataType="wstr"
+                      length="255"
                       name="Phone" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Data Flow\Excel Destination.Outputs[Excel Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  name="Excel Destination Error Output"
+                  synchronousInputId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -334,338 +675,315 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow\OLE DB Source"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-              description="OLE DB Source"
-              name="OLE DB Source"
+              refId="Package\Data Flow\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="7177"
+              name="Flat File Source"
               usesDispositions="true"
-              version="7">
+              version="1">
               <properties>
                 <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Customer]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
                   dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
                 <property
                   dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SSIS SQL Server]"
-                  connectionManagerRefId="Package.ConnectionManagers[SSIS SQL Server]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
+                  refId="Package\Data Flow\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
+                  refId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]"
-                      dataType="i2"
+                      refId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[CustomerID]"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      externalMetadataColumnId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CustomerID]"
+                      length="50"
+                      lineageId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[CustomerID]"
                       name="CustomerID"
-                      truncationRowDisposition="FailComponent" />
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[NameStyle]"
-                      dataType="bool"
+                      refId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[NameStyle]"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NameStyle]"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[NameStyle]"
+                      externalMetadataColumnId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NameStyle]"
+                      length="50"
+                      lineageId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[NameStyle]"
                       name="NameStyle"
-                      truncationRowDisposition="FailComponent" />
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[Title]"
+                      refId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[Title]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Title]"
-                      length="4"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[Title]"
+                      externalMetadataColumnId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Title]"
+                      length="50"
+                      lineageId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[Title]"
                       name="Title"
-                      truncationRowDisposition="FailComponent" />
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      refId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[FirstName]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
-                      length="24"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      externalMetadataColumnId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FirstName]"
+                      length="50"
+                      lineageId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[FirstName]"
                       name="FirstName"
-                      truncationRowDisposition="FailComponent" />
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiddleName]"
+                      refId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[LastName]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MiddleName]"
-                      length="20"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiddleName]"
-                      name="MiddleName"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
-                      length="22"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]"
+                      externalMetadataColumnId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LastName]"
+                      length="50"
+                      lineageId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[LastName]"
                       name="LastName"
-                      truncationRowDisposition="FailComponent" />
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suffix]"
+                      refId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[CompanyName]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Suffix]"
-                      length="22"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suffix]"
-                      name="Suffix"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyName]"
-                      length="41"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]"
+                      externalMetadataColumnId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CompanyName]"
+                      length="50"
+                      lineageId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[CompanyName]"
                       name="CompanyName"
-                      truncationRowDisposition="FailComponent" />
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesPerson]"
+                      refId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[SalesPerson]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesPerson]"
-                      length="24"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesPerson]"
+                      externalMetadataColumnId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SalesPerson]"
+                      length="50"
+                      lineageId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[SalesPerson]"
                       name="SalesPerson"
-                      truncationRowDisposition="FailComponent" />
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmailAddress]"
+                      refId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[EmailAddress]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EmailAddress]"
-                      length="43"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmailAddress]"
+                      externalMetadataColumnId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EmailAddress]"
+                      length="50"
+                      lineageId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[EmailAddress]"
                       name="EmailAddress"
-                      truncationRowDisposition="FailComponent" />
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phone]"
+                      refId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[Phone]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Phone]"
-                      length="19"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phone]"
+                      externalMetadataColumnId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Phone]"
+                      length="50"
+                      lineageId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].Columns[Phone]"
                       name="Phone"
-                      truncationRowDisposition="FailComponent" />
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
-                      dataType="i2"
+                      refId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CustomerID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="CustomerID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NameStyle]"
-                      dataType="bool"
+                      refId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NameStyle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="NameStyle" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Title]"
+                      refId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Title]"
                       codePage="1252"
                       dataType="str"
-                      length="4"
+                      length="50"
                       name="Title" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      refId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FirstName]"
                       codePage="1252"
                       dataType="str"
-                      length="24"
+                      length="50"
                       name="FirstName" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MiddleName]"
+                      refId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LastName]"
                       codePage="1252"
                       dataType="str"
-                      length="20"
-                      name="MiddleName" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="22"
+                      length="50"
                       name="LastName" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Suffix]"
+                      refId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CompanyName]"
                       codePage="1252"
                       dataType="str"
-                      length="22"
-                      name="Suffix" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="41"
+                      length="50"
                       name="CompanyName" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesPerson]"
+                      refId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SalesPerson]"
                       codePage="1252"
                       dataType="str"
-                      length="24"
+                      length="50"
                       name="SalesPerson" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EmailAddress]"
+                      refId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EmailAddress]"
                       codePage="1252"
                       dataType="str"
-                      length="43"
+                      length="50"
                       name="EmailAddress" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Phone]"
+                      refId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Phone]"
                       codePage="1252"
                       dataType="str"
-                      length="19"
+                      length="50"
                       name="Phone" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
-                  name="OLE DB Source Error Output">
+                  name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
-                      dataType="i2"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
-                      name="CustomerID" />
-                    <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NameStyle]"
-                      dataType="bool"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NameStyle]"
-                      name="NameStyle" />
-                    <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Title]"
+                      refId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1252"
-                      dataType="str"
-                      length="4"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Title]"
-                      name="Title" />
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FirstName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="24"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FirstName]"
-                      name="FirstName" />
-                    <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MiddleName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MiddleName]"
-                      name="MiddleName" />
-                    <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="22"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastName]"
-                      name="LastName" />
-                    <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Suffix]"
-                      codePage="1252"
-                      dataType="str"
-                      length="22"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Suffix]"
-                      name="Suffix" />
-                    <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CompanyName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="41"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CompanyName]"
-                      name="CompanyName" />
-                    <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalesPerson]"
-                      codePage="1252"
-                      dataType="str"
-                      length="24"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalesPerson]"
-                      name="SalesPerson" />
-                    <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EmailAddress]"
-                      codePage="1252"
-                      dataType="str"
-                      length="43"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EmailAddress]"
-                      name="EmailAddress" />
-                    <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Phone]"
-                      codePage="1252"
-                      dataType="str"
-                      length="19"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Phone]"
-                      name="Phone" />
-                    <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -676,15 +994,15 @@
           </components>
           <paths>
             <path
-              refId="Package\Data Flow.Paths[Derived Column Output]"
-              endId="Package\Data Flow\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\Data Flow\Derived Column.Outputs[Derived Column Output]" />
+              refId="Package\Data Flow.Paths[Data Conversion Output]"
+              endId="Package\Data Flow\Excel Destination.Inputs[Excel Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow\Data Conversion.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Data Flow.Paths[OLE DB Source Output]"
-              endId="Package\Data Flow\Derived Column.Inputs[Derived Column Input]"
-              name="OLE DB Source Output"
-              startId="Package\Data Flow\OLE DB Source.Outputs[OLE DB Source Output]" />
+              refId="Package\Data Flow.Paths[Flat File Source Output]"
+              endId="Package\Data Flow\Data Conversion.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow\Flat File Source.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -715,31 +1033,43 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="188.8,41.6"
-          Id="Package\Data Flow\OLE DB Source"
-          TopLeft="126.999998107553,67.9999989867211" />
+          Size="151.2,41.6"
+          Id="Package\Data Flow\Flat File Source"
+          TopLeft="85.9999987185003,61.3333324193955" />
         <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Data Flow\OLE DB Destination"
-          TopLeft="356.666661351919,142.999997869134" />
+          Size="159.2,41.6"
+          Id="Package\Data Flow\Excel Destination"
+          TopLeft="441.999993413687,70.6666656136512" />
         <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Data Flow\Derived Column"
-          TopLeft="141.333331227303,144.399998420477" />
+          Size="156,41.6"
+          Id="Package\Data Flow\Data Conversion"
+          TopLeft="251.999996244907,151.999997735024" />
         <EdgeLayout
-          Id="Package\Data Flow.Paths[OLE DB Source Output]"
-          TopLeft="219.566664667428,109.599998986721">
+          Id="Package\Data Flow.Paths[Flat File Source Output]"
+          TopLeft="161.5999987185,102.933332419395">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.7999994337559"
+              EndConnector="143.733330859741,49.0666653156281"
               Start="0,0"
-              End="0,27.2999994337559">
+              End="143.733330859741,41.5666653156281">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.2999994337559" />
+                    End="0,25.1411159488756" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.1411159488756"
+                    Point2="0,29.1411159488756"
+                    Point3="4,29.1411159488756" />
+                  <mssgle:LineSegment
+                    End="139.733330859741,29.1411159488756" />
+                  <mssgle:CubicBezierSegment
+                    Point1="139.733330859741,29.1411159488756"
+                    Point2="143.733330859741,29.1411159488756"
+                    Point3="143.733330859741,33.1411159488756" />
+                  <mssgle:LineSegment
+                    End="143.733330859741,41.5666653156281" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -749,19 +1079,31 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow.Paths[Derived Column Output]"
-          TopLeft="294.133331227303,164.499998144805">
+          Id="Package\Data Flow.Paths[Data Conversion Output]"
+          TopLeft="354.666662911574,151.999997735024">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="62.5333301246166,0"
+              EndConnector="166.933330502112,-39.7333321213723"
               Start="0,0"
-              End="55.0333301246166,0">
+              End="166.933330502112,-32.2333321213723">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="55.0333301246166,0" />
+                    End="0,-12.1353632980192" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-12.1353632980192"
+                    Point2="0,-16.1353632980192"
+                    Point3="4,-16.1353632980192" />
+                  <mssgle:LineSegment
+                    End="162.933330502112,-16.1353632980192" />
+                  <mssgle:CubicBezierSegment
+                    Point1="162.933330502112,-16.1353632980192"
+                    Point2="166.933330502112,-16.1353632980192"
+                    Point3="166.933330502112,-20.1353632980192" />
+                  <mssgle:LineSegment
+                    End="166.933330502112,-32.2333321213723" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -774,20 +1116,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow\OLE DB Destination">
+    design-time-name="Package\Data Flow\Excel Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
