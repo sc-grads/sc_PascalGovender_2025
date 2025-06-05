@@ -3,7 +3,7 @@ Go
 
 TRUNCATE TABLE Timesheet;
 TRUNCATE TABLE ErrorRows;
-
+TRUNCATE TABLE Leave;
 
 DROP TABLE IF EXISTS [dbo].[Timesheet]
 Go
@@ -22,7 +22,7 @@ CREATE TABLE Timesheet (
     TotalHours DECIMAL(5,2) NOT NULL,
     StartTime TIME(0),
     EndTime TIME(0),
-    CONSTRAINT UQ_Timesheet_UniqueEntry UNIQUE (EmployeeName, Date, StartTime, EndTime)
+    CONSTRAINT UQTimesheetUniqueEntry UNIQUE (EmployeeName, Date, StartTime, EndTime)
 );
 
 
@@ -31,15 +31,15 @@ Go
 
 CREATE TABLE Leave (
     LeaveID INT PRIMARY KEY IDENTITY(1,1),
+	EmployeeName NVARCHAR(50) NOT NULL,
     Type NVARCHAR(50) NOT NULL,
     StartDate DATE NOT NULL,
     EndDate Date NOT NULL,
     NumberDays INT NOT NULL,
     Approved NVARCHAR(50) NOT NULL,
-	SickNote NVARCHAR(50) NOT NULL
+	SickNote NVARCHAR(50) NULL
+	CONSTRAINT UQLeaveUniqueEntry UNIQUE (EmployeeName, StartDate, EndDate)
 )
-
-
 
 
 
