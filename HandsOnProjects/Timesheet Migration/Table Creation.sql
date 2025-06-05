@@ -3,6 +3,8 @@ Go
 
 TRUNCATE TABLE Timesheet;
 TRUNCATE TABLE Leave;
+TRUNCATE TABLE AuditLog;
+TRUNCATE TABLE ErrorLog;
 
 DROP TABLE IF EXISTS [dbo].[Timesheet]
 Go
@@ -40,14 +42,16 @@ CREATE TABLE Leave (
 	CONSTRAINT UQLeaveUniqueEntry UNIQUE (EmployeeName, StartDate, EndDate)
 )
 
+DROP TABLE IF EXISTS [dbo].[AuditLog]
+Go
+
 CREATE TABLE AuditLog (
     LogID INT PRIMARY KEY IDENTITY(1,1),
-    Operation VARCHAR(10) NOT NULL,
-    TableName VARCHAR(50) NOT NULL,
-    Timestamp DATETIME NOT NULL DEFAULT GETDATE(),
-    EmployeeName VARCHAR(50),
-    UserName VARCHAR(50) NOT NULL,
-    Details TEXT
+    TableName NVARCHAR(50)NULL,
+    Timestamp DATETIME NULL DEFAULT GETDATE(),
+    EmployeeName NVARCHAR(50),
+    UserName NVARCHAR(50) NULL,
+    Details NVARCHAR(MAX)
 );
  
 CREATE TABLE ErrorLog (
