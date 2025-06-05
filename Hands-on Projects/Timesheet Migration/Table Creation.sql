@@ -2,7 +2,6 @@ USE [TimesheetDB]
 Go
 
 TRUNCATE TABLE Timesheet;
-TRUNCATE TABLE ErrorRows;
 TRUNCATE TABLE Leave;
 
 DROP TABLE IF EXISTS [dbo].[Timesheet]
@@ -41,22 +40,19 @@ CREATE TABLE Leave (
 	CONSTRAINT UQLeaveUniqueEntry UNIQUE (EmployeeName, StartDate, EndDate)
 )
 
-
-
-DROP TABLE IF EXISTS [dbo].[ErrorRows]
-Go
-
-CREATE TABLE ErrorRows (
-    EmployeeName NVARCHAR(50),
-    Date DATE,
-    DayOfWeek NVARCHAR(50),
-    Client NVARCHAR(50),
-    ClientProjectName NVARCHAR(50),
-    Description NVARCHAR(50),
-    Billable NVARCHAR(50),
-    Comments NTEXT,
-    TotalHours DECIMAL(5,2),
-    StartTime TIME(0),
-    EndTime TIME(0),
-    ErrorDescription NVARCHAR(255)
+CREATE TABLE AuditLog (
+    LogID INT PRIMARY KEY IDENTITY(1,1),
+    Operation VARCHAR(10) NOT NULL,
+    TableName VARCHAR(50) NOT NULL,
+    Timestamp DATETIME NOT NULL DEFAULT GETDATE(),
+    EmployeeName VARCHAR(50),
+    UserName VARCHAR(50) NOT NULL,
+    Details TEXT
+);
+ 
+CREATE TABLE ErrorLog (
+    ErrorID INT PRIMARY KEY IDENTITY(1,1),
+    FilePath VARCHAR(255),
+    ErrorMessage TEXT,
+    Timestamp DATETIME DEFAULT GETDATE()
 );
