@@ -1,10 +1,17 @@
 USE [TimesheetDB]
 Go
 
-TRUNCATE TABLE Timesheet;
-TRUNCATE TABLE Leave;
-TRUNCATE TABLE AuditLog;
-TRUNCATE TABLE ErrorLog;
+--Reset tables
+--TRUNCATE TABLE [dbo].[Timesheet];
+--TRUNCATE TABLE Leave;
+--TRUNCATE TABLE AuditLog;
+--TRUNCATE TABLE ErrorLog;
+
+-- View data in all tables
+--Select * from [dbo].[Timesheet]
+--Select * from [dbo].[Leave]
+--Select * from [dbo].[AuditLog]
+--Select * from [dbo].[ErrorLog]
 
 DROP TABLE IF EXISTS [dbo].[Timesheet]
 Go
@@ -25,7 +32,6 @@ CREATE TABLE Timesheet (
     EndTime TIME(0),
     CONSTRAINT UQTimesheetUniqueEntry UNIQUE (EmployeeName, Date, StartTime, EndTime)
 );
-
 
 DROP TABLE IF EXISTS [dbo].[Leave]
 Go
@@ -53,10 +59,14 @@ CREATE TABLE AuditLog (
     UserName NVARCHAR(50) NULL,
     Details NVARCHAR(MAX)
 );
+
+DROP TABLE IF EXISTS [dbo].[ErrorLog]
+Go
  
 CREATE TABLE ErrorLog (
-    ErrorID INT PRIMARY KEY IDENTITY(1,1),
-    FilePath VARCHAR(255),
-    ErrorMessage TEXT,
-    Timestamp DATETIME DEFAULT GETDATE()
+	ErrorID INT PRIMARY KEY IDENTITY(1,1),
+	FilePath NVARCHAR(1000),
+	ErrorCode NVarchar(15),
+	ErrorDescription NVARCHAR(1000),
+	Timestamp DATETIME DEFAULT GETDATE()
 );
