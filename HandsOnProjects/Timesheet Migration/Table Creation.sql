@@ -1,7 +1,7 @@
 USE [TimesheetDB]
 Go
 
-TRUNCATE TABLE Timesheet;
+TRUNCATE TABLE [dbo].[Timesheet];
 TRUNCATE TABLE Leave;
 TRUNCATE TABLE AuditLog;
 TRUNCATE TABLE ErrorLog;
@@ -53,10 +53,13 @@ CREATE TABLE AuditLog (
     UserName NVARCHAR(50) NULL,
     Details NVARCHAR(MAX)
 );
+
+DROP TABLE IF EXISTS [dbo].[ErrorLog]
+Go
  
 CREATE TABLE ErrorLog (
-    ErrorID INT PRIMARY KEY IDENTITY(1,1),
-    FilePath VARCHAR(255),
-    ErrorMessage TEXT,
-    Timestamp DATETIME DEFAULT GETDATE()
-);
+        ErrorID INT PRIMARY KEY IDENTITY(1,1),
+        FilePath VARCHAR(255),
+        ErrorDescription TEXT,
+        Timestamp DATETIME DEFAULT GETDATE()
+    );

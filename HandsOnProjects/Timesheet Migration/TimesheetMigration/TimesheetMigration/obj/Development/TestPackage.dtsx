@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="6/3/2025 9:29:11 AM"
+  DTS:CreationDate="6/6/2025 9:19:51 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LAPTOP-H6CGEPKT"
   DTS:CreatorName="LAPTOP-H6CGEPKT\PascalGovender"
-  DTS:DTSID="{53E63741-9243-47BE-BAD9-4D17E2896FFD}"
+  DTS:DTSID="{9FFA03E6-DE94-4BE4-9F15-7355370E709A}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5685.0"
   DTS:LocaleID="7177"
-  DTS:ObjectName="LoadTimesheets"
+  DTS:ObjectName="TestPackage"
   DTS:PackageType="5"
-  DTS:VersionBuild="289"
-  DTS:VersionGUID="{F89E56BD-63B5-4D45-8091-2DC08DA6379B}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{62DB0B09-AFFA-47F7-A989-9BC54EC24506}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -60,7 +60,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{34742AAA-8A86-48B1-AED8-74908149357A}"
+      DTS:DTSID="{7D5D5FD8-2458-48AD-807E-96F3A024E354}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="RIGHT(&#xA;  LEFT(@[User::FilePath], LEN(@[User::FilePath]) - FINDSTRING(REVERSE(@[User::FilePath]), &quot;\\&quot;, 1)),&#xA;  FINDSTRING(REVERSE(LEFT(@[User::FilePath], LEN(@[User::FilePath]) - FINDSTRING(REVERSE(@[User::FilePath]), &quot;\\&quot;, 1))), &quot;\\&quot;, 1) - 1&#xA;)"
       DTS:IncludeInDebugDump="2345"
@@ -71,30 +71,12 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F09D27D9-33A8-4C1E-AF7F-D85CA1AA8A7F}"
+      DTS:DTSID="{44F08659-3C8D-461E-B206-09107BBA80CB}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="FilePath">
       <DTS:VariableValue
         DTS:DataType="8">C:\Users\PascalGovender\Documents\Timesheets\Karabo Tsaoane\Karabo_Tsaoane_April_FinalWeek.xlsx</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{383F7CE7-722C-4C48-BE73-24C496F407A5}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="RootFolder">
-      <DTS:VariableValue
-        DTS:DataType="8">C:\Users\PascalGovender\Documents\Timesheets</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{69389AD8-D80B-4B47-8D28-7D09E09282DD}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="SheetName">
-      <DTS:VariableValue
-        DTS:DataType="8">TSheet</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -102,13 +84,13 @@
       DTS:refId="Package\Subfolders TIMESHEETS"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
-      DTS:DTSID="{3AEE82E0-CEE0-45B8-9A85-94F2E753486C}"
+      DTS:DTSID="{a1e38719-5f12-4561-a7b8-9e5298700a86}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="Subfolders TIMESHEETS">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachFileEnumerator"
-        DTS:DTSID="{56B174B4-B23A-421D-835A-86F0DF2EA13D}"
+        DTS:DTSID="{e9d84962-73d7-4ffc-a12f-a764c2325ada}"
         DTS:ObjectName="{56B174B4-B23A-421D-835A-86F0DF2EA13D}">
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
@@ -129,7 +111,7 @@
           DTS:refId="Package\Subfolders TIMESHEETS\Load Leave Data"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{16ca64b5-592d-4de0-a9fe-21af6cbcb022}"
+          DTS:DTSID="{6497b7aa-a8a9-4e1a-adee-a6ba177f3422}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Load Leave Data"
@@ -430,170 +412,6 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table"
-                  componentClassID="Microsoft.OLEDBDestination"
-                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-                  description="OLE DB Destination"
-                  name="Audit Table"
-                  usesDispositions="true"
-                  version="4">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[AuditLog]</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the variable that contains the name of the database object used to open a rowset."
-                      name="OpenRowsetVariable"></property>
-                    <property
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Forces the use of the DefaultCodePage property value when describing character data."
-                      name="AlwaysUseDefaultCodePage">false</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the mode used to access the database."
-                      name="AccessMode"
-                      typeConverter="AccessMode">3</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                      name="FastLoadKeepIdentity">false</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                      name="FastLoadKeepNulls">false</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                      name="FastLoadMaxInsertCommitSize">2147483647</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[LocalHost.TimesheetDB]"
-                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.TimesheetDB]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Inputs[OLE DB Destination Input]"
-                      errorOrTruncationOperation="Insert"
-                      errorRowDisposition="FailComponent"
-                      hasSideEffects="true"
-                      name="OLE DB Destination Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Inputs[OLE DB Destination Input].Columns[Execution start time]"
-                          cachedDataType="date"
-                          cachedName="Execution start time"
-                          externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Inputs[OLE DB Destination Input].ExternalColumns[Timestamp]"
-                          lineageId="Package\Subfolders TIMESHEETS\Load Leave Data\Aggregate.Outputs[Aggregate Output 1].Columns[Execution start time]" />
-                        <inputColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Inputs[OLE DB Destination Input].Columns[Name]"
-                          cachedDataType="wstr"
-                          cachedLength="50"
-                          cachedName="Name"
-                          externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeName]"
-                          lineageId="Package\Subfolders TIMESHEETS\Load Leave Data\Aggregate.Outputs[Aggregate Output 1].Columns[Name]" />
-                        <inputColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Inputs[OLE DB Destination Input].Columns[User name]"
-                          cachedDataType="wstr"
-                          cachedLength="64"
-                          cachedName="User name"
-                          externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Inputs[OLE DB Destination Input].ExternalColumns[UserName]"
-                          lineageId="Package\Subfolders TIMESHEETS\Load Leave Data\Aggregate.Outputs[Aggregate Output 1].Columns[User name]" />
-                        <inputColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Inputs[OLE DB Destination Input].Columns[Task name]"
-                          cachedDataType="wstr"
-                          cachedLength="64"
-                          cachedName="Task name"
-                          externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Inputs[OLE DB Destination Input].ExternalColumns[Details]"
-                          lineageId="Package\Subfolders TIMESHEETS\Load Leave Data\Aggregate.Outputs[Aggregate Output 1].Columns[Task name]" />
-                        <inputColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Inputs[OLE DB Destination Input].Columns[TableName]"
-                          cachedDataType="wstr"
-                          cachedLength="5"
-                          cachedName="TableName"
-                          externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Inputs[OLE DB Destination Input].ExternalColumns[TableName]"
-                          lineageId="Package\Subfolders TIMESHEETS\Load Leave Data\Aggregate.Outputs[Aggregate Output 1].Columns[TableName]" />
-                      </inputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Inputs[OLE DB Destination Input].ExternalColumns[LogID]"
-                          dataType="i4"
-                          name="LogID" />
-                        <externalMetadataColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Inputs[OLE DB Destination Input].ExternalColumns[TableName]"
-                          dataType="wstr"
-                          length="50"
-                          name="TableName" />
-                        <externalMetadataColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Inputs[OLE DB Destination Input].ExternalColumns[Timestamp]"
-                          dataType="dbTimeStamp"
-                          name="Timestamp" />
-                        <externalMetadataColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeName]"
-                          dataType="wstr"
-                          length="50"
-                          name="EmployeeName" />
-                        <externalMetadataColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Inputs[OLE DB Destination Input].ExternalColumns[UserName]"
-                          dataType="wstr"
-                          length="50"
-                          name="UserName" />
-                        <externalMetadataColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Inputs[OLE DB Destination Input].ExternalColumns[Details]"
-                          dataType="nText"
-                          name="Details" />
-                      </externalMetadataColumns>
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Outputs[OLE DB Destination Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Inputs[OLE DB Destination Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
                   refId="Package\Subfolders TIMESHEETS\Load Leave Data\Conditional Split"
                   componentClassID="Microsoft.ConditionalSplit"
                   contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -625,13 +443,13 @@
                         <inputColumn
                           refId="Package\Subfolders TIMESHEETS\Load Leave Data\Conditional Split.Inputs[Conditional Split Input].Columns[F1]"
                           cachedDataType="wstr"
-                          cachedLength="50"
+                          cachedLength="255"
                           cachedName="F1"
                           lineageId="Package\Subfolders TIMESHEETS\Load Leave Data\Excel Source.Outputs[Excel Source Output].Columns[F1]" />
                         <inputColumn
                           refId="Package\Subfolders TIMESHEETS\Load Leave Data\Conditional Split.Inputs[Conditional Split Input].Columns[F5]"
                           cachedDataType="wstr"
-                          cachedLength="50"
+                          cachedLength="255"
                           cachedName="F5"
                           lineageId="Package\Subfolders TIMESHEETS\Load Leave Data\Excel Source.Outputs[Excel Source Output].Columns[F5]" />
                       </inputColumns>
@@ -917,7 +735,7 @@
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Leave Data\Excel Source.Outputs[Excel Source Output].ExternalColumns[F1]"
-                          length="50"
+                          length="255"
                           lineageId="Package\Subfolders TIMESHEETS\Load Leave Data\Excel Source.Outputs[Excel Source Output].Columns[F1]"
                           name="F1"
                           truncationRowDisposition="FailComponent" />
@@ -955,7 +773,7 @@
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Leave Data\Excel Source.Outputs[Excel Source Output].ExternalColumns[F5]"
-                          length="50"
+                          length="255"
                           lineageId="Package\Subfolders TIMESHEETS\Load Leave Data\Excel Source.Outputs[Excel Source Output].Columns[F5]"
                           name="F5"
                           truncationRowDisposition="FailComponent" />
@@ -1139,7 +957,7 @@ where [refTable].[Type] = ? and [refTable].[EmployeeName] = ? and [refTable].[St
                         <inputColumn
                           refId="Package\Subfolders TIMESHEETS\Load Leave Data\Lookup.Inputs[Lookup Input].Columns[F1]"
                           cachedDataType="wstr"
-                          cachedLength="50"
+                          cachedLength="255"
                           cachedName="F1"
                           lineageId="Package\Subfolders TIMESHEETS\Load Leave Data\Excel Source.Outputs[Excel Source Output].Columns[F1]">
                           <properties>
@@ -1360,7 +1178,7 @@ where [refTable].[Type] = ? and [refTable].[EmployeeName] = ? and [refTable].[St
                         <inputColumn
                           refId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[F1]"
                           cachedDataType="wstr"
-                          cachedLength="50"
+                          cachedLength="255"
                           cachedName="F1"
                           externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
                           lineageId="Package\Subfolders TIMESHEETS\Load Leave Data\Excel Source.Outputs[Excel Source Output].Columns[F1]" />
@@ -1386,7 +1204,7 @@ where [refTable].[Type] = ? and [refTable].[EmployeeName] = ? and [refTable].[St
                         <inputColumn
                           refId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[F5]"
                           cachedDataType="wstr"
-                          cachedLength="50"
+                          cachedLength="255"
                           cachedName="F5"
                           externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Approved]"
                           lineageId="Package\Subfolders TIMESHEETS\Load Leave Data\Excel Source.Outputs[Excel Source Output].Columns[F5]" />
@@ -1471,11 +1289,175 @@ where [refTable].[Type] = ? and [refTable].[EmployeeName] = ? and [refTable].[St
                     </output>
                   </outputs>
                 </component>
+                <component
+                  refId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination 1"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[AuditLog]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.TimesheetDB]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.TimesheetDB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Execution start time]"
+                          cachedDataType="date"
+                          cachedName="Execution start time"
+                          externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Timestamp]"
+                          lineageId="Package\Subfolders TIMESHEETS\Load Leave Data\Aggregate.Outputs[Aggregate Output 1].Columns[Execution start time]" />
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Name]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Name"
+                          externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeName]"
+                          lineageId="Package\Subfolders TIMESHEETS\Load Leave Data\Aggregate.Outputs[Aggregate Output 1].Columns[Name]" />
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[User name]"
+                          cachedDataType="wstr"
+                          cachedLength="64"
+                          cachedName="User name"
+                          externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[UserName]"
+                          lineageId="Package\Subfolders TIMESHEETS\Load Leave Data\Aggregate.Outputs[Aggregate Output 1].Columns[User name]" />
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Task name]"
+                          cachedDataType="wstr"
+                          cachedLength="64"
+                          cachedName="Task name"
+                          externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Details]"
+                          lineageId="Package\Subfolders TIMESHEETS\Load Leave Data\Aggregate.Outputs[Aggregate Output 1].Columns[Task name]" />
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[TableName]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="TableName"
+                          externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[TableName]"
+                          lineageId="Package\Subfolders TIMESHEETS\Load Leave Data\Aggregate.Outputs[Aggregate Output 1].Columns[TableName]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[LogID]"
+                          dataType="i4"
+                          name="LogID" />
+                        <externalMetadataColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[TableName]"
+                          dataType="wstr"
+                          length="50"
+                          name="TableName" />
+                        <externalMetadataColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Timestamp]"
+                          dataType="dbTimeStamp"
+                          name="Timestamp" />
+                        <externalMetadataColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeName]"
+                          dataType="wstr"
+                          length="50"
+                          name="EmployeeName" />
+                        <externalMetadataColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[UserName]"
+                          dataType="wstr"
+                          length="50"
+                          name="UserName" />
+                        <externalMetadataColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Details]"
+                          dataType="nText"
+                          name="Details" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
               </components>
               <paths>
                 <path
                   refId="Package\Subfolders TIMESHEETS\Load Leave Data.Paths[Aggregate Output 1]"
-                  endId="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table.Inputs[OLE DB Destination Input]"
+                  endId="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Subfolders TIMESHEETS\Load Leave Data\Aggregate.Outputs[Aggregate Output 1]" />
                 <path
@@ -1521,7 +1503,7 @@ where [refTable].[Type] = ? and [refTable].[EmployeeName] = ? and [refTable].[St
           DTS:refId="Package\Subfolders TIMESHEETS\Load Timesheet Data"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{5269D75B-92EE-487F-B7B0-0C3F0B4EE716}"
+          DTS:DTSID="{7efbda33-2405-48c8-8339-8a2def2a5da6}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Load Timesheet Data"
@@ -1816,170 +1798,6 @@ where [refTable].[Type] = ? and [refTable].[EmployeeName] = ? and [refTable].[St
                               typeConverter="LineageItemSelected">7</property>
                           </properties>
                         </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table"
-                  componentClassID="Microsoft.OLEDBDestination"
-                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-                  description="OLE DB Destination"
-                  name="Audit Table"
-                  usesDispositions="true"
-                  version="4">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[AuditLog]</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the variable that contains the name of the database object used to open a rowset."
-                      name="OpenRowsetVariable"></property>
-                    <property
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Forces the use of the DefaultCodePage property value when describing character data."
-                      name="AlwaysUseDefaultCodePage">false</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the mode used to access the database."
-                      name="AccessMode"
-                      typeConverter="AccessMode">3</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                      name="FastLoadKeepIdentity">false</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                      name="FastLoadKeepNulls">false</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                      name="FastLoadMaxInsertCommitSize">2147483647</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[LocalHost.TimesheetDB]"
-                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.TimesheetDB]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Inputs[OLE DB Destination Input]"
-                      errorOrTruncationOperation="Insert"
-                      errorRowDisposition="FailComponent"
-                      hasSideEffects="true"
-                      name="OLE DB Destination Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Inputs[OLE DB Destination Input].Columns[EmployeeName]"
-                          cachedDataType="wstr"
-                          cachedLength="50"
-                          cachedName="EmployeeName"
-                          externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeName]"
-                          lineageId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Aggregate.Outputs[Aggregate Output 1].Columns[EmployeeName]" />
-                        <inputColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Inputs[OLE DB Destination Input].Columns[Execution start time]"
-                          cachedDataType="date"
-                          cachedName="Execution start time"
-                          externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Inputs[OLE DB Destination Input].ExternalColumns[Timestamp]"
-                          lineageId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Aggregate.Outputs[Aggregate Output 1].Columns[Execution start time]" />
-                        <inputColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Inputs[OLE DB Destination Input].Columns[User name]"
-                          cachedDataType="wstr"
-                          cachedLength="64"
-                          cachedName="User name"
-                          externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Inputs[OLE DB Destination Input].ExternalColumns[UserName]"
-                          lineageId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Aggregate.Outputs[Aggregate Output 1].Columns[User name]" />
-                        <inputColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Inputs[OLE DB Destination Input].Columns[Task name]"
-                          cachedDataType="wstr"
-                          cachedLength="64"
-                          cachedName="Task name"
-                          externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Inputs[OLE DB Destination Input].ExternalColumns[Details]"
-                          lineageId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Aggregate.Outputs[Aggregate Output 1].Columns[Task name]" />
-                        <inputColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Inputs[OLE DB Destination Input].Columns[TableName]"
-                          cachedDataType="wstr"
-                          cachedLength="9"
-                          cachedName="TableName"
-                          externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Inputs[OLE DB Destination Input].ExternalColumns[TableName]"
-                          lineageId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Aggregate.Outputs[Aggregate Output 1].Columns[TableName]" />
-                      </inputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Inputs[OLE DB Destination Input].ExternalColumns[LogID]"
-                          dataType="i4"
-                          name="LogID" />
-                        <externalMetadataColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Inputs[OLE DB Destination Input].ExternalColumns[TableName]"
-                          dataType="wstr"
-                          length="50"
-                          name="TableName" />
-                        <externalMetadataColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Inputs[OLE DB Destination Input].ExternalColumns[Timestamp]"
-                          dataType="dbTimeStamp"
-                          name="Timestamp" />
-                        <externalMetadataColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeName]"
-                          dataType="wstr"
-                          length="50"
-                          name="EmployeeName" />
-                        <externalMetadataColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Inputs[OLE DB Destination Input].ExternalColumns[UserName]"
-                          dataType="wstr"
-                          length="50"
-                          name="UserName" />
-                        <externalMetadataColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Inputs[OLE DB Destination Input].ExternalColumns[Details]"
-                          dataType="nText"
-                          name="Details" />
-                      </externalMetadataColumns>
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Outputs[OLE DB Destination Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Inputs[OLE DB Destination Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -2709,6 +2527,170 @@ where [refTable].[EmployeeName] = ? and [refTable].[StartTime] = ? and [refTable
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[AuditLog]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.TimesheetDB]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.TimesheetDB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EmployeeName]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="EmployeeName"
+                          externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeName]"
+                          lineageId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Aggregate.Outputs[Aggregate Output 1].Columns[EmployeeName]" />
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Execution start time]"
+                          cachedDataType="date"
+                          cachedName="Execution start time"
+                          externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Timestamp]"
+                          lineageId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Aggregate.Outputs[Aggregate Output 1].Columns[Execution start time]" />
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[User name]"
+                          cachedDataType="wstr"
+                          cachedLength="64"
+                          cachedName="User name"
+                          externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UserName]"
+                          lineageId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Aggregate.Outputs[Aggregate Output 1].Columns[User name]" />
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Task name]"
+                          cachedDataType="wstr"
+                          cachedLength="64"
+                          cachedName="Task name"
+                          externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Details]"
+                          lineageId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Aggregate.Outputs[Aggregate Output 1].Columns[Task name]" />
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TableName]"
+                          cachedDataType="wstr"
+                          cachedLength="9"
+                          cachedName="TableName"
+                          externalMetadataColumnId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TableName]"
+                          lineageId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Aggregate.Outputs[Aggregate Output 1].Columns[TableName]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LogID]"
+                          dataType="i4"
+                          name="LogID" />
+                        <externalMetadataColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TableName]"
+                          dataType="wstr"
+                          length="50"
+                          name="TableName" />
+                        <externalMetadataColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Timestamp]"
+                          dataType="dbTimeStamp"
+                          name="Timestamp" />
+                        <externalMetadataColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeName]"
+                          dataType="wstr"
+                          length="50"
+                          name="EmployeeName" />
+                        <externalMetadataColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UserName]"
+                          dataType="wstr"
+                          length="50"
+                          name="UserName" />
+                        <externalMetadataColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Details]"
+                          dataType="nText"
+                          name="Details" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Timesheet Table"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -2946,7 +2928,7 @@ where [refTable].[EmployeeName] = ? and [refTable].[StartTime] = ? and [refTable
               <paths>
                 <path
                   refId="Package\Subfolders TIMESHEETS\Load Timesheet Data.Paths[Aggregate Output 1]"
-                  endId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table.Inputs[OLE DB Destination Input]"
+                  endId="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Subfolders TIMESHEETS\Load Timesheet Data\Aggregate.Outputs[Aggregate Output 1]" />
                 <path
@@ -2988,7 +2970,7 @@ where [refTable].[EmployeeName] = ? and [refTable].[StartTime] = ? and [refTable
           DTS:CreationName="Microsoft.ScriptTask"
           DTS:Description="Script Task"
           DTS:Disabled="True"
-          DTS:DTSID="{37ee7b83-46a0-48e9-a073-775a72221e5e}"
+          DTS:DTSID="{8d310cbe-04cc-4e28-ad9c-ebcde7f834f6}"
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Script Task"
@@ -2996,20 +2978,41 @@ where [refTable].[EmployeeName] = ? and [refTable].[StartTime] = ? and [refTable
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
-              Name="ST_92cf889737964e14b4b05cf8fde2835b"
+              Name="ST_fbf0033021534abd856fb67fca0c8357"
               VSTAMajorVersion="16"
               VSTAMinorVersion="0"
               Language="CSharp"
               ReadOnlyVariables="User::FilePath">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_5598afb1281140c2a66bfe765c3dc341")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("HP")]
+[assembly: AssemblyProduct("ST_5598afb1281140c2a66bfe765c3dc341")]
+[assembly: AssemblyCopyright("Copyright @ HP 2025")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -3130,92 +3133,6 @@ where [refTable].[EmployeeName] = ? and [refTable].[StartTime] = ? and [refTable
   </resheader>
 </root>]]></ProjectItem>
               <ProjectItem
-                Name="ST_92cf889737964e14b4b05cf8fde2835b.csproj"
-                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{EE072914-B39A-491E-B395-BE43B90C71BF}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ST_5598afb1281140c2a66bfe765c3dc341</RootNamespace>
-    <AssemblyName>ST_92cf889737964e14b4b05cf8fde2835b</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
-    <TargetFrameworkProfile></TargetFrameworkProfile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>.\bin\Debug\</OutputPath>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DebugSymbols>false</DebugSymbols>
-    <Optimize>true</Optimize>
-    <OutputPath>.\bin\Release\</OutputPath>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-  </ItemGroup>
-  <ItemGroup>
-    <AppDesigner Include="Properties\" />
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="ScriptMain.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <!-- Include the build rules for a C# project.-->
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ProjectExtensions>
-    <VisualStudio>
-      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
-        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
-        <Host Name="ScriptTask" />
-        <ProjectClient>
-          <HostIdentifier>SSIS_ST160</HostIdentifier>
-        </ProjectClient>
-      </FlavorProperties>
-    </VisualStudio>
-  </ProjectExtensions>
-</Project>]]></ProjectItem>
-              <ProjectItem
                 Name="ScriptMain.cs"
                 Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
 /* The Script Task allows you to perform virtually any operation that can be accomplished in
@@ -3334,6 +3251,9 @@ namespace ST_5598afb1281140c2a66bfe765c3dc341
 	}
 }]]></ProjectItem>
               <ProjectItem
+                Name="ST_fbf0033021534abd856fb67fca0c8357.csproj"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?><Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"><PropertyGroup><ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids><Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform><ProductVersion>8.0.30703</ProductVersion><SchemaVersion>2.0</SchemaVersion><ProjectGuid>{EE072914-B39A-491E-B395-BE43B90C71BF}</ProjectGuid><OutputType>Library</OutputType><AppDesignerFolder>Properties</AppDesignerFolder><RootNamespace>ST_5598afb1281140c2a66bfe765c3dc341</RootNamespace><AssemblyName>ST_fbf0033021534abd856fb67fca0c8357</AssemblyName><TargetFrameworkVersion>v4.7</TargetFrameworkVersion><FileAlignment>512</FileAlignment><ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch><TargetFrameworkProfile></TargetFrameworkProfile></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Debug' "><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><OutputPath>.\bin\Debug\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>DEBUG;TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Release' "><DebugSymbols>false</DebugSymbols><Optimize>true</Optimize><OutputPath>.\bin\Release\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><ItemGroup><Reference Include="System" /><Reference Include="System.Data" /><Reference Include="System.Windows.Forms" /><Reference Include="System.Xml" /><Reference Include="Microsoft.SqlServer.ManagedDTS, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.ScriptTask, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /></ItemGroup><ItemGroup><AppDesigner Include="Properties\" /><Compile Include="Properties\AssemblyInfo.cs"><SubType>Code</SubType></Compile><EmbeddedResource Include="Properties\Resources.resx"><Generator>ResXFileCodeGenerator</Generator><LastGenOutput>Resources.Designer.cs</LastGenOutput></EmbeddedResource><Compile Include="Properties\Resources.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Resources.resx</DependentUpon></Compile><None Include="Properties\Settings.settings"><Generator>SettingsSingleFileGenerator</Generator><LastGenOutput>Settings.Designer.cs</LastGenOutput></None><Compile Include="Properties\Settings.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Settings.settings</DependentUpon></Compile><Compile Include="ScriptMain.cs"><SubType>Code</SubType></Compile></ItemGroup><!-- Include the build rules for a C# project.--><Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" /><ProjectExtensions><VisualStudio><FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}"><ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" /><Host Name="ScriptTask" /><ProjectClient><HostIdentifier>SSIS_ST160</HostIdentifier></ProjectClient></FlavorProperties></VisualStudio></ProjectExtensions></Project>]]></ProjectItem>
+              <ProjectItem
                 Name="Project"
                 Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
@@ -3344,7 +3264,7 @@ namespace ST_5598afb1281140c2a66bfe765c3dc341
     <msb:ProjectId>{F5757BD1-E32B-4D9B-B61C-FEAAE2E90B84}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
-    <msb:Project Include="ST_92cf889737964e14b4b05cf8fde2835b.csproj" />
+    <msb:Project Include="ST_fbf0033021534abd856fb67fca0c8357.csproj" />
     <msb:File Include="Properties\Settings.settings" />
     <msb:File Include="Properties\AssemblyInfo.cs" />
     <msb:File Include="Properties\Resources.resx" />
@@ -3383,35 +3303,14 @@ namespace ST_5598afb1281140c2a66bfe765c3dc341.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_5598afb1281140c2a66bfe765c3dc341")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("HP")]
-[assembly: AssemblyProduct("ST_5598afb1281140c2a66bfe765c3dc341")]
-[assembly: AssemblyCopyright("Copyright @ HP 2025")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -3606,7 +3505,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Subfolders TIMESHEETS.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{19FF878C-DE1D-4301-A867-4CCFC3B425FE}"
+          DTS:DTSID="{4ddcf0ed-12c3-4c5f-a56a-be1d8b8e73a5}"
           DTS:From="Package\Subfolders TIMESHEETS\Script Task"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -3614,7 +3513,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Subfolders TIMESHEETS.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{0DAAB5B0-3542-4977-A73F-A8B7E1A370DE}"
+          DTS:DTSID="{69618686-b596-49cd-b741-83ecce8f431a}"
           DTS:From="Package\Subfolders TIMESHEETS\Load Timesheet Data"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -3623,7 +3522,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{D8C77415-86FD-49BB-92A5-8D5EF7FB6EA0}"
+          DTS:DTSID="{39d0b36b-b3e2-408e-b53c-1850563fb02e}"
           DTS:ObjectName="{D8C77415-86FD-49BB-92A5-8D5EF7FB6EA0}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::FilePath" />
@@ -3649,25 +3548,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <NodeLayout
           Size="177.6,41.6"
           Id="Package\Subfolders TIMESHEETS\Load Timesheet Data"
-          TopLeft="106.199979510905,87.2818182639996" />
+          TopLeft="107.033312798707,88.1484849246396" />
         <NodeLayout
           Size="130.4,41.6"
           Id="Package\Subfolders TIMESHEETS\Script Task"
           TopLeft="129.799984428287,16.5999994395177" />
         <EdgeLayout
           Id="Package\Subfolders TIMESHEETS.PrecedenceConstraints[Constraint]"
-          TopLeft="194.999981969596,58.1999994395177">
+          TopLeft="195.416648613497,58.1999994395177">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,29.0818188244819"
+              EndConnector="0,29.9484854851219"
               Start="0,0"
-              End="0,21.5818188244819">
+              End="0,22.4484854851219">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.5818188244819" />
+                    End="0,22.4484854851219" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3678,18 +3577,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Subfolders TIMESHEETS.PrecedenceConstraints[Constraint 1]"
-          TopLeft="196.02081896251,128.881818264">
+          TopLeft="196.437485606411,129.74848492464">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44.2333317663943"
+              EndConnector="0,43.3666651057544"
               Start="0,0"
-              End="0,36.7333317663943">
+              End="0,35.8666651057544">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.7333317663943" />
+                    End="0,35.8666651057544" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3704,7 +3603,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           PanelSize="391.2,269.6"
           Size="391.2,312.8"
           Id="Package\Subfolders TIMESHEETS"
-          TopLeft="32.9166648681795,47.3296293005052" />
+          TopLeft="60,60" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -3728,15 +3627,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination"
-          TopLeft="136.999999349316,294.466662306321" />
+          TopLeft="77.0000002433855,290.466662365926" />
         <NodeLayout
           Size="102.4,41.6"
           Id="Package\Subfolders TIMESHEETS\Load Leave Data\Audit"
           TopLeft="282.999997173747,127.466664794816" />
         <NodeLayout
-          Size="131.2,41.6"
-          Id="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table"
-          TopLeft="394.999995504817,285.466662440433" />
+          Size="180,41.6"
+          Id="Package\Subfolders TIMESHEETS\Load Leave Data\OLE DB Destination 1"
+          TopLeft="386.999995624026,285.466662440433" />
         <NodeLayout
           Size="140,41.6"
           Id="Package\Subfolders TIMESHEETS\Load Leave Data\Excel Source"
@@ -3893,26 +3792,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="13.3999998360877,27.39999897182"
+              EndConnector="29.7999999552966,27.3999989718199"
               Start="0,0"
-              End="13.3999998360877,19.89999897182">
+              End="29.7999999552966,19.8999989718199">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.69999948591001" />
+                    End="0,9.69999948591004" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.69999948591001"
+                    Point1="0,9.69999948591004"
                     Point2="0,13.69999948591"
                     Point3="4,13.69999948591" />
                   <mssgle:LineSegment
-                    End="9.39999983608766,13.69999948591" />
+                    End="25.7999999552966,13.69999948591" />
                   <mssgle:CubicBezierSegment
-                    Point1="9.39999983608766,13.69999948591"
-                    Point2="13.3999998360877,13.69999948591"
-                    Point3="13.3999998360877,17.69999948591" />
+                    Point1="25.7999999552966,13.69999948591"
+                    Point2="29.7999999552966,13.69999948591"
+                    Point3="29.7999999552966,17.69999948591" />
                   <mssgle:LineSegment
-                    End="13.3999998360877,19.89999897182" />
+                    End="29.7999999552966,19.8999989718199" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3945,18 +3844,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Subfolders TIMESHEETS\Load Leave Data.Paths[Multicast Output 1]"
-          TopLeft="222.099999163051,261.066663423909">
+          TopLeft="221.599998976787,261.066663423909">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33.3999988824123"
+              EndConnector="-58.9999987334008,29.399998942017"
               Start="0,0"
-              End="0,25.8999988824123">
+              End="-58.9999987334008,21.899998942017">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.8999988824123" />
+                    End="0,10.6999994710085" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.6999994710085"
+                    Point2="0,14.6999994710085"
+                    Point3="-4,14.6999994710085" />
+                  <mssgle:LineSegment
+                    End="-54.9999987334008,14.6999994710085" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-54.9999987334008,14.6999994710085"
+                    Point2="-58.9999987334008,14.6999994710085"
+                    Point3="-58.9999987334008,18.6999994710085" />
+                  <mssgle:LineSegment
+                    End="-58.9999987334008,21.899998942017" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3968,27 +3879,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Subfolders TIMESHEETS\Load Leave Data\Audit Table">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Subfolders TIMESHEETS\Load Leave Data\Excel Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Subfolders TIMESHEETS\Load Timesheet Data">
     <LayoutInfo>
@@ -4007,9 +3897,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           Id="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit"
           TopLeft="346.296277375502,32.7407405130657" />
         <NodeLayout
-          Size="131.2,41.6"
-          Id="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table"
-          TopLeft="346.481462550569,281.088886934232" />
+          Size="171.2,41.6"
+          Id="Package\Subfolders TIMESHEETS\Load Timesheet Data\OLE DB Destination"
+          TopLeft="339.814796248153,288.888886879992" />
         <NodeLayout
           Size="112.8,41.6"
           Id="Package\Subfolders TIMESHEETS\Load Timesheet Data\Lookup"
@@ -4186,18 +4076,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Subfolders TIMESHEETS\Load Timesheet Data.Paths[Aggregate Output 1]"
-          TopLeft="415.418499339713,246.711109684794">
+          TopLeft="422.085166188505,246.711109684794">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.3777772494382"
+              EndConnector="0,42.177777195198"
               Start="0,0"
-              End="0,26.8777772494382">
+              End="0,34.677777195198">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.8777772494382" />
+                    End="0,34.677777195198" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4211,55 +4101,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Subfolders TIMESHEETS\Load Timesheet Data\Excel Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Subfolders TIMESHEETS\Load Timesheet Data\Audit Table">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Subfolders TIMESHEETS\Load Timesheet Data\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Timesheet]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Subfolders TIMESHEETS\Load Timesheet Data\Timesheet Table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
