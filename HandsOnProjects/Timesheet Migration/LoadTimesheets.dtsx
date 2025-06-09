@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="LoadTimesheets"
   DTS:PackageType="5"
-  DTS:VersionBuild="319"
-  DTS:VersionGUID="{8785EED7-651F-4B1C-93CF-B3E68B7D1FC5}">
+  DTS:VersionBuild="345"
+  DTS:VersionGUID="{1F541BE8-15D9-4B3D-8425-9E787669333E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -102,7 +102,6 @@
       DTS:refId="Package\Load Clients"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{f9732b24-1c8e-49ac-b720-b0f01e49de45}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -113,6 +112,457 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Load Clients\Aggregate"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="Aggregate"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Clients\Aggregate.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Clients\Aggregate.Inputs[Aggregate Input 1].Columns[Task name]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="Task name"
+                      lineageId="Package\Load Clients\Audit.Outputs[Audit Output 1].Columns[Task name]" />
+                    <inputColumn
+                      refId="Package\Load Clients\Aggregate.Inputs[Aggregate Input 1].Columns[User name]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="User name"
+                      lineageId="Package\Load Clients\Audit.Outputs[Audit Output 1].Columns[User name]" />
+                    <inputColumn
+                      refId="Package\Load Clients\Aggregate.Inputs[Aggregate Input 1].Columns[Execution start time]"
+                      cachedDataType="date"
+                      cachedName="Execution start time"
+                      lineageId="Package\Load Clients\Audit.Outputs[Audit Output 1].Columns[Execution start time]" />
+                    <inputColumn
+                      refId="Package\Load Clients\Aggregate.Inputs[Aggregate Input 1].Columns[TableName]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="TableName"
+                      lineageId="Package\Load Clients\Derived Column.Outputs[Derived Column Output].Columns[TableName]" />
+                    <inputColumn
+                      refId="Package\Load Clients\Aggregate.Inputs[Aggregate Input 1].Columns[EmpName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EmpName"
+                      lineageId="Package\Load Clients\Derived Column.Outputs[Derived Column Output].Columns[EmpName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Clients\Aggregate.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Clients\Aggregate.Outputs[Aggregate Output 1].Columns[Task name]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Load Clients\Aggregate.Outputs[Aggregate Output 1].Columns[Task name]"
+                      name="Task name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Load Clients\Audit.Outputs[Audit Output 1].Columns[Task name]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Clients\Aggregate.Outputs[Aggregate Output 1].Columns[User name]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Load Clients\Aggregate.Outputs[Aggregate Output 1].Columns[User name]"
+                      name="User name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Load Clients\Audit.Outputs[Audit Output 1].Columns[User name]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Clients\Aggregate.Outputs[Aggregate Output 1].Columns[Execution start time]"
+                      dataType="date"
+                      lineageId="Package\Load Clients\Aggregate.Outputs[Aggregate Output 1].Columns[Execution start time]"
+                      name="Execution start time">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Load Clients\Audit.Outputs[Audit Output 1].Columns[Execution start time]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Clients\Aggregate.Outputs[Aggregate Output 1].Columns[TableName]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\Load Clients\Aggregate.Outputs[Aggregate Output 1].Columns[TableName]"
+                      name="TableName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Load Clients\Derived Column.Outputs[Derived Column Output].Columns[TableName]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Clients\Aggregate.Outputs[Aggregate Output 1].Columns[EmpName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Clients\Aggregate.Outputs[Aggregate Output 1].Columns[EmpName]"
+                      name="EmpName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Load Clients\Derived Column.Outputs[Derived Column Output].Columns[EmpName]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Clients\Audit"
+              componentClassID="Microsoft.Lineage"
+              contactInfo="Audit;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Includes data about the environment in which the package runs. Map system variables to new output columns. For example, add the name of the computer and operator to the data flow."
+              name="Audit">
+              <inputs>
+                <input
+                  refId="Package\Load Clients\Audit.Inputs[Audit Input 1]"
+                  name="Audit Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Clients\Audit.Outputs[Audit Output 1]"
+                  exclusionGroup="1"
+                  name="Audit Output 1"
+                  synchronousInputId="Package\Load Clients\Audit.Inputs[Audit Input 1]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Clients\Audit.Outputs[Audit Output 1].Columns[Task name]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Load Clients\Audit.Outputs[Audit Output 1].Columns[Task name]"
+                      name="Task name">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies which audit item this column produces."
+                          name="LineageItemSelected"
+                          typeConverter="LineageItemSelected">7</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Clients\Audit.Outputs[Audit Output 1].Columns[User name]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Load Clients\Audit.Outputs[Audit Output 1].Columns[User name]"
+                      name="User name">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies which audit item this column produces."
+                          name="LineageItemSelected"
+                          typeConverter="LineageItemSelected">6</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Clients\Audit.Outputs[Audit Output 1].Columns[Execution start time]"
+                      dataType="date"
+                      lineageId="Package\Load Clients\Audit.Outputs[Audit Output 1].Columns[Execution start time]"
+                      name="Execution start time">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies which audit item this column produces."
+                          name="LineageItemSelected"
+                          typeConverter="LineageItemSelected">4</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Clients\Audit Log"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Audit Log"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[AuditLog]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Clients\Audit Log.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.TimesheetDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.TimesheetDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Clients\Audit Log.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Clients\Audit Log.Inputs[OLE DB Destination Input].Columns[Execution start time]"
+                      cachedDataType="date"
+                      cachedName="Execution start time"
+                      externalMetadataColumnId="Package\Load Clients\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[Timestamp]"
+                      lineageId="Package\Load Clients\Aggregate.Outputs[Aggregate Output 1].Columns[Execution start time]" />
+                    <inputColumn
+                      refId="Package\Load Clients\Audit Log.Inputs[OLE DB Destination Input].Columns[User name]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="User name"
+                      externalMetadataColumnId="Package\Load Clients\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[UserName]"
+                      lineageId="Package\Load Clients\Aggregate.Outputs[Aggregate Output 1].Columns[User name]" />
+                    <inputColumn
+                      refId="Package\Load Clients\Audit Log.Inputs[OLE DB Destination Input].Columns[Task name]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="Task name"
+                      externalMetadataColumnId="Package\Load Clients\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[Details]"
+                      lineageId="Package\Load Clients\Aggregate.Outputs[Aggregate Output 1].Columns[Task name]" />
+                    <inputColumn
+                      refId="Package\Load Clients\Audit Log.Inputs[OLE DB Destination Input].Columns[TableName]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="TableName"
+                      externalMetadataColumnId="Package\Load Clients\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[TableName]"
+                      lineageId="Package\Load Clients\Aggregate.Outputs[Aggregate Output 1].Columns[TableName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Clients\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[LogID]"
+                      dataType="i4"
+                      name="LogID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Clients\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[TableName]"
+                      dataType="wstr"
+                      length="50"
+                      name="TableName" />
+                    <externalMetadataColumn
+                      refId="Package\Load Clients\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[Timestamp]"
+                      dataType="dbTimeStamp"
+                      name="Timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Load Clients\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[UserName]"
+                      dataType="wstr"
+                      length="50"
+                      name="UserName" />
+                    <externalMetadataColumn
+                      refId="Package\Load Clients\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[Details]"
+                      dataType="nText"
+                      name="Details" />
+                    <externalMetadataColumn
+                      refId="Package\Load Clients\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
+                      dataType="i4"
+                      name="EmployeeID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Clients\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[Filename]"
+                      dataType="wstr"
+                      length="1000"
+                      name="Filename" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Clients\Audit Log.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Clients\Audit Log.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Clients\Audit Log.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Clients\Audit Log.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Clients\Audit Log.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Clients\Audit Log.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Load Clients\Conditional Split"
               componentClassID="Microsoft.ConditionalSplit"
@@ -196,6 +646,103 @@
                       refId="Package\Load Clients\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Load Clients\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Clients\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Clients\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Clients\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load Clients\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Clients\Derived Column.Outputs[Derived Column Output].Columns[TableName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="6"
+                      lineageId="Package\Load Clients\Derived Column.Outputs[Derived Column Output].Columns[TableName]"
+                      name="TableName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Client"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Client"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Clients\Derived Column.Outputs[Derived Column Output].Columns[EmpName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Clients\Derived Column.Outputs[Derived Column Output].Columns[EmpName]"
+                      name="EmpName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,50)@[User::EmpName]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,50)@[User::EmpName]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Clients\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load Clients\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Clients\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Clients\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Clients\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Clients\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -494,6 +1041,186 @@
               </outputs>
             </component>
             <component
+              refId="Package\Load Clients\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Client]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Client]) [refTable]
+where [refTable].[ClientName] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ClientID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ClientName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Load Clients\Excel Source.Outputs[Excel Source Output].Columns[F1]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Clients\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.TimesheetDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.TimesheetDB]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Clients\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Clients\Lookup.Inputs[Lookup Input].Columns[F1]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F1"
+                      lineageId="Package\Load Clients\Excel Source.Outputs[Excel Source Output].Columns[F1]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">ClientName</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Clients\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Load Clients\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Clients\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Load Clients\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Clients\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Load Clients\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Clients\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Clients\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Clients\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Clients\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Clients\Multicast"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="Multicast">
+              <inputs>
+                <input
+                  refId="Package\Load Clients\Multicast.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Clients\Multicast.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\Load Clients\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Clients\Multicast.Outputs[Multicast Output 3]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 3"
+                  synchronousInputId="Package\Load Clients\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Clients\Multicast.Outputs[Multicast Output 2]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\Load Clients\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Load Clients\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -615,15 +1342,45 @@
           </components>
           <paths>
             <path
+              refId="Package\Load Clients.Paths[Aggregate Output 1]"
+              endId="Package\Load Clients\Audit Log.Inputs[OLE DB Destination Input]"
+              name="Aggregate Output 1"
+              startId="Package\Load Clients\Aggregate.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\Load Clients.Paths[Audit Output 1]"
+              endId="Package\Load Clients\Conditional Split.Inputs[Conditional Split Input]"
+              name="Audit Output 1"
+              startId="Package\Load Clients\Audit.Outputs[Audit Output 1]" />
+            <path
               refId="Package\Load Clients.Paths[Case 1]"
-              endId="Package\Load Clients\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Load Clients\Lookup.Inputs[Lookup Input]"
               name="Case 1"
               startId="Package\Load Clients\Conditional Split.Outputs[Case 1]" />
             <path
+              refId="Package\Load Clients.Paths[Derived Column Output]"
+              endId="Package\Load Clients\Aggregate.Inputs[Aggregate Input 1]"
+              name="Derived Column Output"
+              startId="Package\Load Clients\Derived Column.Outputs[Derived Column Output]" />
+            <path
               refId="Package\Load Clients.Paths[Excel Source Output]"
-              endId="Package\Load Clients\Conditional Split.Inputs[Conditional Split Input]"
+              endId="Package\Load Clients\Audit.Inputs[Audit Input 1]"
               name="Excel Source Output"
               startId="Package\Load Clients\Excel Source.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Load Clients.Paths[Lookup No Match Output]"
+              endId="Package\Load Clients\Multicast.Inputs[Multicast Input 1]"
+              name="Lookup No Match Output"
+              startId="Package\Load Clients\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Load Clients.Paths[Multicast Output 1]"
+              endId="Package\Load Clients\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Multicast Output 1"
+              startId="Package\Load Clients\Multicast.Outputs[Multicast Output 1]" />
+            <path
+              refId="Package\Load Clients.Paths[Multicast Output 3]"
+              endId="Package\Load Clients\Derived Column.Inputs[Derived Column Input]"
+              name="Multicast Output 3"
+              startId="Package\Load Clients\Multicast.Outputs[Multicast Output 3]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -632,7 +1389,6 @@
       DTS:refId="Package\Load Employees"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{d995c6f1-ede2-47ae-a359-037774b12390}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -643,6 +1399,549 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Load Employees\Aggregate"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="Aggregate"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Employees\Aggregate.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Employees\Aggregate.Inputs[Aggregate Input 1].Columns[Task name]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="Task name"
+                      lineageId="Package\Load Employees\Audit.Outputs[Audit Output 1].Columns[Task name]" />
+                    <inputColumn
+                      refId="Package\Load Employees\Aggregate.Inputs[Aggregate Input 1].Columns[User name]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="User name"
+                      lineageId="Package\Load Employees\Audit.Outputs[Audit Output 1].Columns[User name]" />
+                    <inputColumn
+                      refId="Package\Load Employees\Aggregate.Inputs[Aggregate Input 1].Columns[Execution start time]"
+                      cachedDataType="date"
+                      cachedName="Execution start time"
+                      lineageId="Package\Load Employees\Audit.Outputs[Audit Output 1].Columns[Execution start time]" />
+                    <inputColumn
+                      refId="Package\Load Employees\Aggregate.Inputs[Aggregate Input 1].Columns[TableName]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="TableName"
+                      lineageId="Package\Load Employees\Derived Column.Outputs[Derived Column Output].Columns[TableName]" />
+                    <inputColumn
+                      refId="Package\Load Employees\Aggregate.Inputs[Aggregate Input 1].Columns[EmpName]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="EmpName"
+                      lineageId="Package\Load Employees\Derived Column.Outputs[Derived Column Output].Columns[EmpName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Employees\Aggregate.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Employees\Aggregate.Outputs[Aggregate Output 1].Columns[Task name]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Load Employees\Aggregate.Outputs[Aggregate Output 1].Columns[Task name]"
+                      name="Task name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Load Employees\Audit.Outputs[Audit Output 1].Columns[Task name]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Employees\Aggregate.Outputs[Aggregate Output 1].Columns[User name]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Load Employees\Aggregate.Outputs[Aggregate Output 1].Columns[User name]"
+                      name="User name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Load Employees\Audit.Outputs[Audit Output 1].Columns[User name]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Employees\Aggregate.Outputs[Aggregate Output 1].Columns[Execution start time]"
+                      dataType="date"
+                      lineageId="Package\Load Employees\Aggregate.Outputs[Aggregate Output 1].Columns[Execution start time]"
+                      name="Execution start time">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Load Employees\Audit.Outputs[Audit Output 1].Columns[Execution start time]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Employees\Aggregate.Outputs[Aggregate Output 1].Columns[TableName]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\Load Employees\Aggregate.Outputs[Aggregate Output 1].Columns[TableName]"
+                      name="TableName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Load Employees\Derived Column.Outputs[Derived Column Output].Columns[TableName]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Employees\Aggregate.Outputs[Aggregate Output 1].Columns[EmpName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Employees\Aggregate.Outputs[Aggregate Output 1].Columns[EmpName]"
+                      name="EmpName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Load Employees\Derived Column.Outputs[Derived Column Output].Columns[EmpName]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Employees\Audit"
+              componentClassID="Microsoft.Lineage"
+              contactInfo="Audit;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Includes data about the environment in which the package runs. Map system variables to new output columns. For example, add the name of the computer and operator to the data flow."
+              name="Audit">
+              <inputs>
+                <input
+                  refId="Package\Load Employees\Audit.Inputs[Audit Input 1]"
+                  name="Audit Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Employees\Audit.Outputs[Audit Output 1]"
+                  exclusionGroup="1"
+                  name="Audit Output 1"
+                  synchronousInputId="Package\Load Employees\Audit.Inputs[Audit Input 1]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Employees\Audit.Outputs[Audit Output 1].Columns[User name]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Load Employees\Audit.Outputs[Audit Output 1].Columns[User name]"
+                      name="User name">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies which audit item this column produces."
+                          name="LineageItemSelected"
+                          typeConverter="LineageItemSelected">6</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Employees\Audit.Outputs[Audit Output 1].Columns[Task name]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Load Employees\Audit.Outputs[Audit Output 1].Columns[Task name]"
+                      name="Task name">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies which audit item this column produces."
+                          name="LineageItemSelected"
+                          typeConverter="LineageItemSelected">7</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Employees\Audit.Outputs[Audit Output 1].Columns[Execution start time]"
+                      dataType="date"
+                      lineageId="Package\Load Employees\Audit.Outputs[Audit Output 1].Columns[Execution start time]"
+                      name="Execution start time">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies which audit item this column produces."
+                          name="LineageItemSelected"
+                          typeConverter="LineageItemSelected">4</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Employees\Audit Log"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Audit Log"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[AuditLog]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Employees\Audit Log.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.TimesheetDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.TimesheetDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Employees\Audit Log.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Employees\Audit Log.Inputs[OLE DB Destination Input].Columns[Execution start time]"
+                      cachedDataType="date"
+                      cachedName="Execution start time"
+                      externalMetadataColumnId="Package\Load Employees\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[Timestamp]"
+                      lineageId="Package\Load Employees\Aggregate.Outputs[Aggregate Output 1].Columns[Execution start time]" />
+                    <inputColumn
+                      refId="Package\Load Employees\Audit Log.Inputs[OLE DB Destination Input].Columns[User name]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="User name"
+                      externalMetadataColumnId="Package\Load Employees\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[UserName]"
+                      lineageId="Package\Load Employees\Aggregate.Outputs[Aggregate Output 1].Columns[User name]" />
+                    <inputColumn
+                      refId="Package\Load Employees\Audit Log.Inputs[OLE DB Destination Input].Columns[Task name]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="Task name"
+                      externalMetadataColumnId="Package\Load Employees\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[Details]"
+                      lineageId="Package\Load Employees\Aggregate.Outputs[Aggregate Output 1].Columns[Task name]" />
+                    <inputColumn
+                      refId="Package\Load Employees\Audit Log.Inputs[OLE DB Destination Input].Columns[TableName]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="TableName"
+                      externalMetadataColumnId="Package\Load Employees\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[TableName]"
+                      lineageId="Package\Load Employees\Aggregate.Outputs[Aggregate Output 1].Columns[TableName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Employees\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[LogID]"
+                      dataType="i4"
+                      name="LogID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Employees\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[TableName]"
+                      dataType="wstr"
+                      length="50"
+                      name="TableName" />
+                    <externalMetadataColumn
+                      refId="Package\Load Employees\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[Timestamp]"
+                      dataType="dbTimeStamp"
+                      name="Timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Load Employees\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[UserName]"
+                      dataType="wstr"
+                      length="50"
+                      name="UserName" />
+                    <externalMetadataColumn
+                      refId="Package\Load Employees\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[Details]"
+                      dataType="nText"
+                      name="Details" />
+                    <externalMetadataColumn
+                      refId="Package\Load Employees\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
+                      dataType="i4"
+                      name="EmployeeID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Employees\Audit Log.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Employees\Audit Log.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Employees\Audit Log.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Employees\Audit Log.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Employees\Audit Log.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Employees\Audit Log.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Employees\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Employees\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Employees\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load Employees\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Employees\Derived Column.Outputs[Derived Column Output].Columns[TableName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="8"
+                      lineageId="Package\Load Employees\Derived Column.Outputs[Derived Column Output].Columns[TableName]"
+                      name="TableName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Employee"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Employee"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Employees\Derived Column.Outputs[Derived Column Output].Columns[EmpName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="4"
+                      lineageId="Package\Load Employees\Derived Column.Outputs[Derived Column Output].Columns[EmpName]"
+                      name="EmpName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">NULL(DT_WSTR,4)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">NULL(DT_WSTR,4)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Employees\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load Employees\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Employees\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Employees\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Employees\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Employees\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Load Employees\Excel Source"
               componentClassID="Microsoft.ExcelSource"
@@ -790,6 +2089,194 @@
               </outputs>
             </component>
             <component
+              refId="Package\Load Employees\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Employee]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Employee]) [refTable]
+where [refTable].[EmployeeName] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="EmployeeID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EmployeeName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Load Employees\Excel Source.Outputs[Excel Source Output].Columns[Resource]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Employees\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.TimesheetDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.TimesheetDB]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Employees\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Employees\Lookup.Inputs[Lookup Input].Columns[Resource]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Resource"
+                      lineageId="Package\Load Employees\Excel Source.Outputs[Excel Source Output].Columns[Resource]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">EmployeeName</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Employees\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Load Employees\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Employees\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Load Employees\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Employees\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Load Employees\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Employees\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Employees\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Employees\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Employees\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Employees\Multicast"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="Multicast">
+              <inputs>
+                <input
+                  refId="Package\Load Employees\Multicast.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Employees\Multicast.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\Load Employees\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Employees\Multicast.Outputs[Multicast Output 4]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 4"
+                  synchronousInputId="Package\Load Employees\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Employees\Multicast.Outputs[Multicast Output 3]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 3"
+                  synchronousInputId="Package\Load Employees\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Employees\Multicast.Outputs[Multicast Output 2]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\Load Employees\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Load Employees\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -911,10 +2398,40 @@
           </components>
           <paths>
             <path
+              refId="Package\Load Employees.Paths[Aggregate Output 1]"
+              endId="Package\Load Employees\Audit Log.Inputs[OLE DB Destination Input]"
+              name="Aggregate Output 1"
+              startId="Package\Load Employees\Aggregate.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\Load Employees.Paths[Audit Output 1]"
+              endId="Package\Load Employees\Lookup.Inputs[Lookup Input]"
+              name="Audit Output 1"
+              startId="Package\Load Employees\Audit.Outputs[Audit Output 1]" />
+            <path
+              refId="Package\Load Employees.Paths[Derived Column Output]"
+              endId="Package\Load Employees\Aggregate.Inputs[Aggregate Input 1]"
+              name="Derived Column Output"
+              startId="Package\Load Employees\Derived Column.Outputs[Derived Column Output]" />
+            <path
               refId="Package\Load Employees.Paths[Excel Source Output]"
-              endId="Package\Load Employees\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Load Employees\Audit.Inputs[Audit Input 1]"
               name="Excel Source Output"
               startId="Package\Load Employees\Excel Source.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Load Employees.Paths[Lookup No Match Output]"
+              endId="Package\Load Employees\Multicast.Inputs[Multicast Input 1]"
+              name="Lookup No Match Output"
+              startId="Package\Load Employees\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Load Employees.Paths[Multicast Output 1]"
+              endId="Package\Load Employees\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Multicast Output 1"
+              startId="Package\Load Employees\Multicast.Outputs[Multicast Output 1]" />
+            <path
+              refId="Package\Load Employees.Paths[Multicast Output 3]"
+              endId="Package\Load Employees\Derived Column.Inputs[Derived Column Input]"
+              name="Multicast Output 3"
+              startId="Package\Load Employees\Multicast.Outputs[Multicast Output 3]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1024,6 +2541,12 @@
                           cachedDataType="i4"
                           cachedName="EmployeeID"
                           lineageId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[EmployeeID]" />
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Aggregate.Inputs[Aggregate Input 1].Columns[FileName]"
+                          cachedDataType="wstr"
+                          cachedLength="95"
+                          cachedName="FileName"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[FileName]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -1162,6 +2685,33 @@
                               dataType="System.Int32"
                               description="Specifies the ID of the input column used in the aggregation."
                               name="AggregationColumnId">#{Package\Subfolders TIMESHEETS V4\Load Leave Data\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[EmployeeID]}</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the type of aggregation."
+                              name="AggregationType"
+                              typeConverter="AggregationType">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                              name="IsBig">1</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the string comparison options."
+                              name="AggregationComparisonFlags">0</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Aggregate.Outputs[Aggregate Output 1].Columns[FileName]"
+                          dataType="wstr"
+                          length="95"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Aggregate.Outputs[Aggregate Output 1].Columns[FileName]"
+                          name="FileName">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the ID of the input column used in the aggregation."
+                              name="AggregationColumnId">#{Package\Subfolders TIMESHEETS V4\Load Leave Data\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[FileName]}</property>
                             <property
                               dataType="System.Int32"
                               description="Specifies the type of aggregation."
@@ -1669,6 +3219,29 @@
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
                               name="FriendlyExpression">(DT_WSTR,1000)@[User::FilePath]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Derived Column.Outputs[Derived Column Output].Columns[FileName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="95"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Derived Column.Outputs[Derived Column Output].Columns[FileName]"
+                          name="FileName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[RIGHT](@[User::FilePath],[LEN](@[User::FilePath]) - [FINDSTRING]([REVERSE](@[User::FilePath]),"\\",1) + 1)</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">RIGHT(@[User::FilePath],LEN(@[User::FilePath]) - FINDSTRING(REVERSE(@[User::FilePath]),"\\",1) + 1)</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -2481,6 +4054,39 @@
                               typeConverter="tcComparisonFlagsEx">0</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Fuzzy Lookup.Inputs[Fuzzy Lookup Input].Columns[FileName]"
+                          cachedDataType="wstr"
+                          cachedLength="95"
+                          cachedName="FileName"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Derived Column.Outputs[Derived Column Output].Columns[FileName]">
+                          <properties>
+                            <property
+                              dataType="System.Null"
+                              description="Name of the reference table column with which the input column should be matched."
+                              name="JoinToReferenceColumn"
+                              state="escaped" />
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies whether the match is a fuzzy or an exact match."
+                              name="JoinType"
+                              typeConverter="tcJoinType">2</property>
+                            <property
+                              dataType="System.Single"
+                              description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
+                              name="MinSimilarity">0</property>
+                            <property
+                              dataType="System.UInt32"
+                              description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
+                              name="FuzzyComparisonFlags"
+                              typeConverter="tcComparisonFlags">1</property>
+                            <property
+                              dataType="System.UInt32"
+                              description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
+                              name="FuzzyComparisonFlagsEx"
+                              typeConverter="tcComparisonFlagsEx">0</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -2743,6 +4349,30 @@
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
                               name="SourceInputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Leave Data\Derived Column.Outputs[Derived Column Output].Columns[FullPath]}</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies whether the column is used to indicate confidence or similarity."
+                              name="ColumnType"
+                              typeConverter="tcColumnType">0</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[FileName]"
+                          dataType="wstr"
+                          length="95"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[FileName]"
+                          name="FileName">
+                          <properties>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the reference table column that is copied to the output for each match result."
+                              name="CopyFromReferenceColumn"
+                              state="escaped" />
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                              name="SourceInputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Leave Data\Derived Column.Outputs[Derived Column Output].Columns[FileName]}</property>
                             <property
                               dataType="System.Int32"
                               description="Specifies whether the column is used to indicate confidence or similarity."
@@ -3322,6 +4952,13 @@ where [refTable].[Type] = ? and [refTable].[StartDate] = ? and [refTable].[EndDa
                           cachedName="EmployeeID"
                           externalMetadataColumnId="Package\Subfolders TIMESHEETS V4\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
                           lineageId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Aggregate.Outputs[Aggregate Output 1].Columns[EmployeeID]" />
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[FileName]"
+                          cachedDataType="wstr"
+                          cachedLength="95"
+                          cachedName="FileName"
+                          externalMetadataColumnId="Package\Subfolders TIMESHEETS V4\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Filename]"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Aggregate.Outputs[Aggregate Output 1].Columns[FileName]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3347,6 +4984,11 @@ where [refTable].[Type] = ? and [refTable].[StartDate] = ? and [refTable].[EndDa
                           refId="Package\Subfolders TIMESHEETS V4\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Details]"
                           dataType="nText"
                           name="Details" />
+                        <externalMetadataColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Filename]"
+                          dataType="wstr"
+                          length="1000"
+                          name="Filename" />
                         <externalMetadataColumn
                           refId="Package\Subfolders TIMESHEETS V4\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
                           dataType="i4"
@@ -4987,6 +6629,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           cachedDataType="i4"
                           cachedName="EmployeeID"
                           lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Employee.Outputs[Fuzzy Lookup Output].Columns[EmployeeID]" />
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Aggregate.Inputs[Aggregate Input 1].Columns[FileName]"
+                          cachedDataType="wstr"
+                          cachedLength="95"
+                          cachedName="FileName"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Employee.Outputs[Fuzzy Lookup Output].Columns[FileName]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -5125,6 +6773,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                               dataType="System.Int32"
                               description="Specifies the ID of the input column used in the aggregation."
                               name="AggregationColumnId">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Employee.Outputs[Fuzzy Lookup Output].Columns[EmployeeID]}</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the type of aggregation."
+                              name="AggregationType"
+                              typeConverter="AggregationType">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                              name="IsBig">1</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the string comparison options."
+                              name="AggregationComparisonFlags">0</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Aggregate.Outputs[Aggregate Output 1].Columns[FileName]"
+                          dataType="wstr"
+                          length="95"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Aggregate.Outputs[Aggregate Output 1].Columns[FileName]"
+                          name="FileName">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the ID of the input column used in the aggregation."
+                              name="AggregationColumnId">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Employee.Outputs[Fuzzy Lookup Output].Columns[FileName]}</property>
                             <property
                               dataType="System.Int32"
                               description="Specifies the type of aggregation."
@@ -5476,6 +7151,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           cachedName="EmployeeID"
                           externalMetadataColumnId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
                           lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Aggregate.Outputs[Aggregate Output 1].Columns[EmployeeID]" />
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Audit Log.Inputs[OLE DB Destination Input].Columns[FileName]"
+                          cachedDataType="wstr"
+                          cachedLength="95"
+                          cachedName="FileName"
+                          externalMetadataColumnId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[Filename]"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Aggregate.Outputs[Aggregate Output 1].Columns[FileName]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -5501,6 +7183,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[Details]"
                           dataType="nText"
                           name="Details" />
+                        <externalMetadataColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[Filename]"
+                          dataType="wstr"
+                          length="1000"
+                          name="Filename" />
                         <externalMetadataColumn
                           refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
                           dataType="i4"
@@ -5849,6 +7536,29 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
                               name="FriendlyExpression">(DT_WSTR,1000)@[User::FilePath]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Derived Column.Outputs[Derived Column Output].Columns[FileName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="95"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Derived Column.Outputs[Derived Column Output].Columns[FileName]"
+                          name="FileName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[RIGHT](@[User::FilePath],[LEN](@[User::FilePath]) - [FINDSTRING]([REVERSE](@[User::FilePath]),"\\",1) + 1)</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">RIGHT(@[User::FilePath],LEN(@[User::FilePath]) - FINDSTRING(REVERSE(@[User::FilePath]),"\\",1) + 1)</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -8465,6 +10175,39 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                               typeConverter="tcComparisonFlagsEx">0</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Employee.Inputs[Fuzzy Lookup Input].Columns[FileName]"
+                          cachedDataType="wstr"
+                          cachedLength="95"
+                          cachedName="FileName"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Derived Column.Outputs[Derived Column Output].Columns[FileName]">
+                          <properties>
+                            <property
+                              dataType="System.Null"
+                              description="Name of the reference table column with which the input column should be matched."
+                              name="JoinToReferenceColumn"
+                              state="escaped" />
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies whether the match is a fuzzy or an exact match."
+                              name="JoinType"
+                              typeConverter="tcJoinType">2</property>
+                            <property
+                              dataType="System.Single"
+                              description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
+                              name="MinSimilarity">0</property>
+                            <property
+                              dataType="System.UInt32"
+                              description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
+                              name="FuzzyComparisonFlags"
+                              typeConverter="tcComparisonFlags">1</property>
+                            <property
+                              dataType="System.UInt32"
+                              description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
+                              name="FuzzyComparisonFlagsEx"
+                              typeConverter="tcComparisonFlagsEx">0</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -8964,6 +10707,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
                               name="SourceInputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Derived Column.Outputs[Derived Column Output].Columns[FullPath]}</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies whether the column is used to indicate confidence or similarity."
+                              name="ColumnType"
+                              typeConverter="tcColumnType">0</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Employee.Outputs[Fuzzy Lookup Output].Columns[FileName]"
+                          dataType="wstr"
+                          length="95"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Employee.Outputs[Fuzzy Lookup Output].Columns[FileName]"
+                          name="FileName">
+                          <properties>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the reference table column that is copied to the output for each match result."
+                              name="CopyFromReferenceColumn"
+                              state="escaped" />
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                              name="SourceInputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Derived Column.Outputs[Derived Column Output].Columns[FileName]}</property>
                             <property
                               dataType="System.Int32"
                               description="Specifies whether the column is used to indicate confidence or similarity."
@@ -11217,14 +12984,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   startId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Excel Source.Outputs[Excel Source Output]" />
                 <path
                   refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Fuzzy Lookup Output1]"
-                  endId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Timesheet Table.Inputs[OLE DB Destination Input]"
-                  name="Fuzzy Lookup Output"
-                  startId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client.Outputs[Fuzzy Lookup Output]" />
-                <path
-                  refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Fuzzy Lookup Output]"
                   endId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Lookup.Inputs[Lookup Input]"
                   name="Fuzzy Lookup Output"
                   startId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Employee.Outputs[Fuzzy Lookup Output]" />
+                <path
+                  refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Fuzzy Lookup Output]"
+                  endId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Timesheet Table.Inputs[OLE DB Destination Input]"
+                  name="Fuzzy Lookup Output"
+                  startId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client.Outputs[Fuzzy Lookup Output]" />
                 <path
                   refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Lookup No Match Output]"
                   endId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Multicast.Inputs[Multicast Input 1]"
@@ -11287,6 +13054,36 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               VSTAMinorVersion="0"
               Language="CSharp"
               ReadOnlyVariables="User::FilePath">
+              <ProjectItem
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_5598afb1281140c2a66bfe765c3dc341")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("HP")]
+[assembly: AssemblyProduct("ST_5598afb1281140c2a66bfe765c3dc341")]
+[assembly: AssemblyCopyright("Copyright @ HP 2025")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -11406,35 +13203,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_5598afb1281140c2a66bfe765c3dc341.Properties.Settings.get_Default():ST_5598afb1281140c2a66bfe765c3dc341.Properties.Sett" +
-    "ings")]
-
-namespace ST_5598afb1281140c2a66bfe765c3dc341.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
               <ProjectItem
                 Name="ScriptMain.cs"
                 Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -11577,35 +13345,34 @@ namespace ST_5598afb1281140c2a66bfe765c3dc341
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
 
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_5598afb1281140c2a66bfe765c3dc341")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("HP")]
-[assembly: AssemblyProduct("ST_5598afb1281140c2a66bfe765c3dc341")]
-[assembly: AssemblyCopyright("Copyright @ HP 2025")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_5598afb1281140c2a66bfe765c3dc341.Properties.Settings.get_Default():ST_5598afb1281140c2a66bfe765c3dc341.Properties.Sett" +
+    "ings")]
 
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+namespace ST_5598afb1281140c2a66bfe765c3dc341.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Settings.settings"
                 Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -11837,16 +13604,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{c6feac55-6cce-4865-8b67-d648fb4fc418}"
-      DTS:From="Package\Load Clients"
+      DTS:DTSID="{11A05ADA-F6CA-4E2C-B8A2-A1A42E63ABC8}"
+      DTS:From="Package\Load Employees"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Load Employees" />
+      DTS:To="Package\Load Clients" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{33831395-bfdf-41a0-b862-07a2bf752b8f}"
-      DTS:From="Package\Load Employees"
+      DTS:DTSID="{83401E31-2D57-406D-B4EB-3ED5A92EDEA0}"
+      DTS:From="Package\Load Clients"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Subfolders TIMESHEETS V4" />
@@ -11919,11 +13686,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <NodeLayout
           Size="136,41.6"
           Id="Package\Load Clients"
-          TopLeft="322.916645745023,27.8333333484002" />
+          TopLeft="306.249979988983,36.0999998463195" />
         <NodeLayout
           Size="156,41.6"
           Id="Package\Load Employees"
-          TopLeft="531.249967695526,25.9999998191992" />
+          TopLeft="507.083302349268,33.8666664979193" />
         <NodeLayout
           Size="157.6,41.6"
           Id="Package\Subfolders TIMESHEETS V4\Load Leave Data"
@@ -11935,21 +13702,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <NodeLayout
           Size="130.4,41.6"
           Id="Package\Subfolders TIMESHEETS V4\Script Task"
-          TopLeft="140.633317169713,10.5333328150379" />
+          TopLeft="140.633317169713,18.3333327607977" />
         <EdgeLayout
           Id="Package\Subfolders TIMESHEETS V4.PrecedenceConstraints[Constraint]"
-          TopLeft="207.083314642725,52.1333328150379">
+          TopLeft="207.083314642725,59.9333327607977">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.2818186979213"
+              EndConnector="0,39.4818187521615"
               Start="0,0"
-              End="0,39.7818186979213">
+              End="0,31.9818187521615">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.7818186979213" />
+                    End="0,31.9818187521615" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11983,24 +13750,24 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="391.2,269.6"
-          Size="391.2,312.8"
+          PanelSize="364.8,268"
+          Size="364.8,311.2"
           Id="Package\Subfolders TIMESHEETS V4"
-          TopLeft="272.499985111257,119.583332918998" />
+          TopLeft="306.666649911139,120.516666312598" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="458.916645745023,47.7166665837997">
+          TopLeft="507.083302349268,55.7833331721194">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="72.3333219505031,0"
+              EndConnector="-64.833322360285,0"
               Start="0,0"
-              End="64.8333219505031,0">
+              End="-57.333322360285,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="64.8333219505031,0" />
+                    End="-57.333322360285,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12011,30 +13778,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="609.249967695526,67.5999998191992">
+          TopLeft="374.249979988983,77.6999998463195">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-141.149982584269,51.983333099799"
+              EndConnector="114.816669922156,42.8166664662787"
               Start="0,0"
-              End="-141.149982584269,44.483333099799">
+              End="114.816669922156,35.3166664662787">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.9916665498995" />
+                    End="0,17.4083332331394" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,21.9916665498995"
-                    Point2="0,25.9916665498995"
-                    Point3="-4,25.9916665498995" />
+                    Point1="0,17.4083332331394"
+                    Point2="0,21.4083332331394"
+                    Point3="4,21.4083332331394" />
                   <mssgle:LineSegment
-                    End="-137.149982584269,25.9916665498995" />
+                    End="110.816669922156,21.4083332331394" />
                   <mssgle:CubicBezierSegment
-                    Point1="-137.149982584269,25.9916665498995"
-                    Point2="-141.149982584269,25.9916665498995"
-                    Point3="-141.149982584269,29.9916665498995" />
+                    Point1="110.816669922156,21.4083332331394"
+                    Point2="114.816669922156,21.4083332331394"
+                    Point3="114.816669922156,25.4083332331394" />
                   <mssgle:LineSegment
-                    End="-141.149982584269,44.483333099799" />
+                    End="114.816669922156,35.3166664662787" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12062,70 +13829,262 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package\Load Clients">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\Load Clients\Conditional Split"
-          TopLeft="132.999998018146,137.99999794364" />
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Load Clients\OLE DB Destination"
-          TopLeft="117.999998241663,239.999996423721" />
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="140,41.6"
           Id="Package\Load Clients\Excel Source"
           TopLeft="136.999997958541,50.9999992400408" />
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\Load Clients\Conditional Split"
+          TopLeft="337.833328266111,111.199998177688" />
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Load Clients\Lookup"
+          TopLeft="152.166658074492,115.333333302207" />
+        <NodeLayout
+          Size="102.4,41.6"
+          Id="Package\Load Clients\Audit"
+          TopLeft="365.999994546175,44.9999993294478" />
+        <NodeLayout
+          Size="119.2,41.6"
+          Id="Package\Load Clients\Multicast"
+          TopLeft="154.99999769032,205.999996930361" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Load Clients\Derived Column"
+          TopLeft="317.999995261431,203.999996960163" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Load Clients\OLE DB Destination"
+          TopLeft="130.999985133609,366.866661000185" />
+        <NodeLayout
+          Size="126.4,41.6"
+          Id="Package\Load Clients\Aggregate"
+          TopLeft="510.999992385506,201.999996989965" />
+        <NodeLayout
+          Size="122.4,41.6"
+          Id="Package\Load Clients\Audit Log"
+          TopLeft="507.99999243021,290.999995663762" />
         <EdgeLayout
-          Id="Package\Load Clients.Paths[Excel Source Output]"
-          TopLeft="208.399997988343,92.5999992400408">
+          Id="Package\Load Clients.Paths[Multicast Output 3]"
+          TopLeft="274.19999769032,225.799996945262">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45.3999987035989"
+              EndConnector="43.799997571111,0"
               Start="0,0"
-              End="0,37.8999987035989">
+              End="36.299997571111,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.8999987035989" />
+                    End="36.299997571111,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Clients.Paths[Multicast Output 1]"
+          TopLeft="215.599991411965,247.599996930361">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,119.266664069825"
+              Start="0,0"
+              End="0,111.766664069825">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,111.766664069825" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Clients.Paths[Lookup No Match Output]"
+          TopLeft="211.583327882406,156.933333302207">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.0666636281541"
+              Start="0,0"
+              End="0,41.5666636281541">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5666636281541" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-55.80638671875,14.9786443140771,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Clients.Paths[Case 1]"
-          TopLeft="206.699998129904,179.59999794364">
+          Id="Package\Load Clients.Paths[Excel Source Output]"
+          TopLeft="276.999997958541,68.7999992847443">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.3999984800816"
+              EndConnector="88.999996587634,0"
               Start="0,0"
-              End="0,52.8999984800816">
+              End="81.499996587634,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.8999984800816" />
+                    End="81.499996587634,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Clients.Paths[Derived Column Output]"
+          TopLeft="470.799995261431,223.799996975064">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="40.1999971240755,0"
+              Start="0,0"
+              End="32.6999971240755,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="32.6999971240755,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Clients.Paths[Case 1]"
+          TopLeft="337.833328266111,134.066665739947">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-72.8666701916192,0"
+              Start="0,0"
+              End="-65.3666701916192,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-65.3666701916192,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-15.2180859375,21.6731437712908,30.436171875,9.5537109375"
+              BoundingBox="-47.9014210333096,5,30.436171875,9.5537109375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Clients.Paths[Audit Output 1]"
+          TopLeft="415.916661406143,86.5999993294478">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.5999988482402"
+              Start="0,0"
+              End="0,17.0999988482402">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.0999988482402" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Clients.Paths[Aggregate Output 1]"
+          TopLeft="571.699992407858,243.599996989965">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.3999986737966"
+              Start="0,0"
+              End="0,39.8999986737966">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.8999986737966" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Clients\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Clients\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Client]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load Clients\OLE DB Destination">
     <Properties>
@@ -12140,7 +14099,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Clients\Excel Source">
+    design-time-name="Package\Load Clients\Audit Log">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -12156,29 +14115,223 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package\Load Employees">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Load Employees\Lookup"
+          TopLeft="405.999993950128,158.999997630715" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Load Employees\Derived Column"
+          TopLeft="262.999996080995,250.599997779727" />
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\Load Employees\OLE DB Destination"
-          TopLeft="126.999998107553,184.999997243285" />
+          TopLeft="39.9999994039542,248.999996289611" />
+        <NodeLayout
+          Size="102.4,41.6"
+          Id="Package\Load Employees\Audit"
+          TopLeft="410.999993875623,88.7999992251396" />
         <NodeLayout
           Size="140,41.6"
           Id="Package\Load Employees\Excel Source"
           TopLeft="149.999997764826,91.9999986290932" />
+        <NodeLayout
+          Size="119.2,41.6"
+          Id="Package\Load Employees\Multicast"
+          TopLeft="161.999997586012,164.599999061226" />
+        <NodeLayout
+          Size="126.4,41.6"
+          Id="Package\Load Employees\Aggregate"
+          TopLeft="499.999992549419,251.599997764826" />
+        <NodeLayout
+          Size="122.4,41.6"
+          Id="Package\Load Employees\Audit Log"
+          TopLeft="382.999994292856,329.599996602536" />
         <EdgeLayout
-          Id="Package\Load Employees.Paths[Excel Source Output]"
-          TopLeft="216.299997936189,133.599998629093">
+          Id="Package\Load Employees.Paths[Lookup No Match Output]"
+          TopLeft="405.999993950128,182.599998345971">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51.399998614192"
+              EndConnector="-124.799996364116,0"
               Start="0,0"
-              End="0,43.899998614192">
+              End="-117.299996364116,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.899998614192" />
+                    End="-117.299996364116,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-114.456384900808,5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Employees.Paths[Excel Source Output]"
+          TopLeft="289.999997764826,111.199998927116">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="120.999996110797,0"
+              Start="0,0"
+              End="113.499996110797,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="113.499996110797,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Employees.Paths[Derived Column Output]"
+          TopLeft="415.799996080995,269.099997772277">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="84.1999964684239,0"
+              Start="0,0"
+              End="76.6999964684239,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="76.6999964684239,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Employees.Paths[Audit Output 1]"
+          TopLeft="462.299993912876,130.39999922514">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.5999984055757"
+              Start="0,0"
+              End="0,21.0999984055757">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.0999984055757" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Employees.Paths[Aggregate Output 1]"
+          TopLeft="563.199992549419,293.199997764826">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-118.999998256563,36.3999988377099"
+              Start="0,0"
+              End="-118.999998256563,28.8999988377099">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.1999994188549" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.1999994188549"
+                    Point2="0,18.1999994188549"
+                    Point3="-4,18.1999994188549" />
+                  <mssgle:LineSegment
+                    End="-114.999998256563,18.1999994188549" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-114.999998256563,18.1999994188549"
+                    Point2="-118.999998256563,18.1999994188549"
+                    Point3="-118.999998256563,22.1999994188549" />
+                  <mssgle:LineSegment
+                    End="-118.999998256563,28.8999988377099" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Employees.Paths[Multicast Output 3]"
+          TopLeft="240.133330919345,206.199999061226">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99.2666651616493,44.3999987185005"
+              Start="0,0"
+              End="99.2666651616493,36.8999987185005">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.1128471593353" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.1128471593353"
+                    Point2="0,18.1128471593353"
+                    Point3="4,18.1128471593353" />
+                  <mssgle:LineSegment
+                    End="95.2666651616493,18.1128471593353" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95.2666651616493,18.1128471593353"
+                    Point2="99.2666651616493,18.1128471593353"
+                    Point3="99.2666651616493,22.1128471593353" />
+                  <mssgle:LineSegment
+                    End="99.2666651616493,36.8999987185005" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Employees.Paths[Multicast Output 1]"
+          TopLeft="203.066664252679,206.199999061226">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-77.4666648487244,42.7999972283848"
+              Start="0,0"
+              End="-77.4666648487244,35.2999972283848">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.460131319659" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.460131319659"
+                    Point2="0,17.460131319659"
+                    Point3="-4,17.460131319659" />
+                  <mssgle:LineSegment
+                    End="-73.4666648487244,17.460131319659" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-73.4666648487244,17.460131319659"
+                    Point2="-77.4666648487244,17.460131319659"
+                    Point3="-77.4666648487244,21.460131319659" />
+                  <mssgle:LineSegment
+                    End="-77.4666648487244,35.2999972283848" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12190,6 +14343,42 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Employees\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Employee]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Employees\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load Employees\Excel Source">
     <Properties>
@@ -12204,7 +14393,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Employees\OLE DB Destination">
+    design-time-name="Package\Load Employees\Audit Log">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -12781,21 +14970,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="135.2,41.6"
-          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Aggregate 1"
-          TopLeft="318.458328927349,557.413221665059" />
+          Size="119.2,42.4"
+          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Multicast"
+          TopLeft="268.056866084819,193.435449261876" />
         <NodeLayout
           Size="102.4,41.6"
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Audit"
-          TopLeft="224.004617390557,28.86666666064" />
+          TopLeft="227.337950541765,28.86666666064" />
         <NodeLayout
-          Size="136,41.6"
-          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client"
-          TopLeft="261.666652369831,276.26878203774" />
-        <NodeLayout
-          Size="122.4,41.6"
-          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Audit Log"
-          TopLeft="484.79693352827,277.825925111877" />
+          Size="153.6,41.6"
+          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Conditional Split"
+          TopLeft="370.499995571872,30.5999995646874" />
         <NodeLayout
           Size="140,41.6"
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Excel Source"
@@ -12803,11 +14988,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <NodeLayout
           Size="155.2,41.6"
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Employee"
-          TopLeft="471.944418658538,95.0910048244629" />
+          TopLeft="470.944418673439,109.091004615847" />
         <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Lookup"
-          TopLeft="267.509906018824,92.1111113421343" />
+          Size="161.6,41.6"
+          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Script Component"
+          TopLeft="312.374986164479,483.378303991684" />
         <NodeLayout
           Size="120,55.2"
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All"
@@ -12817,29 +15002,57 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Timesheet Table"
           TopLeft="252.351840368668,363.091003796612" />
         <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Script Component"
-          TopLeft="312.374986164479,483.378303991684" />
-        <NodeLayout
-          Size="119.2,42.4"
-          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Multicast"
-          TopLeft="268.056866084819,193.435449261876" />
-        <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Conditional Split"
-          TopLeft="370.499995571872,30.5999995646874" />
+          Size="122.4,41.6"
+          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Audit Log"
+          TopLeft="488.130266679478,276.959258451237" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Derived Column"
           TopLeft="667.437137216018,30.1873023681438" />
         <NodeLayout
-          Size="126.4,41.6"
-          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Aggregate"
-          TopLeft="488.192436067723,189.174338180396" />
+          Size="136,41.6"
+          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client"
+          TopLeft="261.666652369831,276.26878203774" />
+        <NodeLayout
+          Size="135.2,41.6"
+          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Aggregate 1"
+          TopLeft="318.458328927349,557.413221665059" />
         <NodeLayout
           Size="121.6,41.6"
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Error Log"
           TopLeft="529.458325783205,557.556078805787" />
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Lookup"
+          TopLeft="266.509906033725,106.111111133518" />
+        <NodeLayout
+          Size="126.4,41.6"
+          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Aggregate"
+          TopLeft="488.192436067723,189.174338180396" />
+        <EdgeLayout
+          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Weekday Only]"
+          TopLeft="524.099995571872,51.1936509664156">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="143.337141644146,0"
+              Start="0,0"
+              End="135.837141644146,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="135.837141644146,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="35.3264614470731,5,65.18421875,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Union All Output 1]"
           TopLeft="210.458332324814,503.637430109669">
@@ -12886,37 +15099,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[OLE DB Destination Error Output1]"
-          TopLeft="545.99693352827,319.425925111877">
+          TopLeft="549.330266679478,318.559258451237">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-384.338601203456,156.070631115777"
+              EndConnector="-387.671934354664,156.937297776417"
               Start="0,0"
-              End="-384.338601203456,148.570631115777">
+              End="-387.671934354664,149.437297776417">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,131.068362017514" />
+                    End="0,82.5463039208182" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,131.068362017514"
-                    Point2="0,135.068362017514"
-                    Point3="-4,135.068362017514" />
+                    Point1="0,82.5463039208182"
+                    Point2="0,86.5463039208182"
+                    Point3="-4,86.5463039208182" />
                   <mssgle:LineSegment
-                    End="-380.338601203456,135.068362017514" />
+                    End="-383.671934354664,86.5463039208182" />
                   <mssgle:CubicBezierSegment
-                    Point1="-380.338601203456,135.068362017514"
-                    Point2="-384.338601203456,135.068362017514"
-                    Point3="-384.338601203456,139.068362017514" />
+                    Point1="-383.671934354664,86.5463039208182"
+                    Point2="-387.671934354664,86.5463039208182"
+                    Point3="-387.671934354664,90.5463039208182" />
                   <mssgle:LineSegment
-                    End="-384.338601203456,148.570631115777" />
+                    End="-387.671934354664,149.437297776417" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-265.378206851728,140.068362017514,146.4178125,11.43359375"
+              BoundingBox="-267.044873427332,91.5463039208182,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -13002,30 +15215,52 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Lookup No Match Output]"
-          TopLeft="325.783386051822,133.711111342134">
+          TopLeft="325.283386059272,147.711111133518">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.7243379197415"
+              EndConnector="0,45.7243381283579"
               Start="0,0"
-              End="0,52.2243379197415">
+              End="0,38.2243381283579">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.2243379197415" />
+                    End="0,38.2243381283579" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,20.3074814598707,111.6127734375,11.609375"
+              BoundingBox="-55.80638671875,13.307481564179,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Fuzzy Lookup Output1]"
+          TopLeft="470.944418673439,128.401057874683">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-91.6345126397142,0"
+              Start="0,0"
+              End="-84.1345126397142,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-84.1345126397142,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Fuzzy Lookup Output]"
           TopLeft="330.00924636925,317.86878203774">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -13047,41 +15282,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Fuzzy Lookup Output]"
-          TopLeft="471.944418658538,114.401058083299">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-91.6345126397142,0"
-              Start="0,0"
-              End="-84.1345126397142,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-84.1345126397142,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Excel Source Output]"
           TopLeft="186.749989816299,49.7260581866713">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="37.2546275742579,0"
+              EndConnector="40.5879607254662,0"
               Start="0,0"
-              End="29.7546275742579,0">
+              End="33.0879607254662,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="29.7546275742579,0" />
+                    End="33.0879607254662,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13120,26 +15333,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-218.426051890813,23.3037024563191"
+              EndConnector="-219.426051875912,37.3037022477029"
               Start="0,0"
-              End="-218.426051890813,15.8037024563191">
+              End="-219.426051875912,29.8037022477029">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,5.46637446930267" />
+                    End="0,11.1534210166834" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,5.46637446930267"
-                    Point2="0,9.46637446930267"
-                    Point3="-4,9.46637446930267" />
+                    Point1="0,11.1534210166834"
+                    Point2="0,15.1534210166834"
+                    Point3="-4,15.1534210166834" />
                   <mssgle:LineSegment
-                    End="-214.426051890813,9.46637446930267" />
+                    End="-215.426051875912,15.1534210166834" />
                   <mssgle:CubicBezierSegment
-                    Point1="-214.426051890813,9.46637446930267"
-                    Point2="-218.426051890813,9.46637446930267"
-                    Point3="-218.426051890813,13.4663744693027" />
+                    Point1="-215.426051875912,15.1534210166834"
+                    Point2="-219.426051875912,15.1534210166834"
+                    Point3="-219.426051875912,19.1534210166834" />
                   <mssgle:LineSegment
-                    End="-218.426051890813,15.8037024563191" />
+                    End="-219.426051875912,29.8037022477029" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13186,18 +15399,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Audit Output 1]"
-          TopLeft="326.404617390557,50.5333331126637">
+          TopLeft="329.737950541765,50.5333331126637">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="44.095378181315,0"
+              EndConnector="40.7620450301069,0"
               Start="0,0"
-              End="36.595378181315,0">
+              End="33.2620450301069,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="36.595378181315,0" />
+                    End="33.2620450301069,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13230,18 +15443,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Aggregate Output 1]"
-          TopLeft="548.694684797997,230.774338180396">
+          TopLeft="550.361351373601,230.774338180396">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.051586931481"
+              EndConnector="0,46.1849202708409"
               Start="0,0"
-              End="0,39.551586931481">
+              End="0,38.6849202708409">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.551586931481" />
+                    End="0,38.6849202708409" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13250,59 +15463,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Weekday Only]"
-          TopLeft="524.099995571872,51.1936509664156">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="143.337141644146,0"
-              Start="0,0"
-              End="135.837141644146,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="135.837141644146,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="35.3264614470731,5,65.18421875,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Audit Log">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Excel Source">
     <Properties>
@@ -13330,30 +15493,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Lookup">
+    design-time-name="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Timesheet Table">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Timesheet]</Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Timesheet Table">
+    design-time-name="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Audit Log">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -13375,6 +15541,29 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Timesheet]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

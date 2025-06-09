@@ -1,8 +1,13 @@
-CREATE DATABASE TimesheetDB
-GO
+--CREATE DATABASE TimesheetDB
+---GO
 
 USE [TimesheetDB]
 Go
+DROP TABLE IF EXISTS [dbo].[Leave]
+Go
+DROP TABLE IF EXISTS [dbo].[Timesheet]
+Go
+
 
 DROP TABLE IF EXISTS [dbo].[Employee]
 Go
@@ -18,8 +23,7 @@ CREATE TABLE Client (
 	 ClientName NVARCHAR(100) NOT NULL
 );
 
-DROP TABLE IF EXISTS [dbo].[Timesheet]
-Go
+
 
 CREATE TABLE Timesheet (
     TimesheetID INT PRIMARY KEY IDENTITY(1,1),
@@ -39,8 +43,6 @@ CREATE TABLE Timesheet (
     CONSTRAINT FKClient FOREIGN KEY (ClientID) REFERENCES Client(ClientID)
 );
 
-DROP TABLE IF EXISTS [dbo].[Leave]
-Go
 
 CREATE TABLE Leave (
     LeaveID INT PRIMARY KEY IDENTITY(1,1),
@@ -60,7 +62,8 @@ Go
 
 CREATE TABLE AuditLog (
     LogID INT PRIMARY KEY IDENTITY(1,1),
-    TableName NVARCHAR(50)NULL,
+	Filename NVARCHAR(1000),
+    TableName NVARCHAR(50) NOT NULL,
     Timestamp DATETIME NULL DEFAULT GETDATE(),
     EmployeeID INT,
     UserName NVARCHAR(50) NULL,
