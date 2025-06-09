@@ -1,6 +1,8 @@
+CREATE DATABASE TimesheetDB
+GO
+
 USE [TimesheetDB]
 Go
-
 
 DROP TABLE IF EXISTS [dbo].[Employee]
 Go
@@ -81,8 +83,8 @@ TRUNCATE TABLE [dbo].[Timesheet];
 TRUNCATE TABLE Leave;
 TRUNCATE TABLE AuditLog;
 TRUNCATE TABLE ErrorLog;
-TRUNCATE TABLE Client;
-TRUNCATE TABLE Employee;
+--TRUNCATE TABLE Client;
+--TRUNCATE TABLE Employee;
 
 -- View data in all tables
 Select * from [dbo].[Timesheet]
