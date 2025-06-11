@@ -87,7 +87,7 @@ BEGIN
         StartDate DATE NOT NULL,
         EndDate DATE NOT NULL,
         NumberDays INT NOT NULL,
-        Approved NVARCHAR(50) NOT NULL,
+        Approved NVARCHAR(50) NULL,
         SickNote NVARCHAR(50) NULL,
         CONSTRAINT UQLeaveUniqueEntry UNIQUE (EmployeeID, StartDate, EndDate),
         CONSTRAINT FKLeaveEmployee FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID)

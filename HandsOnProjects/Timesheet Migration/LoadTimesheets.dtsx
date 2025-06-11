@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="LoadTimesheets"
   DTS:PackageType="5"
-  DTS:VersionBuild="346"
-  DTS:VersionGUID="{5F938573-5134-40E3-B3DC-BB452E634E9F}">
+  DTS:VersionBuild="357"
+  DTS:VersionGUID="{AD2229E8-9778-4B0B-8B37-08F8DB638660}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -68,6 +68,17 @@
       DTS:ObjectName="EmpName">
       <DTS:VariableValue
         DTS:DataType="8">Karabo Tsaoane</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F3E42F5A-87D9-4951-A4BB-76E264EB68D8}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="RIGHT(@[User::FilePath], LEN(@[User::FilePath]) - FINDSTRING(@[User::FilePath], &quot;\\&quot;, LEN(@[User::FilePath]) - LEN(REPLACE(@[User::FilePath], &quot;\\&quot;, &quot;&quot;))))"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Filename">
+      <DTS:VariableValue
+        DTS:DataType="8">Karabo_Tsaoane_April_FinalWeek.xlsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -2539,7 +2550,7 @@ where [refTable].[EmployeeName] = ?</property>
                         <inputColumn
                           refId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Aggregate.Inputs[Aggregate Input 1].Columns[FileName]"
                           cachedDataType="wstr"
-                          cachedLength="95"
+                          cachedLength="1000"
                           cachedName="FileName"
                           lineageId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[FileName]" />
                       </inputColumns>
@@ -2989,12 +3000,6 @@ where [refTable].[EmployeeName] = ?</property>
                           cachedLength="255"
                           cachedName="F1"
                           lineageId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Excel Source.Outputs[Excel Source Output].Columns[F1]" />
-                        <inputColumn
-                          refId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Conditional Split.Inputs[Conditional Split Input].Columns[F5]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="F5"
-                          lineageId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Excel Source.Outputs[Excel Source Output].Columns[F5]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -3014,13 +3019,13 @@ where [refTable].[EmployeeName] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                          name="Expression">![ISNULL](#{Package\Subfolders TIMESHEETS V4\Load Leave Data\Excel Source.Outputs[Excel Source Output].Columns[F1]}) &amp;&amp; ![ISNULL](#{Package\Subfolders TIMESHEETS V4\Load Leave Data\Excel Source.Outputs[Excel Source Output].Columns[F2]}) &amp;&amp; ![ISNULL](#{Package\Subfolders TIMESHEETS V4\Load Leave Data\Excel Source.Outputs[Excel Source Output].Columns[F3]}) &amp;&amp; ![ISNULL](#{Package\Subfolders TIMESHEETS V4\Load Leave Data\Excel Source.Outputs[Excel Source Output].Columns[F4]}) &amp;&amp; ![ISNULL](#{Package\Subfolders TIMESHEETS V4\Load Leave Data\Excel Source.Outputs[Excel Source Output].Columns[F5]})</property>
+                          name="Expression">![ISNULL](#{Package\Subfolders TIMESHEETS V4\Load Leave Data\Excel Source.Outputs[Excel Source Output].Columns[F1]}) &amp;&amp; ![ISNULL](#{Package\Subfolders TIMESHEETS V4\Load Leave Data\Excel Source.Outputs[Excel Source Output].Columns[F2]}) &amp;&amp; ![ISNULL](#{Package\Subfolders TIMESHEETS V4\Load Leave Data\Excel Source.Outputs[Excel Source Output].Columns[F3]}) &amp;&amp; ![ISNULL](#{Package\Subfolders TIMESHEETS V4\Load Leave Data\Excel Source.Outputs[Excel Source Output].Columns[F4]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the friendly version of the expression. This expression version uses column names."
                           expressionType="Notify"
-                          name="FriendlyExpression">!ISNULL(F1) &amp;&amp; !ISNULL(F2) &amp;&amp; !ISNULL(F3) &amp;&amp; !ISNULL(F4) &amp;&amp; !ISNULL(F5)</property>
+                          name="FriendlyExpression">!ISNULL(F1) &amp;&amp; !ISNULL(F2) &amp;&amp; !ISNULL(F3) &amp;&amp; !ISNULL(F4)</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -3221,7 +3226,7 @@ where [refTable].[EmployeeName] = ?</property>
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
-                          length="95"
+                          length="1000"
                           lineageId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Derived Column.Outputs[Derived Column Output].Columns[FileName]"
                           name="FileName"
                           truncationRowDisposition="FailComponent">
@@ -3230,13 +3235,13 @@ where [refTable].[EmployeeName] = ?</property>
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              name="Expression">[RIGHT](@[User::FilePath],[LEN](@[User::FilePath]) - [FINDSTRING]([REVERSE](@[User::FilePath]),"\\",1) + 1)</property>
+                              name="Expression">(DT_WSTR,1000)@[User::Filename]</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
-                              name="FriendlyExpression">RIGHT(@[User::FilePath],LEN(@[User::FilePath]) - FINDSTRING(REVERSE(@[User::FilePath]),"\\",1) + 1)</property>
+                              name="FriendlyExpression">(DT_WSTR,1000)@[User::Filename]</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -4052,7 +4057,7 @@ where [refTable].[EmployeeName] = ?</property>
                         <inputColumn
                           refId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Fuzzy Lookup.Inputs[Fuzzy Lookup Input].Columns[FileName]"
                           cachedDataType="wstr"
-                          cachedLength="95"
+                          cachedLength="1000"
                           cachedName="FileName"
                           lineageId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Derived Column.Outputs[Derived Column Output].Columns[FileName]">
                           <properties>
@@ -4354,7 +4359,7 @@ where [refTable].[EmployeeName] = ?</property>
                         <outputColumn
                           refId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[FileName]"
                           dataType="wstr"
-                          length="95"
+                          length="1000"
                           lineageId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[FileName]"
                           name="FileName">
                           <properties>
@@ -4947,6 +4952,13 @@ where [refTable].[Type] = ? and [refTable].[StartDate] = ? and [refTable].[EndDa
                           cachedName="EmployeeID"
                           externalMetadataColumnId="Package\Subfolders TIMESHEETS V4\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
                           lineageId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Aggregate.Outputs[Aggregate Output 1].Columns[EmployeeID]" />
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[FileName]"
+                          cachedDataType="wstr"
+                          cachedLength="95"
+                          cachedName="FileName"
+                          externalMetadataColumnId="Package\Subfolders TIMESHEETS V4\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Filename]"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Leave Data\Aggregate.Outputs[Aggregate Output 1].Columns[FileName]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -4976,6 +4988,11 @@ where [refTable].[Type] = ? and [refTable].[StartDate] = ? and [refTable].[EndDa
                           refId="Package\Subfolders TIMESHEETS V4\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
                           dataType="i4"
                           name="EmployeeID" />
+                        <externalMetadataColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Leave Data\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Filename]"
+                          dataType="wstr"
+                          length="1000"
+                          name="Filename" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -6615,7 +6632,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                         <inputColumn
                           refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Aggregate.Inputs[Aggregate Input 1].Columns[FileName]"
                           cachedDataType="wstr"
-                          cachedLength="95"
+                          cachedLength="1000"
                           cachedName="FileName"
                           lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Employee.Outputs[Fuzzy Lookup Output].Columns[FileName]" />
                       </inputColumns>
@@ -7134,6 +7151,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           cachedName="EmployeeID"
                           externalMetadataColumnId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
                           lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Aggregate.Outputs[Aggregate Output 1].Columns[EmployeeID]" />
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Audit Log.Inputs[OLE DB Destination Input].Columns[FileName]"
+                          cachedDataType="wstr"
+                          cachedLength="95"
+                          cachedName="FileName"
+                          externalMetadataColumnId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[Filename]"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Aggregate.Outputs[Aggregate Output 1].Columns[FileName]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -7163,6 +7187,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
                           dataType="i4"
                           name="EmployeeID" />
+                        <externalMetadataColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Audit Log.Inputs[OLE DB Destination Input].ExternalColumns[Filename]"
+                          dataType="wstr"
+                          length="1000"
+                          name="Filename" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -7514,7 +7543,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
-                          length="95"
+                          length="1000"
                           lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Derived Column.Outputs[Derived Column Output].Columns[FileName]"
                           name="FileName"
                           truncationRowDisposition="FailComponent">
@@ -7523,13 +7552,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              name="Expression">[RIGHT](@[User::FilePath],[LEN](@[User::FilePath]) - [FINDSTRING]([REVERSE](@[User::FilePath]),"\\",1) + 1)</property>
+                              name="Expression">(DT_WSTR,1000)@[User::Filename]</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
-                              name="FriendlyExpression">RIGHT(@[User::FilePath],LEN(@[User::FilePath]) - FINDSTRING(REVERSE(@[User::FilePath]),"\\",1) + 1)</property>
+                              name="FriendlyExpression">(DT_WSTR,1000)@[User::Filename]</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -10149,7 +10178,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                         <inputColumn
                           refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Employee.Inputs[Fuzzy Lookup Input].Columns[FileName]"
                           cachedDataType="wstr"
-                          cachedLength="95"
+                          cachedLength="1000"
                           cachedName="FileName"
                           lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Derived Column.Outputs[Derived Column Output].Columns[FileName]">
                           <properties>
@@ -10688,7 +10717,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                         <outputColumn
                           refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Employee.Outputs[Fuzzy Lookup Output].Columns[FileName]"
                           dataType="wstr"
-                          length="95"
+                          length="1000"
                           lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Employee.Outputs[Fuzzy Lookup Output].Columns[FileName]"
                           name="FileName">
                           <properties>
@@ -12450,176 +12479,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       <externalMetadataColumns />
                     </input>
                     <input
-                      refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2]"
-                      hasSideEffects="true"
-                      name="Union All Input 2">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[Date]"
-                          cachedDataType="date"
-                          cachedName="Date"
-                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client.Outputs[Fuzzy Lookup Output].Columns[Date]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[Date]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[D of Week]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="D of Week"
-                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client.Outputs[Fuzzy Lookup Output].Columns[D of Week]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[D of Week]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[Client]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Client"
-                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client.Outputs[Fuzzy Lookup Output].Columns[Client]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[Client]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[Client Project Name]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Client Project Name"
-                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client.Outputs[Fuzzy Lookup Output].Columns[Client Project Name]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[Client Project Name]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[Description]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Description"
-                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client.Outputs[Fuzzy Lookup Output].Columns[Description]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[Description]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[Billable or Non Billable]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Billable or Non Billable"
-                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client.Outputs[Fuzzy Lookup Output].Columns[Billable or Non Billable]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[Billable or Non Billable]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[Total Hours]"
-                          cachedDataType="date"
-                          cachedName="Total Hours"
-                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client.Outputs[Fuzzy Lookup Output].Columns[Total Hours]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[Total Hours]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[Start Time]"
-                          cachedDataType="date"
-                          cachedName="Start Time"
-                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client.Outputs[Fuzzy Lookup Output].Columns[Start Time]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[Start Time]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[End Time]"
-                          cachedDataType="date"
-                          cachedName="End Time"
-                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client.Outputs[Fuzzy Lookup Output].Columns[End Time]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[End Time]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[ErrorCode]"
-                          cachedDataType="i4"
-                          cachedName="ErrorCode"
-                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Timesheet Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[ErrorColumn]"
-                          cachedDataType="i4"
-                          cachedName="ErrorColumn"
-                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Timesheet Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[FullPath]"
-                          cachedDataType="wstr"
-                          cachedLength="1000"
-                          cachedName="FullPath"
-                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client.Outputs[Fuzzy Lookup Output].Columns[FullPath]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[Path]}</property>
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                    <input
                       refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 3]"
                       hasSideEffects="true"
                       name="Union All Input 3">
@@ -12829,6 +12688,176 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       name="Union All Input 4">
                       <externalMetadataColumns />
                     </input>
+                    <input
+                      refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2]"
+                      hasSideEffects="true"
+                      name="Union All Input 2">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[Date]"
+                          cachedDataType="date"
+                          cachedName="Date"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client.Outputs[Fuzzy Lookup Output].Columns[Date]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[Date]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[D of Week]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="D of Week"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client.Outputs[Fuzzy Lookup Output].Columns[D of Week]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[D of Week]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[Client]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Client"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client.Outputs[Fuzzy Lookup Output].Columns[Client]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[Client]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[Client Project Name]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Client Project Name"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client.Outputs[Fuzzy Lookup Output].Columns[Client Project Name]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[Client Project Name]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[Description]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Description"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client.Outputs[Fuzzy Lookup Output].Columns[Description]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[Description]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[Billable or Non Billable]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Billable or Non Billable"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client.Outputs[Fuzzy Lookup Output].Columns[Billable or Non Billable]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[Billable or Non Billable]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[Total Hours]"
+                          cachedDataType="date"
+                          cachedName="Total Hours"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client.Outputs[Fuzzy Lookup Output].Columns[Total Hours]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[Total Hours]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[Start Time]"
+                          cachedDataType="date"
+                          cachedName="Start Time"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client.Outputs[Fuzzy Lookup Output].Columns[Start Time]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[Start Time]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[End Time]"
+                          cachedDataType="date"
+                          cachedName="End Time"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client.Outputs[Fuzzy Lookup Output].Columns[End Time]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[End Time]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[ErrorCode]"
+                          cachedDataType="i4"
+                          cachedName="ErrorCode"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Timesheet Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[ErrorColumn]"
+                          cachedDataType="i4"
+                          cachedName="ErrorColumn"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Timesheet Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2].Columns[FullPath]"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
+                          cachedName="FullPath"
+                          lineageId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client.Outputs[Fuzzy Lookup Output].Columns[FullPath]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Outputs[Union All Output 1].Columns[Path]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
                   </inputs>
                   <outputs>
                     <output
@@ -12920,14 +12949,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               <paths>
                 <path
                   refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Aggregate Output 1]"
-                  endId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Audit Log.Inputs[OLE DB Destination Input]"
-                  name="Aggregate Output 1"
-                  startId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Aggregate.Outputs[Aggregate Output 1]" />
-                <path
-                  refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Aggregate Output 11]"
                   endId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Error Log.Inputs[OLE DB Destination Input]"
                   name="Aggregate Output 1"
                   startId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Aggregate 1.Outputs[Aggregate Output 1]" />
+                <path
+                  refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Aggregate Output 11]"
+                  endId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Audit Log.Inputs[OLE DB Destination Input]"
+                  name="Aggregate Output 1"
+                  startId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Aggregate.Outputs[Aggregate Output 1]" />
                 <path
                   refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Audit Output 1]"
                   endId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Conditional Split.Inputs[Conditional Split Input]"
@@ -12954,12 +12983,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   name="Excel Source Output"
                   startId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Excel Source.Outputs[Excel Source Output]" />
                 <path
-                  refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Fuzzy Lookup Output1]"
+                  refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Fuzzy Lookup Output]"
                   endId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Timesheet Table.Inputs[OLE DB Destination Input]"
                   name="Fuzzy Lookup Output"
                   startId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client.Outputs[Fuzzy Lookup Output]" />
                 <path
-                  refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Fuzzy Lookup Output]"
+                  refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Fuzzy Lookup Output1]"
                   endId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Lookup.Inputs[Lookup Input]"
                   name="Fuzzy Lookup Output"
                   startId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Employee.Outputs[Fuzzy Lookup Output]" />
@@ -12980,14 +13009,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   startId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Multicast.Outputs[Multicast Output 3]" />
                 <path
                   refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[OLE DB Destination Error Output]"
-                  endId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2]"
-                  name="OLE DB Destination Error Output"
-                  startId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Timesheet Table.Outputs[OLE DB Destination Error Output]" />
-                <path
-                  refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[OLE DB Destination Error Output1]"
                   endId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 3]"
                   name="OLE DB Destination Error Output"
                   startId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Audit Log.Outputs[OLE DB Destination Error Output]" />
+                <path
+                  refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[OLE DB Destination Error Output1]"
+                  endId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All.Inputs[Union All Input 2]"
+                  name="OLE DB Destination Error Output"
+                  startId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Timesheet Table.Outputs[OLE DB Destination Error Output]" />
                 <path
                   refId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Output 0]"
                   endId="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Aggregate 1.Inputs[Aggregate Input 1]"
@@ -13025,6 +13054,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               VSTAMinorVersion="0"
               Language="CSharp"
               ReadOnlyVariables="User::FilePath">
+              <ProjectItem
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -13144,35 +13182,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_5598afb1281140c2a66bfe765c3dc341.Properties.Settings.get_Default():ST_5598afb1281140c2a66bfe765c3dc341.Properties.Sett" +
-    "ings")]
-
-namespace ST_5598afb1281140c2a66bfe765c3dc341.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
               <ProjectItem
                 Name="ScriptMain.cs"
                 Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -13315,6 +13324,35 @@ namespace ST_5598afb1281140c2a66bfe765c3dc341
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
               <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_5598afb1281140c2a66bfe765c3dc341.Properties.Settings.get_Default():ST_5598afb1281140c2a66bfe765c3dc341.Properties.Sett" +
+    "ings")]
+
+namespace ST_5598afb1281140c2a66bfe765c3dc341.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+              <ProjectItem
                 Name="Properties\AssemblyInfo.cs"
                 Encoding="UTF8"><![CDATA[using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -13344,15 +13382,6 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -13802,9 +13831,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="119.2,41.6"
-          Id="Package\Load Clients\Multicast"
-          TopLeft="154.99999769032,205.999996930361" />
+          Size="140,41.6"
+          Id="Package\Load Clients\Excel Source"
+          TopLeft="136.999997958541,50.9999992400408" />
         <NodeLayout
           Size="153.6,41.6"
           Id="Package\Load Clients\Conditional Split"
@@ -13818,6 +13847,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           Id="Package\Load Clients\Audit"
           TopLeft="365.999994546175,44.9999993294478" />
         <NodeLayout
+          Size="119.2,41.6"
+          Id="Package\Load Clients\Multicast"
+          TopLeft="154.99999769032,205.999996930361" />
+        <NodeLayout
           Size="152.8,41.6"
           Id="Package\Load Clients\Derived Column"
           TopLeft="317.999995261431,203.999996960163" />
@@ -13829,10 +13862,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           Size="126.4,41.6"
           Id="Package\Load Clients\Aggregate"
           TopLeft="510.999992385506,201.999996989965" />
-        <NodeLayout
-          Size="140,41.6"
-          Id="Package\Load Clients\Excel Source"
-          TopLeft="136.999997958541,50.9999992400408" />
         <NodeLayout
           Size="122.4,41.6"
           Id="Package\Load Clients\Audit Log"
@@ -13856,7 +13885,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13878,7 +13909,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13924,7 +13957,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13946,7 +13981,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13992,7 +14029,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14014,12 +14053,27 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Clients\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load Clients\Lookup">
     <Properties>
@@ -14045,19 +14099,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load Clients\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Clients\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14406,6 +14447,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           Id="Package\Subfolders TIMESHEETS V4\Load Leave Data\Multicast"
           TopLeft="343.888875662729,187.466663900746" />
         <NodeLayout
+          Size="120,45.6"
+          Id="Package\Subfolders TIMESHEETS V4\Load Leave Data\Union All"
+          TopLeft="111.814808586313,394.111110242539" />
+        <NodeLayout
           Size="112.8,41.6"
           Id="Package\Subfolders TIMESHEETS V4\Load Leave Data\Lookup"
           TopLeft="349.888875573322,101.466665182247" />
@@ -14434,10 +14479,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           Id="Package\Subfolders TIMESHEETS V4\Load Leave Data\Conditional Split"
           TopLeft="309.388872567426,24.2666668052144" />
         <NodeLayout
-          Size="120,45.6"
-          Id="Package\Subfolders TIMESHEETS V4\Load Leave Data\Union All"
-          TopLeft="111.814808586313,394.111110242539" />
-        <NodeLayout
           Size="140,41.6"
           Id="Package\Subfolders TIMESHEETS V4\Load Leave Data\Excel Source"
           TopLeft="106.555549574671,25.6592591126171" />
@@ -14449,6 +14490,28 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           Size="126.4,41.6"
           Id="Package\Subfolders TIMESHEETS V4\Load Leave Data\Aggregate"
           TopLeft="580.888872131154,183.466663960352" />
+        <EdgeLayout
+          Id="Package\Subfolders TIMESHEETS V4\Load Leave Data.Paths[Union All Output 1]"
+          TopLeft="231.814808586313,420.277775342409">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="95.000001167259,0"
+              Start="0,0"
+              End="87.500001167259,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="87.500001167259,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Subfolders TIMESHEETS V4\Load Leave Data.Paths[Output 0]"
           TopLeft="408.514809641813,444.444440442279">
@@ -14468,9 +14531,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14541,7 +14602,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-192.479272022994,36.7524528908452,146.4178125,11.43359375"
+              BoundingBox="-192.479272022995,36.7524528908452,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14564,9 +14625,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14588,9 +14647,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14648,9 +14705,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14672,9 +14727,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14720,9 +14773,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14804,9 +14855,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14828,9 +14877,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14852,33 +14899,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Subfolders TIMESHEETS V4\Load Leave Data.Paths[Union All Output 1]"
-          TopLeft="231.814808586313,420.277775342409">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="95.000001167259,0"
-              Start="0,0"
-              End="87.500001167259,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="87.500001167259,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -14973,67 +14994,91 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="135.2,41.6"
+          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Aggregate 1"
+          TopLeft="326.791661805369,555.679888343779" />
+        <NodeLayout
           Size="155.2,41.6"
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Employee"
           TopLeft="470.944418673439,109.091004615847" />
-        <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Script Component"
-          TopLeft="312.374986164479,483.378303991684" />
-        <NodeLayout
-          Size="119.2,42.4"
-          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Multicast"
-          TopLeft="268.056866084819,193.435449261876" />
-        <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Conditional Split"
-          TopLeft="370.499995571872,30.5999995646874" />
-        <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Lookup"
-          TopLeft="266.509906033725,106.111111133518" />
-        <NodeLayout
-          Size="135.2,41.6"
-          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Aggregate 1"
-          TopLeft="318.458328927349,557.413221665059" />
         <NodeLayout
           Size="121.6,41.6"
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Error Log"
           TopLeft="529.458325783205,557.556078805787" />
         <NodeLayout
+          Size="140,41.6"
+          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Excel Source"
+          TopLeft="46.7499898162988,28.9854497127025" />
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Lookup"
+          TopLeft="266.509906033725,106.111111133518" />
+        <NodeLayout
           Size="102.4,41.6"
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Audit"
           TopLeft="227.337950541765,28.86666666064" />
         <NodeLayout
+          Size="119.2,42.4"
+          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Multicast"
+          TopLeft="268.056866084819,193.435449261876" />
+        <NodeLayout
           Size="152.8,41.6"
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Derived Column"
-          TopLeft="667.437137216018,30.1873023681438" />
+          TopLeft="658.270471050196,30.1873023681438" />
         <NodeLayout
           Size="122.4,41.6"
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Audit Log"
-          TopLeft="488.130266679478,276.092591790597" />
+          TopLeft="485.630266816072,266.559258523557" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Script Component"
+          TopLeft="312.374986164479,483.378303991684" />
         <NodeLayout
           Size="136,41.6"
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client"
           TopLeft="261.666652369831,276.26878203774" />
         <NodeLayout
-          Size="120,55.2"
-          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All"
-          TopLeft="90.4583323248138,475.496556227654" />
-        <NodeLayout
-          Size="140,41.6"
-          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Excel Source"
-          TopLeft="46.7499898162988,28.9854497127025" />
-        <NodeLayout
-          Size="156,41.6"
-          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Timesheet Table"
-          TopLeft="252.351840368668,363.091003796612" />
+          Size="153.6,41.6"
+          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Conditional Split"
+          TopLeft="370.499995571872,30.5999995646874" />
         <NodeLayout
           Size="126.4,41.6"
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Aggregate"
           TopLeft="488.192436067723,189.174338180396" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Timesheet Table"
+          TopLeft="255.685173519876,345.757670583813" />
+        <NodeLayout
+          Size="120,55.2"
+          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Union All"
+          TopLeft="90.4583323248138,475.496556227654" />
         <EdgeLayout
-          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Fuzzy Lookup Output]"
+          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Lookup No Match Output]"
+          TopLeft="325.283386059272,147.711111133518">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.7243381283579"
+              Start="0,0"
+              End="0,38.2243381283579">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.2243381283579" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,13.3074815641789,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Fuzzy Lookup Output1]"
           TopLeft="470.944418673439,128.401057874683">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15046,6 +15091,28 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="-84.1345126397142,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Fuzzy Lookup Output]"
+          TopLeft="331.675912944854,317.86878203774">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.8888885460725"
+              Start="0,0"
+              End="0,20.3888885460725">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3888885460725" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15102,30 +15169,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Derived Column Output]"
-          TopLeft="767.970470549351,71.7873023681438">
+          TopLeft="758.803804383529,71.7873023681438">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-219.426051875912,37.3037022477029"
+              EndConnector="-210.25938571009,37.3037022477032"
               Start="0,0"
-              End="-219.426051875912,29.8037022477029">
+              End="-210.25938571009,29.8037022477032">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.1534210166834" />
+                    End="0,11.1534210166836" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.1534210166834"
-                    Point2="0,15.1534210166834"
-                    Point3="-4,15.1534210166834" />
+                    Point1="0,11.1534210166836"
+                    Point2="0,15.1534210166836"
+                    Point3="-4,15.1534210166836" />
                   <mssgle:LineSegment
-                    End="-215.426051875912,15.1534210166834" />
+                    End="-206.25938571009,15.1534210166836" />
                   <mssgle:CubicBezierSegment
-                    Point1="-215.426051875912,15.1534210166834"
-                    Point2="-219.426051875912,15.1534210166834"
-                    Point3="-219.426051875912,19.1534210166834" />
+                    Point1="-206.25938571009,15.1534210166836"
+                    Point2="-210.25938571009,15.1534210166836"
+                    Point3="-210.25938571009,19.1534210166836" />
                   <mssgle:LineSegment
-                    End="-219.426051875912,29.8037022477029" />
+                    End="-210.25938571009,29.8037022477032" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15136,37 +15203,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Derived Column Error Output]"
-          TopLeft="719.703803882684,71.7873023681438">
+          TopLeft="710.537137716863,71.7873023681438">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-535.645471557871,403.70925385951"
+              EndConnector="-526.478805392049,403.70925385951"
               Start="0,0"
-              End="-535.645471557871,396.20925385951">
+              End="-526.478805392049,396.20925385951">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,259.890286641321" />
+                    End="0,252.090286695562" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,259.890286641321"
-                    Point2="0,263.890286641321"
-                    Point3="-4,263.890286641321" />
+                    Point1="0,252.090286695562"
+                    Point2="0,256.090286695562"
+                    Point3="-4,256.090286695562" />
                   <mssgle:LineSegment
-                    End="-531.645471557871,263.890286641321" />
+                    End="-522.478805392049,256.090286695562" />
                   <mssgle:CubicBezierSegment
-                    Point1="-531.645471557871,263.890286641321"
-                    Point2="-535.645471557871,263.890286641321"
-                    Point3="-535.645471557871,267.890286641321" />
+                    Point1="-522.478805392049,256.090286695562"
+                    Point2="-526.478805392049,256.090286695562"
+                    Point3="-526.478805392049,260.090286695562" />
                   <mssgle:LineSegment
-                    End="-535.645471557871,396.20925385951" />
+                    End="-526.478805392049,396.20925385951" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-332.784122497685,268.890286641321,129.9227734375,11.609375"
+              BoundingBox="-328.200789414774,261.090286695562,129.9227734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15193,41 +15260,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Aggregate Output 11]"
-          TopLeft="453.658328927349,578.284650235422">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="75.7999968558551,0"
-              Start="0,0"
-              End="68.2999968558551,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="68.2999968558551,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Aggregate Output 1]"
-          TopLeft="550.3613513736,230.774338180396">
+          TopLeft="461.991661805369,577.417983574783">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45.3182536102011"
+              EndConnector="67.4666639778359,0"
               Start="0,0"
-              End="0,37.8182536102011">
+              End="59.9666639778359,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.8182536102011" />
+                    End="59.9666639778359,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15242,21 +15287,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="143.337141644146,0"
+              EndConnector="134.170475478324,0"
               Start="0,0"
-              End="135.837141644146,0">
+              End="126.670475478324,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="135.837141644146,0" />
+                    End="126.670475478324,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="35.3264614470731,5,65.18421875,11.609375"
+              BoundingBox="30.743128364162,5,65.18421875,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15284,18 +15329,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Output 0]"
-          TopLeft="389.616657545915,524.978303991684">
+          TopLeft="393.783323984924,524.978303991684">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.4349176733741"
+              EndConnector="0,30.7015843520951"
               Start="0,0"
-              End="0,24.9349176733741">
+              End="0,23.2015843520951">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.9349176733741" />
+                    End="0,23.2015843520951" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15305,74 +15350,38 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[OLE DB Destination Error Output1]"
-          TopLeft="549.330266679478,317.692591790597">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-387.671934354664,157.803964437057"
-              Start="0,0"
-              End="-387.671934354664,150.303964437057">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,83.0242450939652" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,83.0242450939652"
-                    Point2="0,87.0242450939652"
-                    Point3="-4,87.0242450939652" />
-                  <mssgle:LineSegment
-                    End="-383.671934354664,87.0242450939652" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-383.671934354664,87.0242450939652"
-                    Point2="-387.671934354664,87.0242450939652"
-                    Point3="-387.671934354664,91.0242450939652" />
-                  <mssgle:LineSegment
-                    End="-387.671934354664,150.303964437057" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-267.044873427332,92.0242450939652,146.4178125,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[OLE DB Destination Error Output]"
-          TopLeft="330.351840368668,404.691003796612">
+          TopLeft="546.830266816072,308.159258523557">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-191.093508043854,70.8055524310418"
+              EndConnector="-385.171934491258,167.337297704097"
               Start="0,0"
-              End="-191.093508043854,63.3055524310418">
+              End="-385.171934491258,159.837297704097">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.7138464366721" />
+                    End="0,88.2815979985828" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.7138464366721"
-                    Point2="0,21.7138464366721"
-                    Point3="-4,21.7138464366721" />
+                    Point1="0,88.2815979985828"
+                    Point2="0,92.2815979985828"
+                    Point3="-4,92.2815979985828" />
                   <mssgle:LineSegment
-                    End="-187.093508043854,21.7138464366721" />
+                    End="-381.171934491258,92.2815979985828" />
                   <mssgle:CubicBezierSegment
-                    Point1="-187.093508043854,21.7138464366721"
-                    Point2="-191.093508043854,21.7138464366721"
-                    Point3="-191.093508043854,25.7138464366721" />
+                    Point1="-381.171934491258,92.2815979985828"
+                    Point2="-385.171934491258,92.2815979985828"
+                    Point3="-385.171934491258,96.2815979985828" />
                   <mssgle:LineSegment
-                    End="-191.093508043854,63.3055524310418" />
+                    End="-385.171934491258,159.837297704097" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-168.755660271927,26.7138464366721,146.4178125,11.43359375"
+              BoundingBox="-265.794873495629,97.2815979985828,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15421,43 +15430,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Lookup No Match Output]"
-          TopLeft="325.283386059272,147.711111133518">
+          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Aggregate Output 11]"
+          TopLeft="549.111351441898,230.774338180396">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45.7243381283579"
+              EndConnector="0,35.7849203431613"
               Start="0,0"
-              End="0,38.2243381283579">
+              End="0,28.2849203431613">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.2243381283579" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,13.307481564179,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[Fuzzy Lookup Output1]"
-          TopLeft="330.00924636925,317.86878203774">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45.2222217588722"
-              Start="0,0"
-              End="0,37.7222217588722">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.7222217588722" />
+                    End="0,28.2849203431613" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15466,11 +15451,73 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Subfolders TIMESHEETS V4\Load Timesheet Data.Paths[OLE DB Destination Error Output1]"
+          TopLeft="333.685173519876,387.357670583813">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-194.426841195062,88.1388856438415"
+              Start="0,0"
+              End="-194.426841195062,80.6388856438415">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.6060031124126" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,44.6060031124126"
+                    Point2="0,48.6060031124126"
+                    Point3="-4,48.6060031124126" />
+                  <mssgle:LineSegment
+                    End="-190.426841195062,48.6060031124126" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-190.426841195062,48.6060031124126"
+                    Point2="-194.426841195062,48.6060031124126"
+                    Point3="-194.426841195062,52.6060031124126" />
+                  <mssgle:LineSegment
+                    End="-194.426841195062,80.6388856438415" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-170.422326847531,53.6060031124126,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Employee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Error Log">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -15506,19 +15553,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Error Log">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Audit Log">
     <Properties>
       <Property>
@@ -15533,19 +15567,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Fuzzy Client">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Subfolders TIMESHEETS V4\Load Timesheet Data\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

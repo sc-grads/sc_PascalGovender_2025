@@ -51,7 +51,7 @@ CREATE TABLE Leave (
     StartDate DATE NOT NULL,
     EndDate Date NOT NULL,
     NumberDays INT NOT NULL,
-    Approved NVARCHAR(50) NOT NULL,
+    Approved NVARCHAR(50) NULL,
 	SickNote NVARCHAR(50) NULL
 	CONSTRAINT UQLeaveUniqueEntry UNIQUE (EmployeeID, StartDate, EndDate),
 	CONSTRAINT FKLeaveEmployee FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID)
