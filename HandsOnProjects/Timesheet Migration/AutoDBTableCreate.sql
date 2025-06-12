@@ -106,7 +106,7 @@ BEGIN
     CREATE TABLE AuditLog (
         AuditID INT PRIMARY KEY IDENTITY(1,1),
         Filename NVARCHAR(1000),
-        EmployeeID INT,
+        EmployeeName NVARCHAR(1000),
         Month NVARCHAR(255),
         Type NVARCHAR(255) NOT NULL,
         Task NVARCHAR(255),

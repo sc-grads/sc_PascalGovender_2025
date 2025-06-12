@@ -62,12 +62,11 @@ CREATE TABLE Leave (
 CREATE TABLE AuditLog (
     AuditID INT PRIMARY KEY IDENTITY(1,1),
 	Filename NVARCHAR(1000),
-	EmployeeID INT,
+	EmployeeName NVARCHAR(1000),
 	Month NVARCHAR(255),
-    Type NVARCHAR(255) NOT NULL,
+    Type NVARCHAR(255),
     Task NVARCHAR(255),
 	Timestamp DATETIME NULL DEFAULT GETDATE(),
-	CONSTRAINT FKAuditEmployee FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID)
 );
 
 DROP TABLE IF EXISTS [dbo].[ErrorLog]
