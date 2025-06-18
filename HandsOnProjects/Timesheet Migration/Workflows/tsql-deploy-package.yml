@@ -1,0 +1,36 @@
+name: SSIS Deployment (T-SQL)
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted
+    environment: SISS
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy using T-SQL
+        run: |
+          set "ISPAC_PATH=%GITHUB_WORKSPACE%\Timesheet\bin\Development\TimesheetMigrationV2.ispac"
+          
+          sqlcmd -S LAPTOP-H6CGEPKT -E -v IspacPath="%ISPAC_PATH%" -i scripts/DeploySSIS.sql > deploy.log 2>&1
+          
+          if %ERRORLEVEL% neq 0 (
+            echo "::error::Deployment failed!"
+            type deploy.log || echo "No deploy log available"
+            exit /b 1
+          )
+        shell: cmd
+
+      - name: Verify Deployment
+        run: |
+          sqlcmd -S LAPTOP-H6CGEPKT -E -Q "SELECT name FROM SSISDB.catalog.projects WHERE name = 'TimesheetMigrationV2'"
+          if %ERRORLEVEL% neq 0 (
+            echo "::error::Verification failed!"
+            exit /b 1
+          )
+        shell: cmd

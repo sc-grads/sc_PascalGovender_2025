@@ -110,8 +110,7 @@ BEGIN
         Month NVARCHAR(255),
         Type NVARCHAR(255) NOT NULL,
         Task NVARCHAR(255),
-        Timestamp DATETIME NULL DEFAULT GETDATE(),
-        CONSTRAINT FKAuditEmployee FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID)
+        Timestamp DATETIME NULL DEFAULT GETDATE()
     );
     PRINT 'Table "AuditLog" created successfully and being initialized';
 END
