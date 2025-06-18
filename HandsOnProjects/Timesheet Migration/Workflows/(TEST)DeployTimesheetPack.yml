@@ -1,0 +1,77 @@
+name: SSIS Deployment (DEBUGGING)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted
+    environment: local-dev
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Verify SSIS DevOps Tools
+        run: |
+          if not exist "C:\ssis-tools\SSISBuild.exe" (
+            echo "::error::SSISBuild.exe not found in C:\ssis-tools! Please install SSIS DevOps Tools manually from https://www.microsoft.com/download/details.aspx?id=105224"
+            exit /b 1
+          )
+          if not exist "C:\ssis-tools\SSISDeploy.exe" (
+            echo "::error::SSISDeploy.exe not found in C:\ssis-tools! Please install SSIS DevOps Tools manually from https://www.microsoft.com/download/details.aspx?id=105224"
+            exit /b 1
+          )
+          echo "SSIS DevOps Tools found in C:\ssis-tools"
+        shell: cmd
+
+      - name: Validate SSIS project
+        run: |
+          if not exist "%GITHUB_WORKSPACE%\Timesheet\TimesheetMigrationV2.dtproj" (
+            echo "::error::SSIS project file not found!"
+            exit /b 1
+          )
+        shell: cmd
+
+      - name: Build SSIS Package
+        run: |
+          cd /d "%GITHUB_WORKSPACE%"
+          C:\ssis-tools\SSISBuild.exe -p:Timesheet\TimesheetMigrationV2.dtproj -o:build -c:Development -l:build.log
+          if not exist "Timesheet\build\Development\TimesheetMigrationV2.ispac" (
+            echo "::error::Build failed!"
+            type build.log || echo "No build log available"
+            exit /b 1
+          )
+        shell: cmd
+
+      - name: Deploy to SQL Server
+        run: |
+          cd /d "%GITHUB_WORKSPACE%"
+          C:\ssis-tools\SSISDeploy.exe -s:Timesheet\build\Development\TimesheetMigrationV2.ispac ^
+            -d:CATALOG;/SSISDB/TimesheetMigrationPacks/TimesheetMigrationV2;LAPTOP-H6CGEPKT ^
+            -authType:WIN ^
+            -l:deploy.log
+          if %ERRORLEVEL% neq 0 (
+            echo "::error::Deployment failed!"
+            type deploy.log || echo "No deploy log available"
+            exit /b 1
+          )
+        shell: cmd
+
+      - name: Verify Deployment
+        run: |
+          sqlcmd -S LAPTOP-H6CGEPKT -E -Q "SELECT name FROM SSISDB.catalog.projects WHERE name = 'TimesheetMigrationV2'"
+          if %ERRORLEVEL% neq 0 (
+            echo "::error::Verification failed!"
+            exit /b 1
+          )
+        shell: cmd
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: deployment-artifacts
+          path: |
+            %GITHUB_WORKSPACE%\Timesheet\build\Development\TimesheetMigrationV2.ispac
+            %GITHUB_WORKSPACE%\build.log
+            %GITHUB_WORKSPACE%\deploy.log
