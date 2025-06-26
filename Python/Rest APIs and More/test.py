@@ -1,0 +1,1 @@
+student = {'name':'Jose','school':'Computing','grades': (66,77,88)}
