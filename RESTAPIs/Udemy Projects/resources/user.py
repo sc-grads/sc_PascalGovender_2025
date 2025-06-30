@@ -17,6 +17,7 @@ from blocklist import BLOCKLIST
 
 blp = Blueprint("Users", "users", description="Operations on users")
 
+
 @blp.route("/logout")
 class UserLogout(MethodView):
     @jwt_required()
