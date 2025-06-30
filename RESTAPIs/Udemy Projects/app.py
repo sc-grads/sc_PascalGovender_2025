@@ -5,8 +5,8 @@ from flask import Flask, jsonify
 from flask_smorest import Api
 from flask_jwt_extended import JWTManager
 from blocklist import BLOCKLIST
-
 from db import db
+from flask_migrate import Migrate
 
 import models
 
@@ -29,6 +29,7 @@ def create_app(db_url=None):
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     app.config["PROPAGATE_EXCEPTIONS"] = True
     db.init_app(app)
+    migrate = Migrate(app, db)
     api = Api(app)
 
     # Define BLOCKLIST for revoked tokens
