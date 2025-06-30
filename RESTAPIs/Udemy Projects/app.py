@@ -93,4 +93,7 @@ def create_app(db_url=None):
     api.register_blueprint(TagBlueprint)
     api.register_blueprint(UserBlueprint)
 
+    print("Connected to:", app.config["SQLALCHEMY_DATABASE_URI"])
+
+
     return app
