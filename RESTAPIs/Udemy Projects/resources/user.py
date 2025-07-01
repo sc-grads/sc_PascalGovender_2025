@@ -11,12 +11,25 @@ from flask_jwt_extended import (
 
 from db import db
 from models import UserModel
-from schemas import UserSchema
+from schemas import UserSchema, UserRegisterSchema
 from blocklist import BLOCKLIST
+from sqlalchemy import or_ 
+
+import os
+import requests
 
 
 blp = Blueprint("Users", "users", description="Operations on users")
 
+def send_simple_message(to,subject,body):
+    domain = os.getenv("MAILGUN_DOMAIN")
+    return requests.post(
+  		"https://api.mailgun.net/v3/{domain}/messages",
+  		auth=("api", os.getenv("MAILGUN_API_KEY")),
+  		data={"from": "Pascal Govender <postmaster@{domain}>",
+			"to": [to],
+  			"subject": subject,
+  			"text": body})
 
 @blp.route("/logout")
 class UserLogout(MethodView):
@@ -54,17 +67,29 @@ class TokenRefresh(MethodView):
     
 @blp.route("/register")
 class UserRegister(MethodView):
-    @blp.arguments(UserSchema)
+    @blp.arguments(UserRegisterSchema)
     def post(self, user_data):
-        if UserModel.query.filter(UserModel.username == user_data["username"]).first():
+        if UserModel.query.filter(
+            or_(
+            UserModel.email == user_data["email"],
+            UserModel.username == user_data["username"]
+            )).first():
             abort(409, message="A user with that username already exists.")
 
         user = UserModel(
             username=user_data["username"],
+            email=user_data["email"],
             password=pbkdf2_sha256.hash(user_data["password"]),
         )
         db.session.add(user)
         db.session.commit()
+
+        send_simple_message(
+            to=user.email,
+            subject="successful registered",
+            body=f"Hello {user_data['username']},\n\nThank you for registering with us!"
+        )
+
 
         return {"message": "User created successfully."}, 201
 
