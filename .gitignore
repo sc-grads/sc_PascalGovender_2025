@@ -5,9 +5,9 @@
 *DatabaseAdministration/SSI Packages/SSISDemoFiles/
 *HandsOnProjects/Timesheet Migration/TimesheetMigration/
 *HandsOnProjects/Timesheet Migration/TimesheetMigrationV2/
-./RESTAPIs/Udemy Projects/.env
-./RESTAPIs/Udemy Projects/.venv
-./RESTAPIs/Udemy Projects/__pycache__
-./RESTAPIs/Udemy Projects/instance/data.db
-*./RESTAPIs/Udemy Projects/.pyc
-./RESTAPIs/Udemy Projects/.DS_Store
+*RESTAPIs/Udemy Projects/.env
+*RESTAPIs/Udemy Projects/.venv
+*RESTAPIs/Udemy Projects/__pycache__
+*RESTAPIs/Udemy Projects/instance/data.db
+*RESTAPIs/Udemy Projects/.pyc
+*RESTAPIs/Udemy Projects/.DS_Store
