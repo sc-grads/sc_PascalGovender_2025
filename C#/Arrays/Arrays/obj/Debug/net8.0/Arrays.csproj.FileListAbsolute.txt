@@ -1,0 +1,15 @@
+C:\scGradsGithub\C#\Arrays\Arrays\bin\Debug\net8.0\Arrays.exe
+C:\scGradsGithub\C#\Arrays\Arrays\bin\Debug\net8.0\Arrays.deps.json
+C:\scGradsGithub\C#\Arrays\Arrays\bin\Debug\net8.0\Arrays.runtimeconfig.json
+C:\scGradsGithub\C#\Arrays\Arrays\bin\Debug\net8.0\Arrays.dll
+C:\scGradsGithub\C#\Arrays\Arrays\bin\Debug\net8.0\Arrays.pdb
+C:\scGradsGithub\C#\Arrays\Arrays\obj\Debug\net8.0\Arrays.GeneratedMSBuildEditorConfig.editorconfig
+C:\scGradsGithub\C#\Arrays\Arrays\obj\Debug\net8.0\Arrays.AssemblyInfoInputs.cache
+C:\scGradsGithub\C#\Arrays\Arrays\obj\Debug\net8.0\Arrays.AssemblyInfo.cs
+C:\scGradsGithub\C#\Arrays\Arrays\obj\Debug\net8.0\Arrays.csproj.CoreCompileInputs.cache
+C:\scGradsGithub\C#\Arrays\Arrays\obj\Debug\net8.0\Arrays.sourcelink.json
+C:\scGradsGithub\C#\Arrays\Arrays\obj\Debug\net8.0\Arrays.dll
+C:\scGradsGithub\C#\Arrays\Arrays\obj\Debug\net8.0\refint\Arrays.dll
+C:\scGradsGithub\C#\Arrays\Arrays\obj\Debug\net8.0\Arrays.pdb
+C:\scGradsGithub\C#\Arrays\Arrays\obj\Debug\net8.0\Arrays.genruntimeconfig.cache
+C:\scGradsGithub\C#\Arrays\Arrays\obj\Debug\net8.0\ref\Arrays.dll
