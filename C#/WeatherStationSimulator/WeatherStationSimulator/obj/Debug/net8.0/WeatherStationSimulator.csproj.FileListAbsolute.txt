@@ -1,0 +1,15 @@
+C:\scGradsGithub\C#\WeatherStationSimulator\WeatherStationSimulator\bin\Debug\net8.0\WeatherStationSimulator.exe
+C:\scGradsGithub\C#\WeatherStationSimulator\WeatherStationSimulator\bin\Debug\net8.0\WeatherStationSimulator.deps.json
+C:\scGradsGithub\C#\WeatherStationSimulator\WeatherStationSimulator\bin\Debug\net8.0\WeatherStationSimulator.runtimeconfig.json
+C:\scGradsGithub\C#\WeatherStationSimulator\WeatherStationSimulator\bin\Debug\net8.0\WeatherStationSimulator.dll
+C:\scGradsGithub\C#\WeatherStationSimulator\WeatherStationSimulator\bin\Debug\net8.0\WeatherStationSimulator.pdb
+C:\scGradsGithub\C#\WeatherStationSimulator\WeatherStationSimulator\obj\Debug\net8.0\WeatherStationSimulator.GeneratedMSBuildEditorConfig.editorconfig
+C:\scGradsGithub\C#\WeatherStationSimulator\WeatherStationSimulator\obj\Debug\net8.0\WeatherStationSimulator.AssemblyInfoInputs.cache
+C:\scGradsGithub\C#\WeatherStationSimulator\WeatherStationSimulator\obj\Debug\net8.0\WeatherStationSimulator.AssemblyInfo.cs
+C:\scGradsGithub\C#\WeatherStationSimulator\WeatherStationSimulator\obj\Debug\net8.0\WeatherStationSimulator.csproj.CoreCompileInputs.cache
+C:\scGradsGithub\C#\WeatherStationSimulator\WeatherStationSimulator\obj\Debug\net8.0\WeatherStationSimulator.sourcelink.json
+C:\scGradsGithub\C#\WeatherStationSimulator\WeatherStationSimulator\obj\Debug\net8.0\WeatherStationSimulator.dll
+C:\scGradsGithub\C#\WeatherStationSimulator\WeatherStationSimulator\obj\Debug\net8.0\refint\WeatherStationSimulator.dll
+C:\scGradsGithub\C#\WeatherStationSimulator\WeatherStationSimulator\obj\Debug\net8.0\WeatherStationSimulator.pdb
+C:\scGradsGithub\C#\WeatherStationSimulator\WeatherStationSimulator\obj\Debug\net8.0\WeatherStationSimulator.genruntimeconfig.cache
+C:\scGradsGithub\C#\WeatherStationSimulator\WeatherStationSimulator\obj\Debug\net8.0\ref\WeatherStationSimulator.dll
