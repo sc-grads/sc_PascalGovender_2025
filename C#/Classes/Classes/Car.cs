@@ -13,6 +13,8 @@ namespace Classes
         private string _brand;
         private bool _isLuxury;
 
+        public static int NumberOfCars = 0;
+
         //properties
         public string Model { get => _model; set => _model = value; }
         public string Brand
@@ -34,11 +36,19 @@ namespace Classes
         }
 
         public Car(string model, string brand, bool luxury) { 
+
+            NumberOfCars++;
+
             Model = model;
             Brand = brand;
             Luxury = luxury;
             Console.WriteLine($"A {Brand} {Model} created with luxury status: {Luxury}");
             
+        }
+
+        public Car()
+        {
+            NumberOfCars++;
         }
 
     }
