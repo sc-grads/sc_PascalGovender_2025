@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WeatherStationSimulator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7df9f97cb88a887d307dfc52fd24246a0baa2bfb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c0d23cd6a212dc7c9a437c5653ad4c7fc815fca")]
 [assembly: System.Reflection.AssemblyProductAttribute("WeatherStationSimulator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WeatherStationSimulator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

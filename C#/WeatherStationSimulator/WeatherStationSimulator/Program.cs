@@ -24,9 +24,37 @@
             }
 
             Console.WriteLine($"Average Temperature is: {CalculateAverage(temp)}");
+            Console.WriteLine($"Maximum Temperature was: {temp.Max()}");
+            Console.WriteLine($"Minimum Temperature was: {temp.Min()}");
+            Console.WriteLine($"Most Common Weather Condition: {MostCommonCondition(weatherConditions)}");
             Console.ReadKey();
         }
 
+        static string MostCommonCondition(string[] weatherConditions)
+        {
+            int count = 0;
+            string mostCommon = weatherConditions[0];
+
+            foreach (string condition in weatherConditions)
+            {
+                int tempCount = 0;
+                for (int i = 0; i < weatherConditions.Length; i++)
+                {
+                    if (condition == weatherConditions[i])
+                    {
+                        tempCount++;
+                    }
+                }
+
+                if(tempCount > count)
+                {
+                    count = tempCount;
+                    mostCommon = condition;
+                }
+            }
+
+            return mostCommon;
+        }
         static double CalculateAverage(int[] temperature)
         {
             double sum = 0;

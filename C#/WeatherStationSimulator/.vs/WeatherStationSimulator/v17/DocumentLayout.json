@@ -22,7 +22,7 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "WeatherStationSimulator\\Program.cs",
               "ToolTip": "C:\\scGradsGithub\\C#\\WeatherStationSimulator\\WeatherStationSimulator\\Program.cs",
               "RelativeToolTip": "WeatherStationSimulator\\Program.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwB4AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAYwDsAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-12T12:32:15.003Z",
               "EditorCaption": ""
