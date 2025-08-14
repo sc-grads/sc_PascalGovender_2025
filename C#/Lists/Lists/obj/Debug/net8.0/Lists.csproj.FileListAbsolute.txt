@@ -1,0 +1,15 @@
+C:\scGradsGithub\C#\Lists\Lists\bin\Debug\net8.0\Lists.exe
+C:\scGradsGithub\C#\Lists\Lists\bin\Debug\net8.0\Lists.deps.json
+C:\scGradsGithub\C#\Lists\Lists\bin\Debug\net8.0\Lists.runtimeconfig.json
+C:\scGradsGithub\C#\Lists\Lists\bin\Debug\net8.0\Lists.dll
+C:\scGradsGithub\C#\Lists\Lists\bin\Debug\net8.0\Lists.pdb
+C:\scGradsGithub\C#\Lists\Lists\obj\Debug\net8.0\Lists.GeneratedMSBuildEditorConfig.editorconfig
+C:\scGradsGithub\C#\Lists\Lists\obj\Debug\net8.0\Lists.AssemblyInfoInputs.cache
+C:\scGradsGithub\C#\Lists\Lists\obj\Debug\net8.0\Lists.AssemblyInfo.cs
+C:\scGradsGithub\C#\Lists\Lists\obj\Debug\net8.0\Lists.csproj.CoreCompileInputs.cache
+C:\scGradsGithub\C#\Lists\Lists\obj\Debug\net8.0\Lists.sourcelink.json
+C:\scGradsGithub\C#\Lists\Lists\obj\Debug\net8.0\Lists.dll
+C:\scGradsGithub\C#\Lists\Lists\obj\Debug\net8.0\refint\Lists.dll
+C:\scGradsGithub\C#\Lists\Lists\obj\Debug\net8.0\Lists.pdb
+C:\scGradsGithub\C#\Lists\Lists\obj\Debug\net8.0\Lists.genruntimeconfig.cache
+C:\scGradsGithub\C#\Lists\Lists\obj\Debug\net8.0\ref\Lists.dll

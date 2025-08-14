@@ -14,6 +14,7 @@ namespace QuizAppV2
         public Quiz(Question[] questions)
         {
             this.questions = questions;
+            _score = 0; // Initialize score to 0
         }
 
         public void Start()
@@ -31,6 +32,7 @@ namespace QuizAppV2
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Correct!");
+                    _score++; // Increment score for correct answer
                 }
                 else
                 {
@@ -40,10 +42,39 @@ namespace QuizAppV2
                 Console.ResetColor(); // Reset color to default
             }
 
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Quiz completed! Thank you for participating.");
+            DisplayResults();
+
+        }
+
+        private void DisplayResults()
+        {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║                                 Results                                 ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════╝");
+            Console.ResetColor(); // Reset color to default
+            Console.WriteLine("Thank you for participating in the quiz!");
+            Console.WriteLine($"Your score: {_score} out of {questions.Length}");
+
+            double percentage = ((double)_score / questions.Length) * 100;
+            if (percentage >= 80)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Excellent job! You scored above 80%!");
+            }
+            else if (percentage >= 50)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Good job! You scored between 50% and 80%.");
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("You scored below 50%. Better luck next time!");
+            }
             Console.ResetColor(); // Reset color to default
         }
+
         public void DisplayQuestion(Question question)
         { 
             Console.ForegroundColor = ConsoleColor.Yellow;

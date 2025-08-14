@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "QuizAppV2\\Quiz.cs",
               "ToolTip": "C:\\scGradsGithub\\C#\\QuizAppV2\\QuizAppV2\\Quiz.cs",
               "RelativeToolTip": "QuizAppV2\\Quiz.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA+wBYAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-13T13:06:05.426Z",
               "EditorCaption": ""
@@ -55,8 +55,7 @@
               "RelativeToolTip": "QuizAppV2\\Question.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T13:00:26.434Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-13T13:00:26.434Z"
             },
             {
               "$type": "Document",
@@ -68,8 +67,7 @@
               "RelativeToolTip": "QuizAppV2\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T12:58:59.404Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-13T12:58:59.404Z"
             }
           ]
         }

@@ -1,0 +1,15 @@
+C:\scGradsGithub\C#\Dictionaries\Dictionaries\bin\Debug\net8.0\Dictionaries.exe
+C:\scGradsGithub\C#\Dictionaries\Dictionaries\bin\Debug\net8.0\Dictionaries.deps.json
+C:\scGradsGithub\C#\Dictionaries\Dictionaries\bin\Debug\net8.0\Dictionaries.runtimeconfig.json
+C:\scGradsGithub\C#\Dictionaries\Dictionaries\bin\Debug\net8.0\Dictionaries.dll
+C:\scGradsGithub\C#\Dictionaries\Dictionaries\bin\Debug\net8.0\Dictionaries.pdb
+C:\scGradsGithub\C#\Dictionaries\Dictionaries\obj\Debug\net8.0\Dictionaries.GeneratedMSBuildEditorConfig.editorconfig
+C:\scGradsGithub\C#\Dictionaries\Dictionaries\obj\Debug\net8.0\Dictionaries.AssemblyInfoInputs.cache
+C:\scGradsGithub\C#\Dictionaries\Dictionaries\obj\Debug\net8.0\Dictionaries.AssemblyInfo.cs
+C:\scGradsGithub\C#\Dictionaries\Dictionaries\obj\Debug\net8.0\Dictionaries.csproj.CoreCompileInputs.cache
+C:\scGradsGithub\C#\Dictionaries\Dictionaries\obj\Debug\net8.0\Dictionaries.sourcelink.json
+C:\scGradsGithub\C#\Dictionaries\Dictionaries\obj\Debug\net8.0\Dictionaries.dll
+C:\scGradsGithub\C#\Dictionaries\Dictionaries\obj\Debug\net8.0\refint\Dictionaries.dll
+C:\scGradsGithub\C#\Dictionaries\Dictionaries\obj\Debug\net8.0\Dictionaries.pdb
+C:\scGradsGithub\C#\Dictionaries\Dictionaries\obj\Debug\net8.0\Dictionaries.genruntimeconfig.cache
+C:\scGradsGithub\C#\Dictionaries\Dictionaries\obj\Debug\net8.0\ref\Dictionaries.dll

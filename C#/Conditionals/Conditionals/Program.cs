@@ -1,14 +1,14 @@
 ﻿//// See https://aka.ms/new-console-template for more information
 
-//bool isRainy = true;
-//bool hasUmbrella = true;
+bool israiny = true;
+bool hasumbrella = true;
 
-//if (isRainy)
-//{
-//    Console.WriteLine("It's rainy");
-//}
-//Console.WriteLine("Ay OK!");
-//Console.ReadKey();
+if (israiny)
+{
+    Console.WriteLine("it's rainy");
+}
+Console.WriteLine("ay ok!");
+Console.ReadKey();
 
 
 
@@ -124,24 +124,24 @@
 //Console.WriteLine($"The month is {monthName}");
 
 
-int day = 3;
+//int day = 3;
 
-// TODO: Rewrite this if-else structure using a switch statement.
+//// TODO: Rewrite this if-else structure using a switch statement.
 
-switch (day)
-{
-    case 1:
-        Console.WriteLine("Monday");
-        break;
-    case 2:
-        Console.WriteLine("Tuesday");
-        break;
-    case 3:
-        Console.WriteLine("Wednesday");
-        break;
-    default:
-        Console.WriteLine("Another day");
-        break;
-}
+//switch (day)
+//{
+//    case 1:
+//        Console.WriteLine("Monday");
+//        break;
+//    case 2:
+//        Console.WriteLine("Tuesday");
+//        break;
+//    case 3:
+//        Console.WriteLine("Wednesday");
+//        break;
+//    default:
+//        Console.WriteLine("Another day");
+//        break;
+//}
 
-Console.ReadKey();
+//Console.ReadKey();
