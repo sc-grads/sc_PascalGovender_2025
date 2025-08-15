@@ -1,0 +1,15 @@
+C:\scGradsGithub\C#\QuizApp\QuizApp\bin\Debug\net8.0\QuizApp.exe
+C:\scGradsGithub\C#\QuizApp\QuizApp\bin\Debug\net8.0\QuizApp.deps.json
+C:\scGradsGithub\C#\QuizApp\QuizApp\bin\Debug\net8.0\QuizApp.runtimeconfig.json
+C:\scGradsGithub\C#\QuizApp\QuizApp\bin\Debug\net8.0\QuizApp.dll
+C:\scGradsGithub\C#\QuizApp\QuizApp\bin\Debug\net8.0\QuizApp.pdb
+C:\scGradsGithub\C#\QuizApp\QuizApp\obj\Debug\net8.0\QuizApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\scGradsGithub\C#\QuizApp\QuizApp\obj\Debug\net8.0\QuizApp.AssemblyInfoInputs.cache
+C:\scGradsGithub\C#\QuizApp\QuizApp\obj\Debug\net8.0\QuizApp.AssemblyInfo.cs
+C:\scGradsGithub\C#\QuizApp\QuizApp\obj\Debug\net8.0\QuizApp.csproj.CoreCompileInputs.cache
+C:\scGradsGithub\C#\QuizApp\QuizApp\obj\Debug\net8.0\QuizApp.sourcelink.json
+C:\scGradsGithub\C#\QuizApp\QuizApp\obj\Debug\net8.0\QuizApp.dll
+C:\scGradsGithub\C#\QuizApp\QuizApp\obj\Debug\net8.0\refint\QuizApp.dll
+C:\scGradsGithub\C#\QuizApp\QuizApp\obj\Debug\net8.0\QuizApp.pdb
+C:\scGradsGithub\C#\QuizApp\QuizApp\obj\Debug\net8.0\QuizApp.genruntimeconfig.cache
+C:\scGradsGithub\C#\QuizApp\QuizApp\obj\Debug\net8.0\ref\QuizApp.dll

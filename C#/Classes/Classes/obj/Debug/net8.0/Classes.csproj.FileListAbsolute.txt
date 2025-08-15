@@ -1,0 +1,15 @@
+C:\scGradsGithub\C#\Classes\Classes\bin\Debug\net8.0\Classes.exe
+C:\scGradsGithub\C#\Classes\Classes\bin\Debug\net8.0\Classes.deps.json
+C:\scGradsGithub\C#\Classes\Classes\bin\Debug\net8.0\Classes.runtimeconfig.json
+C:\scGradsGithub\C#\Classes\Classes\bin\Debug\net8.0\Classes.dll
+C:\scGradsGithub\C#\Classes\Classes\bin\Debug\net8.0\Classes.pdb
+C:\scGradsGithub\C#\Classes\Classes\obj\Debug\net8.0\Classes.GeneratedMSBuildEditorConfig.editorconfig
+C:\scGradsGithub\C#\Classes\Classes\obj\Debug\net8.0\Classes.AssemblyInfoInputs.cache
+C:\scGradsGithub\C#\Classes\Classes\obj\Debug\net8.0\Classes.AssemblyInfo.cs
+C:\scGradsGithub\C#\Classes\Classes\obj\Debug\net8.0\Classes.csproj.CoreCompileInputs.cache
+C:\scGradsGithub\C#\Classes\Classes\obj\Debug\net8.0\Classes.sourcelink.json
+C:\scGradsGithub\C#\Classes\Classes\obj\Debug\net8.0\Classes.dll
+C:\scGradsGithub\C#\Classes\Classes\obj\Debug\net8.0\refint\Classes.dll
+C:\scGradsGithub\C#\Classes\Classes\obj\Debug\net8.0\Classes.pdb
+C:\scGradsGithub\C#\Classes\Classes\obj\Debug\net8.0\Classes.genruntimeconfig.cache
+C:\scGradsGithub\C#\Classes\Classes\obj\Debug\net8.0\ref\Classes.dll

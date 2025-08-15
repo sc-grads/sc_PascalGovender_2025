@@ -1,0 +1,15 @@
+C:\scGradsGithub\C#\Playground\Playground\bin\Debug\net8.0\Playground.exe
+C:\scGradsGithub\C#\Playground\Playground\bin\Debug\net8.0\Playground.deps.json
+C:\scGradsGithub\C#\Playground\Playground\bin\Debug\net8.0\Playground.runtimeconfig.json
+C:\scGradsGithub\C#\Playground\Playground\bin\Debug\net8.0\Playground.dll
+C:\scGradsGithub\C#\Playground\Playground\bin\Debug\net8.0\Playground.pdb
+C:\scGradsGithub\C#\Playground\Playground\obj\Debug\net8.0\Playground.GeneratedMSBuildEditorConfig.editorconfig
+C:\scGradsGithub\C#\Playground\Playground\obj\Debug\net8.0\Playground.AssemblyInfoInputs.cache
+C:\scGradsGithub\C#\Playground\Playground\obj\Debug\net8.0\Playground.AssemblyInfo.cs
+C:\scGradsGithub\C#\Playground\Playground\obj\Debug\net8.0\Playground.csproj.CoreCompileInputs.cache
+C:\scGradsGithub\C#\Playground\Playground\obj\Debug\net8.0\Playground.sourcelink.json
+C:\scGradsGithub\C#\Playground\Playground\obj\Debug\net8.0\Playground.dll
+C:\scGradsGithub\C#\Playground\Playground\obj\Debug\net8.0\refint\Playground.dll
+C:\scGradsGithub\C#\Playground\Playground\obj\Debug\net8.0\Playground.pdb
+C:\scGradsGithub\C#\Playground\Playground\obj\Debug\net8.0\Playground.genruntimeconfig.cache
+C:\scGradsGithub\C#\Playground\Playground\obj\Debug\net8.0\ref\Playground.dll

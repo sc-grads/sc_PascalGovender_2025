@@ -1,0 +1,15 @@
+C:\scGradsGithub\C#\Conditionals\Conditionals\bin\Debug\net8.0\Conditionals.exe
+C:\scGradsGithub\C#\Conditionals\Conditionals\bin\Debug\net8.0\Conditionals.deps.json
+C:\scGradsGithub\C#\Conditionals\Conditionals\bin\Debug\net8.0\Conditionals.runtimeconfig.json
+C:\scGradsGithub\C#\Conditionals\Conditionals\bin\Debug\net8.0\Conditionals.dll
+C:\scGradsGithub\C#\Conditionals\Conditionals\bin\Debug\net8.0\Conditionals.pdb
+C:\scGradsGithub\C#\Conditionals\Conditionals\obj\Debug\net8.0\Conditionals.GeneratedMSBuildEditorConfig.editorconfig
+C:\scGradsGithub\C#\Conditionals\Conditionals\obj\Debug\net8.0\Conditionals.AssemblyInfoInputs.cache
+C:\scGradsGithub\C#\Conditionals\Conditionals\obj\Debug\net8.0\Conditionals.AssemblyInfo.cs
+C:\scGradsGithub\C#\Conditionals\Conditionals\obj\Debug\net8.0\Conditionals.csproj.CoreCompileInputs.cache
+C:\scGradsGithub\C#\Conditionals\Conditionals\obj\Debug\net8.0\Conditionals.sourcelink.json
+C:\scGradsGithub\C#\Conditionals\Conditionals\obj\Debug\net8.0\Conditionals.dll
+C:\scGradsGithub\C#\Conditionals\Conditionals\obj\Debug\net8.0\refint\Conditionals.dll
+C:\scGradsGithub\C#\Conditionals\Conditionals\obj\Debug\net8.0\Conditionals.pdb
+C:\scGradsGithub\C#\Conditionals\Conditionals\obj\Debug\net8.0\Conditionals.genruntimeconfig.cache
+C:\scGradsGithub\C#\Conditionals\Conditionals\obj\Debug\net8.0\ref\Conditionals.dll

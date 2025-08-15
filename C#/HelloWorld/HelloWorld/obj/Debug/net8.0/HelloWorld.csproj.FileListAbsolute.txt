@@ -1,0 +1,15 @@
+C:\scGradsGithub\C#\HelloWorld\HelloWorld\bin\Debug\net8.0\HelloWorld.exe
+C:\scGradsGithub\C#\HelloWorld\HelloWorld\bin\Debug\net8.0\HelloWorld.deps.json
+C:\scGradsGithub\C#\HelloWorld\HelloWorld\bin\Debug\net8.0\HelloWorld.runtimeconfig.json
+C:\scGradsGithub\C#\HelloWorld\HelloWorld\bin\Debug\net8.0\HelloWorld.dll
+C:\scGradsGithub\C#\HelloWorld\HelloWorld\bin\Debug\net8.0\HelloWorld.pdb
+C:\scGradsGithub\C#\HelloWorld\HelloWorld\obj\Debug\net8.0\HelloWorld.GeneratedMSBuildEditorConfig.editorconfig
+C:\scGradsGithub\C#\HelloWorld\HelloWorld\obj\Debug\net8.0\HelloWorld.AssemblyInfoInputs.cache
+C:\scGradsGithub\C#\HelloWorld\HelloWorld\obj\Debug\net8.0\HelloWorld.AssemblyInfo.cs
+C:\scGradsGithub\C#\HelloWorld\HelloWorld\obj\Debug\net8.0\HelloWorld.csproj.CoreCompileInputs.cache
+C:\scGradsGithub\C#\HelloWorld\HelloWorld\obj\Debug\net8.0\HelloWorld.sourcelink.json
+C:\scGradsGithub\C#\HelloWorld\HelloWorld\obj\Debug\net8.0\HelloWorld.dll
+C:\scGradsGithub\C#\HelloWorld\HelloWorld\obj\Debug\net8.0\refint\HelloWorld.dll
+C:\scGradsGithub\C#\HelloWorld\HelloWorld\obj\Debug\net8.0\HelloWorld.pdb
+C:\scGradsGithub\C#\HelloWorld\HelloWorld\obj\Debug\net8.0\HelloWorld.genruntimeconfig.cache
+C:\scGradsGithub\C#\HelloWorld\HelloWorld\obj\Debug\net8.0\ref\HelloWorld.dll
