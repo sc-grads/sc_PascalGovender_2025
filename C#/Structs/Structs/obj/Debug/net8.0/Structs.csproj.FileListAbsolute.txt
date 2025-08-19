@@ -1,0 +1,15 @@
+C:\scGradsGithub\C#\Structs\Structs\bin\Debug\net8.0\Structs.exe
+C:\scGradsGithub\C#\Structs\Structs\bin\Debug\net8.0\Structs.deps.json
+C:\scGradsGithub\C#\Structs\Structs\bin\Debug\net8.0\Structs.runtimeconfig.json
+C:\scGradsGithub\C#\Structs\Structs\bin\Debug\net8.0\Structs.dll
+C:\scGradsGithub\C#\Structs\Structs\bin\Debug\net8.0\Structs.pdb
+C:\scGradsGithub\C#\Structs\Structs\obj\Debug\net8.0\Structs.GeneratedMSBuildEditorConfig.editorconfig
+C:\scGradsGithub\C#\Structs\Structs\obj\Debug\net8.0\Structs.AssemblyInfoInputs.cache
+C:\scGradsGithub\C#\Structs\Structs\obj\Debug\net8.0\Structs.AssemblyInfo.cs
+C:\scGradsGithub\C#\Structs\Structs\obj\Debug\net8.0\Structs.csproj.CoreCompileInputs.cache
+C:\scGradsGithub\C#\Structs\Structs\obj\Debug\net8.0\Structs.sourcelink.json
+C:\scGradsGithub\C#\Structs\Structs\obj\Debug\net8.0\Structs.dll
+C:\scGradsGithub\C#\Structs\Structs\obj\Debug\net8.0\refint\Structs.dll
+C:\scGradsGithub\C#\Structs\Structs\obj\Debug\net8.0\Structs.pdb
+C:\scGradsGithub\C#\Structs\Structs\obj\Debug\net8.0\Structs.genruntimeconfig.cache
+C:\scGradsGithub\C#\Structs\Structs\obj\Debug\net8.0\ref\Structs.dll

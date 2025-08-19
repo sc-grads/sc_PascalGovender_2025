@@ -1,0 +1,15 @@
+C:\scGradsGithub\C#\Delegates\Delegates\bin\Debug\net8.0\Delegates.exe
+C:\scGradsGithub\C#\Delegates\Delegates\bin\Debug\net8.0\Delegates.deps.json
+C:\scGradsGithub\C#\Delegates\Delegates\bin\Debug\net8.0\Delegates.runtimeconfig.json
+C:\scGradsGithub\C#\Delegates\Delegates\bin\Debug\net8.0\Delegates.dll
+C:\scGradsGithub\C#\Delegates\Delegates\bin\Debug\net8.0\Delegates.pdb
+C:\scGradsGithub\C#\Delegates\Delegates\obj\Debug\net8.0\Delegates.GeneratedMSBuildEditorConfig.editorconfig
+C:\scGradsGithub\C#\Delegates\Delegates\obj\Debug\net8.0\Delegates.AssemblyInfoInputs.cache
+C:\scGradsGithub\C#\Delegates\Delegates\obj\Debug\net8.0\Delegates.AssemblyInfo.cs
+C:\scGradsGithub\C#\Delegates\Delegates\obj\Debug\net8.0\Delegates.csproj.CoreCompileInputs.cache
+C:\scGradsGithub\C#\Delegates\Delegates\obj\Debug\net8.0\Delegates.sourcelink.json
+C:\scGradsGithub\C#\Delegates\Delegates\obj\Debug\net8.0\Delegates.dll
+C:\scGradsGithub\C#\Delegates\Delegates\obj\Debug\net8.0\refint\Delegates.dll
+C:\scGradsGithub\C#\Delegates\Delegates\obj\Debug\net8.0\Delegates.pdb
+C:\scGradsGithub\C#\Delegates\Delegates\obj\Debug\net8.0\Delegates.genruntimeconfig.cache
+C:\scGradsGithub\C#\Delegates\Delegates\obj\Debug\net8.0\ref\Delegates.dll

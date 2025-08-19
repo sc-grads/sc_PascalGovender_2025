@@ -1,0 +1,15 @@
+C:\scGradsGithub\C#\Interfaces\Interfaces\bin\Debug\net8.0\Interfaces.exe
+C:\scGradsGithub\C#\Interfaces\Interfaces\bin\Debug\net8.0\Interfaces.deps.json
+C:\scGradsGithub\C#\Interfaces\Interfaces\bin\Debug\net8.0\Interfaces.runtimeconfig.json
+C:\scGradsGithub\C#\Interfaces\Interfaces\bin\Debug\net8.0\Interfaces.dll
+C:\scGradsGithub\C#\Interfaces\Interfaces\bin\Debug\net8.0\Interfaces.pdb
+C:\scGradsGithub\C#\Interfaces\Interfaces\obj\Debug\net8.0\Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+C:\scGradsGithub\C#\Interfaces\Interfaces\obj\Debug\net8.0\Interfaces.AssemblyInfoInputs.cache
+C:\scGradsGithub\C#\Interfaces\Interfaces\obj\Debug\net8.0\Interfaces.AssemblyInfo.cs
+C:\scGradsGithub\C#\Interfaces\Interfaces\obj\Debug\net8.0\Interfaces.csproj.CoreCompileInputs.cache
+C:\scGradsGithub\C#\Interfaces\Interfaces\obj\Debug\net8.0\Interfaces.sourcelink.json
+C:\scGradsGithub\C#\Interfaces\Interfaces\obj\Debug\net8.0\Interfaces.dll
+C:\scGradsGithub\C#\Interfaces\Interfaces\obj\Debug\net8.0\refint\Interfaces.dll
+C:\scGradsGithub\C#\Interfaces\Interfaces\obj\Debug\net8.0\Interfaces.pdb
+C:\scGradsGithub\C#\Interfaces\Interfaces\obj\Debug\net8.0\Interfaces.genruntimeconfig.cache
+C:\scGradsGithub\C#\Interfaces\Interfaces\obj\Debug\net8.0\ref\Interfaces.dll

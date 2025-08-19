@@ -1,0 +1,15 @@
+C:\scGradsGithub\C#\Inheritence\Inheritence\bin\Debug\net8.0\Inheritence.exe
+C:\scGradsGithub\C#\Inheritence\Inheritence\bin\Debug\net8.0\Inheritence.deps.json
+C:\scGradsGithub\C#\Inheritence\Inheritence\bin\Debug\net8.0\Inheritence.runtimeconfig.json
+C:\scGradsGithub\C#\Inheritence\Inheritence\bin\Debug\net8.0\Inheritence.dll
+C:\scGradsGithub\C#\Inheritence\Inheritence\bin\Debug\net8.0\Inheritence.pdb
+C:\scGradsGithub\C#\Inheritence\Inheritence\obj\Debug\net8.0\Inheritence.GeneratedMSBuildEditorConfig.editorconfig
+C:\scGradsGithub\C#\Inheritence\Inheritence\obj\Debug\net8.0\Inheritence.AssemblyInfoInputs.cache
+C:\scGradsGithub\C#\Inheritence\Inheritence\obj\Debug\net8.0\Inheritence.AssemblyInfo.cs
+C:\scGradsGithub\C#\Inheritence\Inheritence\obj\Debug\net8.0\Inheritence.csproj.CoreCompileInputs.cache
+C:\scGradsGithub\C#\Inheritence\Inheritence\obj\Debug\net8.0\Inheritence.sourcelink.json
+C:\scGradsGithub\C#\Inheritence\Inheritence\obj\Debug\net8.0\Inheritence.dll
+C:\scGradsGithub\C#\Inheritence\Inheritence\obj\Debug\net8.0\refint\Inheritence.dll
+C:\scGradsGithub\C#\Inheritence\Inheritence\obj\Debug\net8.0\Inheritence.pdb
+C:\scGradsGithub\C#\Inheritence\Inheritence\obj\Debug\net8.0\Inheritence.genruntimeconfig.cache
+C:\scGradsGithub\C#\Inheritence\Inheritence\obj\Debug\net8.0\ref\Inheritence.dll
