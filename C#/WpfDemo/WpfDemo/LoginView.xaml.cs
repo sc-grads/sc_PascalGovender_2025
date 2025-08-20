@@ -24,5 +24,11 @@ namespace WpfDemo
         {
             InitializeComponent();
         }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window window = Window.GetWindow(this);
+            window.Content = new InvoiceView();
+        }
     }
 }

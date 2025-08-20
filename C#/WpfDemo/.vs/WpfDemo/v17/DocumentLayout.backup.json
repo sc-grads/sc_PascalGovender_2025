@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\scGradsGithub\\C#\\WpfDemo\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6AEB2D10-793F-4178-8F08-3E87DBE64CE4}|WpfDemo\\WpfDemo.csproj|c:\\scgradsgithub\\c#\\wpfdemo\\wpfdemo\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AEB2D10-793F-4178-8F08-3E87DBE64CE4}|WpfDemo\\WpfDemo.csproj|solutionrelative:wpfdemo\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AEB2D10-793F-4178-8F08-3E87DBE64CE4}|WpfDemo\\WpfDemo.csproj|c:\\scgradsgithub\\c#\\wpfdemo\\wpfdemo\\invoiceview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6AEB2D10-793F-4178-8F08-3E87DBE64CE4}|WpfDemo\\WpfDemo.csproj|solutionrelative:wpfdemo\\invoiceview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AEB2D10-793F-4178-8F08-3E87DBE64CE4}|WpfDemo\\WpfDemo.csproj|c:\\scgradsgithub\\c#\\wpfdemo\\wpfdemo\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6AEB2D10-793F-4178-8F08-3E87DBE64CE4}|WpfDemo\\WpfDemo.csproj|solutionrelative:wpfdemo\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6AEB2D10-793F-4178-8F08-3E87DBE64CE4}|WpfDemo\\WpfDemo.csproj|c:\\scgradsgithub\\c#\\wpfdemo\\wpfdemo\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{6AEB2D10-793F-4178-8F08-3E87DBE64CE4}|WpfDemo\\WpfDemo.csproj|solutionrelative:wpfdemo\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -18,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,7 +42,44 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "InvoiceView.xaml",
+              "DocumentMoniker": "C:\\scGradsGithub\\C#\\WpfDemo\\WpfDemo\\InvoiceView.xaml",
+              "RelativeDocumentMoniker": "WpfDemo\\InvoiceView.xaml",
+              "ToolTip": "C:\\scGradsGithub\\C#\\WpfDemo\\WpfDemo\\InvoiceView.xaml*",
+              "RelativeToolTip": "WpfDemo\\InvoiceView.xaml*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-20T07:27:16.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "LoginView.xaml.cs",
+              "DocumentMoniker": "C:\\scGradsGithub\\C#\\WpfDemo\\WpfDemo\\LoginView.xaml.cs",
+              "RelativeDocumentMoniker": "WpfDemo\\LoginView.xaml.cs",
+              "ToolTip": "C:\\scGradsGithub\\C#\\WpfDemo\\WpfDemo\\LoginView.xaml.cs*",
+              "RelativeToolTip": "WpfDemo\\LoginView.xaml.cs*",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAAB4AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T13:53:40.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginView.xaml",
+              "DocumentMoniker": "C:\\scGradsGithub\\C#\\WpfDemo\\WpfDemo\\LoginView.xaml",
+              "RelativeDocumentMoniker": "WpfDemo\\LoginView.xaml",
+              "ToolTip": "C:\\scGradsGithub\\C#\\WpfDemo\\WpfDemo\\LoginView.xaml*",
+              "RelativeToolTip": "WpfDemo\\LoginView.xaml*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-19T13:53:17.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\scGradsGithub\\C#\\WpfDemo\\WpfDemo\\MainWindow.xaml",
               "RelativeDocumentMoniker": "WpfDemo\\MainWindow.xaml",
@@ -42,15 +91,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\scGradsGithub\\C#\\WpfDemo\\WpfDemo\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "WpfDemo\\MainWindow.xaml.cs",
               "ToolTip": "C:\\scGradsGithub\\C#\\WpfDemo\\WpfDemo\\MainWindow.xaml.cs",
               "RelativeToolTip": "WpfDemo\\MainWindow.xaml.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAA+wCQAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAwwBUAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T07:40:35.859Z"
+              "WhenOpened": "2025-08-19T07:40:35.859Z",
+              "EditorCaption": ""
             }
           ]
         }
