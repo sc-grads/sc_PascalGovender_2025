@@ -1,0 +1,93 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\scGradsGithub\\C#\\InvoiceManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0F76BF56-C1D2-424E-B840-CF9E541DA8EA}|InvoiceManagement\\InvoiceManagement.csproj|c:\\scgradsgithub\\c#\\invoicemanagement\\invoicemanagement\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0F76BF56-C1D2-424E-B840-CF9E541DA8EA}|InvoiceManagement\\InvoiceManagement.csproj|solutionrelative:invoicemanagement\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F76BF56-C1D2-424E-B840-CF9E541DA8EA}|InvoiceManagement\\InvoiceManagement.csproj|c:\\scgradsgithub\\c#\\invoicemanagement\\invoicemanagement\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F76BF56-C1D2-424E-B840-CF9E541DA8EA}|InvoiceManagement\\InvoiceManagement.csproj|solutionrelative:invoicemanagement\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F76BF56-C1D2-424E-B840-CF9E541DA8EA}|InvoiceManagement\\InvoiceManagement.csproj|c:\\scgradsgithub\\c#\\invoicemanagement\\invoicemanagement\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0F76BF56-C1D2-424E-B840-CF9E541DA8EA}|InvoiceManagement\\InvoiceManagement.csproj|solutionrelative:invoicemanagement\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F76BF56-C1D2-424E-B840-CF9E541DA8EA}|InvoiceManagement\\InvoiceManagement.csproj|c:\\scgradsgithub\\c#\\invoicemanagement\\invoicemanagement\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F76BF56-C1D2-424E-B840-CF9E541DA8EA}|InvoiceManagement\\InvoiceManagement.csproj|solutionrelative:invoicemanagement\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginView.xaml.cs",
+              "DocumentMoniker": "C:\\scGradsGithub\\C#\\InvoiceManagement\\InvoiceManagement\\LoginView.xaml.cs",
+              "RelativeDocumentMoniker": "InvoiceManagement\\LoginView.xaml.cs",
+              "ToolTip": "C:\\scGradsGithub\\C#\\InvoiceManagement\\InvoiceManagement\\LoginView.xaml.cs",
+              "RelativeToolTip": "InvoiceManagement\\LoginView.xaml.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAowDUAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T08:55:17.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginView.xaml",
+              "DocumentMoniker": "C:\\scGradsGithub\\C#\\InvoiceManagement\\InvoiceManagement\\LoginView.xaml",
+              "RelativeDocumentMoniker": "InvoiceManagement\\LoginView.xaml",
+              "ToolTip": "C:\\scGradsGithub\\C#\\InvoiceManagement\\InvoiceManagement\\LoginView.xaml",
+              "RelativeToolTip": "InvoiceManagement\\LoginView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-20T08:41:21.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\scGradsGithub\\C#\\InvoiceManagement\\InvoiceManagement\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "InvoiceManagement\\MainWindow.xaml",
+              "ToolTip": "C:\\scGradsGithub\\C#\\InvoiceManagement\\InvoiceManagement\\MainWindow.xaml",
+              "RelativeToolTip": "InvoiceManagement\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-20T08:40:03.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\scGradsGithub\\C#\\InvoiceManagement\\InvoiceManagement\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "InvoiceManagement\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\scGradsGithub\\C#\\InvoiceManagement\\InvoiceManagement\\MainWindow.xaml.cs",
+              "RelativeToolTip": "InvoiceManagement\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T08:40:00.801Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
