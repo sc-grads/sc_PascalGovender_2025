@@ -1,0 +1,79 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\scGradsGithub\\C#\\Inheritence\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C01E4A07-D0E1-423B-851B-F2BF2CAF4FCD}|Inheritence\\Inheritence.csproj|c:\\scgradsgithub\\c#\\inheritence\\inheritence\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C01E4A07-D0E1-423B-851B-F2BF2CAF4FCD}|Inheritence\\Inheritence.csproj|solutionrelative:inheritence\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C01E4A07-D0E1-423B-851B-F2BF2CAF4FCD}|Inheritence\\Inheritence.csproj|c:\\scgradsgithub\\c#\\inheritence\\inheritence\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C01E4A07-D0E1-423B-851B-F2BF2CAF4FCD}|Inheritence\\Inheritence.csproj|solutionrelative:inheritence\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C01E4A07-D0E1-423B-851B-F2BF2CAF4FCD}|Inheritence\\Inheritence.csproj|c:\\scgradsgithub\\c#\\inheritence\\inheritence\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C01E4A07-D0E1-423B-851B-F2BF2CAF4FCD}|Inheritence\\Inheritence.csproj|solutionrelative:inheritence\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Account.cs",
+              "DocumentMoniker": "C:\\scGradsGithub\\C#\\Inheritence\\Inheritence\\Account.cs",
+              "RelativeDocumentMoniker": "Inheritence\\Account.cs",
+              "ToolTip": "C:\\scGradsGithub\\C#\\Inheritence\\Inheritence\\Account.cs",
+              "RelativeToolTip": "Inheritence\\Account.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAkwDYAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T08:48:14.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Person.cs",
+              "DocumentMoniker": "C:\\scGradsGithub\\C#\\Inheritence\\Inheritence\\Person.cs",
+              "RelativeDocumentMoniker": "Inheritence\\Person.cs",
+              "ToolTip": "C:\\scGradsGithub\\C#\\Inheritence\\Inheritence\\Person.cs",
+              "RelativeToolTip": "Inheritence\\Person.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAiwCgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T08:13:47.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\scGradsGithub\\C#\\Inheritence\\Inheritence\\Program.cs",
+              "RelativeDocumentMoniker": "Inheritence\\Program.cs",
+              "ToolTip": "C:\\scGradsGithub\\C#\\Inheritence\\Inheritence\\Program.cs",
+              "RelativeToolTip": "Inheritence\\Program.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T07:38:42.334Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

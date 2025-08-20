@@ -1,0 +1,16 @@
+C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\bin\Debug\CurrencyConverter.exe.config
+C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\bin\Debug\CurrencyConverter.exe
+C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\bin\Debug\CurrencyConverter.pdb
+C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter.csproj.AssemblyReference.cache
+C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\obj\Debug\MainWindow.g.cs
+C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\obj\Debug\App.g.cs
+C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter_MarkupCompile.cache
+C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter_MarkupCompile.lref
+C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\obj\Debug\MainWindow.baml
+C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter.g.resources
+C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter.Properties.Resources.resources
+C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter.csproj.GenerateResource.cache
+C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter.csproj.CoreCompileInputs.cache
+C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter.exe
+C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter.pdb
+C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter.exe.config

@@ -1,0 +1,45 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\scGradsGithub\\C#\\Structs\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{98FFC4C6-5F3D-431F-BA79-AB8CB9E5FDAD}|Structs\\Structs.csproj|c:\\scgradsgithub\\c#\\structs\\structs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98FFC4C6-5F3D-431F-BA79-AB8CB9E5FDAD}|Structs\\Structs.csproj|solutionrelative:structs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\scGradsGithub\\C#\\Structs\\Structs\\Program.cs",
+              "RelativeDocumentMoniker": "Structs\\Program.cs",
+              "ToolTip": "C:\\scGradsGithub\\C#\\Structs\\Structs\\Program.cs",
+              "RelativeToolTip": "Structs\\Program.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowCQAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T07:10:58.718Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
