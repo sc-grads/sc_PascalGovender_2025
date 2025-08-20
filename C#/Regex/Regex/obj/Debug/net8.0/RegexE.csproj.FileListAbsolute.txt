@@ -1,0 +1,15 @@
+C:\scGradsGithub\C#\Regex\Regex\bin\Debug\net8.0\RegexE.exe
+C:\scGradsGithub\C#\Regex\Regex\bin\Debug\net8.0\RegexE.deps.json
+C:\scGradsGithub\C#\Regex\Regex\bin\Debug\net8.0\RegexE.runtimeconfig.json
+C:\scGradsGithub\C#\Regex\Regex\bin\Debug\net8.0\RegexE.dll
+C:\scGradsGithub\C#\Regex\Regex\bin\Debug\net8.0\RegexE.pdb
+C:\scGradsGithub\C#\Regex\Regex\obj\Debug\net8.0\RegexE.GeneratedMSBuildEditorConfig.editorconfig
+C:\scGradsGithub\C#\Regex\Regex\obj\Debug\net8.0\RegexE.AssemblyInfoInputs.cache
+C:\scGradsGithub\C#\Regex\Regex\obj\Debug\net8.0\RegexE.AssemblyInfo.cs
+C:\scGradsGithub\C#\Regex\Regex\obj\Debug\net8.0\RegexE.csproj.CoreCompileInputs.cache
+C:\scGradsGithub\C#\Regex\Regex\obj\Debug\net8.0\RegexE.sourcelink.json
+C:\scGradsGithub\C#\Regex\Regex\obj\Debug\net8.0\RegexE.dll
+C:\scGradsGithub\C#\Regex\Regex\obj\Debug\net8.0\refint\RegexE.dll
+C:\scGradsGithub\C#\Regex\Regex\obj\Debug\net8.0\RegexE.pdb
+C:\scGradsGithub\C#\Regex\Regex\obj\Debug\net8.0\RegexE.genruntimeconfig.cache
+C:\scGradsGithub\C#\Regex\Regex\obj\Debug\net8.0\ref\RegexE.dll

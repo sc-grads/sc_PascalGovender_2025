@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{73854F63-8261-4056-BD41-785AAAADFE6D}|Regex\\RegexE.csproj|solutionrelative:regex\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{73854F63-8261-4056-BD41-785AAAADFE6D}|Regex\\RegexE.csproj|c:\\scgradsgithub\\c#\\regex\\regex\\steps.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{73854F63-8261-4056-BD41-785AAAADFE6D}|Regex\\RegexE.csproj|solutionrelative:regex\\steps.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{73854F63-8261-4056-BD41-785AAAADFE6D}|Regex\\RegexE.csproj|c:\\scgradsgithub\\c#\\regex\\regex\\sample.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{73854F63-8261-4056-BD41-785AAAADFE6D}|Regex\\RegexE.csproj|solutionrelative:regex\\sample.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{73854F63-8261-4056-BD41-785AAAADFE6D}|Regex\\RegexE.csproj|c:\\scgradsgithub\\c#\\regex\\regex\\snippets.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{73854F63-8261-4056-BD41-785AAAADFE6D}|Regex\\RegexE.csproj|solutionrelative:regex\\snippets.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{73854F63-8261-4056-BD41-785AAAADFE6D}|Regex\\RegexE.csproj|c:\\scgradsgithub\\c#\\regex\\regex\\sample.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{73854F63-8261-4056-BD41-785AAAADFE6D}|Regex\\RegexE.csproj|solutionrelative:regex\\sample.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{73854F63-8261-4056-BD41-785AAAADFE6D}|Regex\\RegexE.csproj|c:\\scgradsgithub\\c#\\regex\\regex\\steps.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{73854F63-8261-4056-BD41-785AAAADFE6D}|Regex\\RegexE.csproj|solutionrelative:regex\\steps.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +38,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Steps.txt",
               "DocumentMoniker": "C:\\scGradsGithub\\C#\\Regex\\Regex\\Steps.txt",
               "RelativeDocumentMoniker": "Regex\\Steps.txt",
@@ -56,21 +56,23 @@
               "RelativeDocumentMoniker": "Regex\\Snippets.txt",
               "ToolTip": "C:\\scGradsGithub\\C#\\Regex\\Regex\\Snippets.txt",
               "RelativeToolTip": "Regex\\Snippets.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-08-18T13:25:32.602Z"
+              "WhenOpened": "2025-08-18T13:25:32.602Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Sample.txt",
               "DocumentMoniker": "C:\\scGradsGithub\\C#\\Regex\\Regex\\Sample.txt",
               "RelativeDocumentMoniker": "Regex\\Sample.txt",
               "ToolTip": "C:\\scGradsGithub\\C#\\Regex\\Regex\\Sample.txt",
               "RelativeToolTip": "Regex\\Sample.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABwAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-08-18T13:24:48.472Z"
+              "WhenOpened": "2025-08-18T13:24:48.472Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -80,7 +82,7 @@
               "RelativeDocumentMoniker": "Regex\\Program.cs",
               "ToolTip": "C:\\scGradsGithub\\C#\\Regex\\Regex\\Program.cs",
               "RelativeToolTip": "Regex\\Program.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAQwAIAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAwDwAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-18T13:21:00.521Z",
               "EditorCaption": ""

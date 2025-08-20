@@ -34,4 +34,5 @@ Quantifiers:
 {n}     - Matches the previous element exactly n times.
 {n,m}   - Matches the previous element at least n times, but no more than m times.
 
-
+MetaCharacters (Need to be escaped):
+.[{()\^$|?*+
