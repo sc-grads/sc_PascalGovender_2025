@@ -1,0 +1,60 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\scGradsGithub\\C#\\WPFZooManager\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5E64E16A-3F02-4A57-B68B-7E33505B1820}|WPFZooManager\\WPFZooManager.csproj|c:\\scgradsgithub\\c#\\wpfzoomanager\\wpfzoomanager\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5E64E16A-3F02-4A57-B68B-7E33505B1820}|WPFZooManager\\WPFZooManager.csproj|solutionrelative:wpfzoomanager\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E64E16A-3F02-4A57-B68B-7E33505B1820}|WPFZooManager\\WPFZooManager.csproj|C:\\scGradsGithub\\C#\\WPFZooManager\\wpfzoomanager\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E64E16A-3F02-4A57-B68B-7E33505B1820}|WPFZooManager\\WPFZooManager.csproj|solutionrelative:wpfzoomanager\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\scGradsGithub\\C#\\WPFZooManager\\WPFZooManager\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "WPFZooManager\\MainWindow.xaml",
+              "ToolTip": "C:\\scGradsGithub\\C#\\WPFZooManager\\WPFZooManager\\MainWindow.xaml",
+              "RelativeToolTip": "WPFZooManager\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-21T08:45:46.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\scGradsGithub\\C#\\WPFZooManager\\WPFZooManager\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WPFZooManager\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\scGradsGithub\\C#\\WPFZooManager\\WPFZooManager\\MainWindow.xaml.cs",
+              "RelativeToolTip": "WPFZooManager\\MainWindow.xaml.cs",
+              "ViewState": "AgIAACoBAAAAAAAAAAAAAFQBAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T08:45:46.368Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

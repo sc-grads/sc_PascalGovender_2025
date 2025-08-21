@@ -14,3 +14,7 @@ C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConver
 C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter.exe
 C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter.pdb
 C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter.exe.config
+C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\bin\Debug\FontAwesome.WPF.dll
+C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\bin\Debug\FontAwesome.WPF.xml
+C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\obj\Debug\App.baml
+C:\scGradsGithub\C#\CurrencyConverter\CurrencyConverter\obj\Debug\Currency.08E530D3.Up2Date

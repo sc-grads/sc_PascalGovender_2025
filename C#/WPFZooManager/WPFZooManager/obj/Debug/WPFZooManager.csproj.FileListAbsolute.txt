@@ -1,0 +1,16 @@
+C:\scGradsGithub\C#\WPFZooManager\WPFZooManager\bin\Debug\WPFZooManager.exe.config
+C:\scGradsGithub\C#\WPFZooManager\WPFZooManager\bin\Debug\WPFZooManager.exe
+C:\scGradsGithub\C#\WPFZooManager\WPFZooManager\bin\Debug\WPFZooManager.pdb
+C:\scGradsGithub\C#\WPFZooManager\WPFZooManager\obj\Debug\WPFZooManager.csproj.AssemblyReference.cache
+C:\scGradsGithub\C#\WPFZooManager\WPFZooManager\obj\Debug\MainWindow.g.cs
+C:\scGradsGithub\C#\WPFZooManager\WPFZooManager\obj\Debug\App.g.cs
+C:\scGradsGithub\C#\WPFZooManager\WPFZooManager\obj\Debug\WPFZooManager_MarkupCompile.cache
+C:\scGradsGithub\C#\WPFZooManager\WPFZooManager\obj\Debug\WPFZooManager_MarkupCompile.lref
+C:\scGradsGithub\C#\WPFZooManager\WPFZooManager\obj\Debug\MainWindow.baml
+C:\scGradsGithub\C#\WPFZooManager\WPFZooManager\obj\Debug\WPFZooManager.g.resources
+C:\scGradsGithub\C#\WPFZooManager\WPFZooManager\obj\Debug\WPFZooManager.Properties.Resources.resources
+C:\scGradsGithub\C#\WPFZooManager\WPFZooManager\obj\Debug\WPFZooManager.csproj.GenerateResource.cache
+C:\scGradsGithub\C#\WPFZooManager\WPFZooManager\obj\Debug\WPFZooManager.csproj.CoreCompileInputs.cache
+C:\scGradsGithub\C#\WPFZooManager\WPFZooManager\obj\Debug\WPFZooManager.exe
+C:\scGradsGithub\C#\WPFZooManager\WPFZooManager\obj\Debug\WPFZooManager.pdb
+C:\scGradsGithub\C#\WPFZooManager\WPFZooManager\obj\Debug\WPFZooManager.exe.config
