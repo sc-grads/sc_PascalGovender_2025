@@ -141,8 +141,8 @@ namespace CurrencyConverter
             // Validate that the input is a number
             //Regular Expression is used to add regex.
             // Add Library using System.Text.RegularExpressions;
-            Regex regex = new Regex("^[0-9]+");
-            e.Handled = regex.IsMatch(e.Text);
+           // Regex regex = new Regex("^[0-9]+");
+           // e.Handled = regex.IsMatch(e.Text);
 
         }
     }

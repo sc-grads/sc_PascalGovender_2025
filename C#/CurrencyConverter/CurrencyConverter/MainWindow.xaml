@@ -5,19 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CurrencyConverter"
         mc:Ignorable="d"
-        Title="Currency Converter" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
-    <Grid Background="Black">
+        Title="Currency Converter" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" Background="Transparent" >
+    <Grid >
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="81*"/>
             <ColumnDefinition Width="169*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="110" />
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="150" />
             <RowDefinition Height="100" />
         </Grid.RowDefinitions>
+        
         <Border Grid.Row="3" Width="800" CornerRadius="10" BorderThickness="5" Grid.ColumnSpan="2" Margin="100,0,100,0">
             <Border.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
@@ -35,11 +37,11 @@
             </Rectangle>
         </Border>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="50" Width="1000" VerticalAlignment="Center" Grid.ColumnSpan="2">
-            <Label Height="50" Width="1000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Currency Converter" FontSize="25" Foreground="#1abc9c" FontWeight="Bold"></Label>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="60" Width="1000" VerticalAlignment="Center" Grid.ColumnSpan="2">
+            <Label Height="60" Width="1000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Currency Converter" FontSize="36" Foreground="#1abc9c" FontWeight="Bold"></Label>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Left"  Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <Label Height="40" Width="1000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Converted Currency" FontSize="20" Foreground="White" VerticalAlignment="Top"></Label>
+            <Label Height="40" Width="1000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Converted Currency" FontSize="20" Foreground="White" VerticalAlignment="Top" FontStyle="Italic"></Label>
             <Label Name="lblCurrency" Height="60" Width="1000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="30" Foreground="White"></Label>
         </StackPanel>
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Width="800" Grid.ColumnSpan="2" Margin="100,0,0,0">
