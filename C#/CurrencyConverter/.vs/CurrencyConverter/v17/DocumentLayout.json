@@ -41,7 +41,8 @@
               "ToolTip": "C:\\scGradsGithub\\C#\\CurrencyConverter\\CurrencyConverter\\MainWindow.xaml",
               "RelativeToolTip": "CurrencyConverter\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-20T12:31:09.987Z"
+              "WhenOpened": "2025-08-20T12:31:09.987Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -51,7 +52,7 @@
               "RelativeDocumentMoniker": "CurrencyConverter\\MainWindow.xaml.cs",
               "ToolTip": "C:\\scGradsGithub\\C#\\CurrencyConverter\\CurrencyConverter\\MainWindow.xaml.cs",
               "RelativeToolTip": "CurrencyConverter\\MainWindow.xaml.cs",
-              "ViewState": "AgIAABQBAAAAAAAAAAAqwDQBAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAQBAAAAAAAAAAAmwEEBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-20T12:31:09.323Z",
               "EditorCaption": ""
