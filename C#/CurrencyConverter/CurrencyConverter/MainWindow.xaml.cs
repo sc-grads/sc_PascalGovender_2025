@@ -306,6 +306,7 @@ namespace CurrencyConverter
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             MessageBox  .Show("Are you sure you want to Cancel ?", "Information", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            ClearMaster();
         }
 
         private void dgvCurrency_SelectionChanged(object sender, SelectionChangedEventArgs e)
