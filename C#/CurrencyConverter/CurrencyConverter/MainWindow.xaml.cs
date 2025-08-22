@@ -193,9 +193,8 @@ namespace CurrencyConverter
             // Validate that the input is a number
             //Regular Expression is used to add regex.
             // Add Library using System.Text.RegularExpressions;
-           // Regex regex = new Regex("^[0-9]+");
-           // e.Handled = regex.IsMatch(e.Text);
-
+           Regex regex = new Regex("^[0-9]+");
+            e.Handled = !regex.IsMatch(e.Text);
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -377,6 +376,12 @@ namespace CurrencyConverter
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void txtCurrency_TextChanged(object sender, TextChangedEventArgs e)
+        {
+             //Regex regex = new Regex("^[0-9]+");
+            // e.Handled = regex.IsMatch(txtCurrency.Text);
         }
     }
 }

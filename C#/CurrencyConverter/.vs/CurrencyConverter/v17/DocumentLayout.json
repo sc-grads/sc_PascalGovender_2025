@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\scGradsGithub\\C#\\CurrencyConverter\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B8907DC5-0990-4568-A4E2-AEB69A41BC70}|CurrencyConverter\\CurrencyConverter.csproj|c:\\scgradsgithub\\c#\\currencyconverter\\currencyconverter\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B8907DC5-0990-4568-A4E2-AEB69A41BC70}|CurrencyConverter\\CurrencyConverter.csproj|solutionrelative:currencyconverter\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B8907DC5-0990-4568-A4E2-AEB69A41BC70}|CurrencyConverter\\CurrencyConverter.csproj|C:\\scGradsGithub\\C#\\CurrencyConverter\\currencyconverter\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{B8907DC5-0990-4568-A4E2-AEB69A41BC70}|CurrencyConverter\\CurrencyConverter.csproj|solutionrelative:currencyconverter\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8907DC5-0990-4568-A4E2-AEB69A41BC70}|CurrencyConverter\\CurrencyConverter.csproj|c:\\scgradsgithub\\c#\\currencyconverter\\currencyconverter\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8907DC5-0990-4568-A4E2-AEB69A41BC70}|CurrencyConverter\\CurrencyConverter.csproj|solutionrelative:currencyconverter\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,7 +34,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\scGradsGithub\\C#\\CurrencyConverter\\CurrencyConverter\\MainWindow.xaml",
               "RelativeDocumentMoniker": "CurrencyConverter\\MainWindow.xaml",
@@ -46,13 +46,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\scGradsGithub\\C#\\CurrencyConverter\\CurrencyConverter\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "CurrencyConverter\\MainWindow.xaml.cs",
               "ToolTip": "C:\\scGradsGithub\\C#\\CurrencyConverter\\CurrencyConverter\\MainWindow.xaml.cs",
               "RelativeToolTip": "CurrencyConverter\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAQBAAAAAAAAAAAmwEEBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAKMAAAAAAAAAAAAuwL8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-20T12:31:09.323Z",
               "EditorCaption": ""
