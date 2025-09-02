@@ -84,10 +84,6 @@
         </TabItem>
         <TabItem Name="tbMaster" Header="CurrencyMaster" Margin="0,0,0,0" Background="#1abc9c" Foreground="Black">
             <Grid Background="Black">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width="37*"/>
-                </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="60"></RowDefinition>
                     <RowDefinition Height="100"></RowDefinition>
