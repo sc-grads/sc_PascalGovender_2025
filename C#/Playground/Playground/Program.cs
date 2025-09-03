@@ -1,36 +1,67 @@
 ﻿namespace Playground
 {
-    public class Student
+    public interface ITask<T>
     {
-        public int ID { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public int Grade { get; set; }
+        T Perform();
+    }
 
-        public Student(string name, int id, int grade)
+    public class EmailTask : ITask<string>
+    {
+        public string Recipient { get; set; }
+        public string Message { get; set; }
+
+        public string Perform()
         {
-            ID = id;
-            Name = name;
-            Grade = grade;
+               return $"Email sent to {Recipient} with message: {Message}";
         }
+    }
+
+    public class ReportTask : ITask<string>
+    {
+        public string ReportName { get; set; }
+
+        public string Perform()
+        {
+            return $"Report {ReportName}";
+        }
+    }
+
+    public class TaskProcessor<TTask,TResult>
+        where TTask : ITask<TResult>
+    {
+        private TTask _task;
+        public TaskProcessor(TTask task)
+        {
+            _task = task;
+        }
+
+        public TResult Execute()
+        {
+            return _task.Perform();
+        }
+
     }
 
     internal class Program
     {
         static void Main(string[] args)
         {
-            var students = new Dictionary<string, Student>
+            var emailTask = new EmailTask()
             {
-                {"John", new Student("John",1,85)},
-                {"Alice", new Student("Alice",2,90)},
-                {"Bob", new Student("Bob",3,78)}
+                Message = "Hello, World!",
+                Recipient = "Jackson@gmail.com"
             };
 
-            foreach (KeyValuePair<string, Student> s in students)
+            var reportTask = new ReportTask()
             {
-                Console.WriteLine($"Name: {s.Value.Name}, Id: {s.Value.ID}, Grade: {s.Value.Grade}");
-            }
+                ReportName = "Annual Report"
+            };
 
-            Console.ReadKey();
+            var emailProcessor = new TaskProcessor<EmailTask, string>(emailTask);
+            var reportProcessor = new TaskProcessor<ReportTask, string>(reportTask);
+
+            Console.WriteLine(emailProcessor.Execute());
+            Console.WriteLine(reportProcessor.Execute());
         }
     }
 }

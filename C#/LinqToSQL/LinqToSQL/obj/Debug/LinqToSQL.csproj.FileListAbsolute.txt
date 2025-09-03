@@ -1,0 +1,16 @@
+C:\scGradsGithub\C#\LinqToSQL\LinqToSQL\bin\Debug\LinqToSQL.exe.config
+C:\scGradsGithub\C#\LinqToSQL\LinqToSQL\bin\Debug\LinqToSQL.exe
+C:\scGradsGithub\C#\LinqToSQL\LinqToSQL\bin\Debug\LinqToSQL.pdb
+C:\scGradsGithub\C#\LinqToSQL\LinqToSQL\obj\Debug\LinqToSQL.csproj.AssemblyReference.cache
+C:\scGradsGithub\C#\LinqToSQL\LinqToSQL\obj\Debug\MainWindow.g.cs
+C:\scGradsGithub\C#\LinqToSQL\LinqToSQL\obj\Debug\App.g.cs
+C:\scGradsGithub\C#\LinqToSQL\LinqToSQL\obj\Debug\LinqToSQL_MarkupCompile.cache
+C:\scGradsGithub\C#\LinqToSQL\LinqToSQL\obj\Debug\LinqToSQL_MarkupCompile.lref
+C:\scGradsGithub\C#\LinqToSQL\LinqToSQL\obj\Debug\MainWindow.baml
+C:\scGradsGithub\C#\LinqToSQL\LinqToSQL\obj\Debug\LinqToSQL.g.resources
+C:\scGradsGithub\C#\LinqToSQL\LinqToSQL\obj\Debug\LinqToSQL.Properties.Resources.resources
+C:\scGradsGithub\C#\LinqToSQL\LinqToSQL\obj\Debug\LinqToSQL.csproj.GenerateResource.cache
+C:\scGradsGithub\C#\LinqToSQL\LinqToSQL\obj\Debug\LinqToSQL.csproj.CoreCompileInputs.cache
+C:\scGradsGithub\C#\LinqToSQL\LinqToSQL\obj\Debug\LinqToSQL.exe
+C:\scGradsGithub\C#\LinqToSQL\LinqToSQL\obj\Debug\LinqToSQL.pdb
+C:\scGradsGithub\C#\LinqToSQL\LinqToSQL\obj\Debug\LinqToSQL.exe.config

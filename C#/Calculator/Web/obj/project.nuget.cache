@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "1wP8zhmB9q8=",
+  "success": true,
+  "projectFilePath": "C:\\scGradsGithub\\C#\\Calculator\\Web\\Web.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PascalGovender\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.8\\microsoft.aspnetcore.openapi.9.0.8.nupkg.sha512",
+    "C:\\Users\\PascalGovender\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}

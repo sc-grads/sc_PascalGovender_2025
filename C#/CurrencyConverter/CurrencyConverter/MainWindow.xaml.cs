@@ -43,6 +43,7 @@ namespace CurrencyConverter
         {
             InitializeComponent();
             BindCurrency();
+            GetData();
         }
 
         public void mycon()
@@ -192,9 +193,8 @@ namespace CurrencyConverter
             // Validate that the input is a number
             //Regular Expression is used to add regex.
             // Add Library using System.Text.RegularExpressions;
-           // Regex regex = new Regex("^[0-9]+");
-           // e.Handled = regex.IsMatch(e.Text);
-
+           Regex regex = new Regex("^[0-9]+");
+            e.Handled = !regex.IsMatch(e.Text);
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -305,12 +305,83 @@ namespace CurrencyConverter
         }
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Are you sure you want to Cancel ?", "Information", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            ClearMaster();
         }
 
-        private void dgvCurrency_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void dgvCurrency_SelectionChanged(object sender, SelectedCellsChangedEventArgs e)
         {
+            //.Show("Are you sure you want to Select ?", "Information", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            try
+            {
+                //Create object for DataGrid
+                DataGrid grd = (DataGrid)sender;
+                //Create object for DataRowView
+                DataRowView row_selected = grd.CurrentItem as DataRowView;
 
+                //row_selected is not null
+                if (row_selected != null)
+                {
+
+                    //dgvCurrency items count greater than zero
+                    if (dgvCurrency.Items.Count > 0)
+                    {
+                        if (grd.SelectedCells.Count > 0)
+                        {
+
+                            //Get selected row Id column value and Set in CurrencyId variable
+                            CurrencyId = Int32.Parse(row_selected["Id"].ToString());
+
+                            //DisplayIndex is equal to zero than it is Edit cell
+                            if (grd.SelectedCells[0].Column.DisplayIndex == 0)
+                            {
+
+                                //Get selected row Amount column value and Set in Amount textbox
+                                txtAmount.Text = row_selected["Amount"].ToString();
+
+                                //Get selected row CurrencyName column value and Set in CurrencyName textbox
+                                txtCurrencyName.Text = row_selected["CurrencyName"].ToString();
+
+                                //Change save button text Save to Update
+                                btnSave.Content = "Update";
+                            }
+
+                            //DisplayIndex is equal to one than it is Delete cell                    
+                            if (grd.SelectedCells[0].Column.DisplayIndex == 1)
+                            {
+                                //Show confirmation dialogue box
+                                if (MessageBox.Show("Are you sure you want to delete ?", "Information", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                                {
+                                    mycon();
+                                    DataTable dt = new DataTable();
+
+                                    //Execute delete query for delete record from table using Id
+                                    cmd = new SqlCommand("DELETE FROM Currency_Master WHERE Id = @Id", con);
+                                    cmd.CommandType = CommandType.Text;
+
+                                    //CurrencyId set in @Id parameter and send it in delete statement
+                                    cmd.Parameters.AddWithValue("@Id", CurrencyId);
+                                    cmd.ExecuteNonQuery();
+                                    con.Close();
+
+                                    MessageBox.Show("Data deleted successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                                    ClearMaster();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void txtCurrency_TextChanged(object sender, TextChangedEventArgs e)
+        {
+             //Regex regex = new Regex("^[0-9]+");
+            // e.Handled = regex.IsMatch(txtCurrency.Text);
         }
     }
 }
