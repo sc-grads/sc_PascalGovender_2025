@@ -1,0 +1,15 @@
+C:\scGradsGithub\C#\Threads\Threads\bin\Debug\net9.0\Threads.exe
+C:\scGradsGithub\C#\Threads\Threads\bin\Debug\net9.0\Threads.deps.json
+C:\scGradsGithub\C#\Threads\Threads\bin\Debug\net9.0\Threads.runtimeconfig.json
+C:\scGradsGithub\C#\Threads\Threads\bin\Debug\net9.0\Threads.dll
+C:\scGradsGithub\C#\Threads\Threads\bin\Debug\net9.0\Threads.pdb
+C:\scGradsGithub\C#\Threads\Threads\obj\Debug\net9.0\Threads.GeneratedMSBuildEditorConfig.editorconfig
+C:\scGradsGithub\C#\Threads\Threads\obj\Debug\net9.0\Threads.AssemblyInfoInputs.cache
+C:\scGradsGithub\C#\Threads\Threads\obj\Debug\net9.0\Threads.AssemblyInfo.cs
+C:\scGradsGithub\C#\Threads\Threads\obj\Debug\net9.0\Threads.csproj.CoreCompileInputs.cache
+C:\scGradsGithub\C#\Threads\Threads\obj\Debug\net9.0\Threads.sourcelink.json
+C:\scGradsGithub\C#\Threads\Threads\obj\Debug\net9.0\Threads.dll
+C:\scGradsGithub\C#\Threads\Threads\obj\Debug\net9.0\refint\Threads.dll
+C:\scGradsGithub\C#\Threads\Threads\obj\Debug\net9.0\Threads.pdb
+C:\scGradsGithub\C#\Threads\Threads\obj\Debug\net9.0\Threads.genruntimeconfig.cache
+C:\scGradsGithub\C#\Threads\Threads\obj\Debug\net9.0\ref\Threads.dll
