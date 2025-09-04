@@ -11,7 +11,7 @@ namespace CalculatorTest
             var calculator = new Calculator();
             if (calculator.Sum(2, 2) != 4)
             {
-                throw new Exception("Sum method is not working correctly.");
+                throw new Exception($"The Sum(2,2) was expected to be 4 but returned {calculator.Sum(2, 2)}");
             }
         }
 

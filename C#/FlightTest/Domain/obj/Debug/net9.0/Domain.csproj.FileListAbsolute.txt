@@ -1,0 +1,12 @@
+C:\scGradsGithub\C#\FlightTest\Domain\bin\Debug\net9.0\Domain.deps.json
+C:\scGradsGithub\C#\FlightTest\Domain\bin\Debug\net9.0\Domain.dll
+C:\scGradsGithub\C#\FlightTest\Domain\bin\Debug\net9.0\Domain.pdb
+C:\scGradsGithub\C#\FlightTest\Domain\obj\Debug\net9.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\scGradsGithub\C#\FlightTest\Domain\obj\Debug\net9.0\Domain.AssemblyInfoInputs.cache
+C:\scGradsGithub\C#\FlightTest\Domain\obj\Debug\net9.0\Domain.AssemblyInfo.cs
+C:\scGradsGithub\C#\FlightTest\Domain\obj\Debug\net9.0\Domain.csproj.CoreCompileInputs.cache
+C:\scGradsGithub\C#\FlightTest\Domain\obj\Debug\net9.0\Domain.sourcelink.json
+C:\scGradsGithub\C#\FlightTest\Domain\obj\Debug\net9.0\Domain.dll
+C:\scGradsGithub\C#\FlightTest\Domain\obj\Debug\net9.0\refint\Domain.dll
+C:\scGradsGithub\C#\FlightTest\Domain\obj\Debug\net9.0\Domain.pdb
+C:\scGradsGithub\C#\FlightTest\Domain\obj\Debug\net9.0\ref\Domain.dll
