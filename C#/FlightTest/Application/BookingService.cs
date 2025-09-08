@@ -27,11 +27,14 @@ namespace Application
 
         public void CancelBooking(CancelBookingDto c)
         {
+            var flight = Entities.Flights.Find(c);
+            flight.CancelBooking(c.PassengerEmail, c.NumSeats);
+            Entities.SaveChanges();
         }
 
         public object GetRemainingNumberOfSeatsFor(Guid id)
         {
-            return 3;
+            return Entities.Flights.Find(id).RemainingNumberOfSeats;
         }
     }
 }

@@ -39,6 +39,8 @@ namespace Application.Tests
 
         [Theory]
         [InlineData(3)]
+        [InlineData(5)]
+        [InlineData(10)]
         public void Cancels_booking(int initialCapacity)
         {
             //Given
