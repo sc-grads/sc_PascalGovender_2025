@@ -10,3 +10,7 @@ C:\scGradsGithub\C#\FlightTest\Data\obj\Debug\net9.0\Data.dll
 C:\scGradsGithub\C#\FlightTest\Data\obj\Debug\net9.0\refint\Data.dll
 C:\scGradsGithub\C#\FlightTest\Data\obj\Debug\net9.0\Data.pdb
 C:\scGradsGithub\C#\FlightTest\Data\obj\Debug\net9.0\ref\Data.dll
+C:\scGradsGithub\C#\FlightTest\Data\bin\Debug\net9.0\Domain.dll
+C:\scGradsGithub\C#\FlightTest\Data\bin\Debug\net9.0\Domain.pdb
+C:\scGradsGithub\C#\FlightTest\Data\obj\Debug\net9.0\Data.csproj.AssemblyReference.cache
+C:\scGradsGithub\C#\FlightTest\Data\obj\Debug\net9.0\Data.csproj.Up2Date

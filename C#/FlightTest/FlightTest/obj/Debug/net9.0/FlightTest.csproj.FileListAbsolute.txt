@@ -104,3 +104,14 @@ C:\scGradsGithub\C#\FlightTest\FlightTest\obj\Debug\net9.0\FlightTest.genruntime
 C:\scGradsGithub\C#\FlightTest\FlightTest\obj\Debug\net9.0\ref\FlightTest.dll
 C:\scGradsGithub\C#\FlightTest\FlightTest\bin\Debug\net9.0\Domain.dll
 C:\scGradsGithub\C#\FlightTest\FlightTest\bin\Debug\net9.0\Domain.pdb
+C:\scGradsGithub\C#\FlightTest\FlightTest\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+C:\scGradsGithub\C#\FlightTest\FlightTest\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\scGradsGithub\C#\FlightTest\FlightTest\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\scGradsGithub\C#\FlightTest\FlightTest\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\scGradsGithub\C#\FlightTest\FlightTest\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+C:\scGradsGithub\C#\FlightTest\FlightTest\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+C:\scGradsGithub\C#\FlightTest\FlightTest\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\scGradsGithub\C#\FlightTest\FlightTest\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+C:\scGradsGithub\C#\FlightTest\FlightTest\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\scGradsGithub\C#\FlightTest\FlightTest\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+C:\scGradsGithub\C#\FlightTest\FlightTest\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll

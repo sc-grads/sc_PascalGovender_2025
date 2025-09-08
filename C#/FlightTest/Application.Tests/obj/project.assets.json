@@ -634,6 +634,19 @@
           "build/net6.0/xunit.runner.visualstudio.props": {}
         }
       },
+      "Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Application.dll": {}
+        }
+      },
       "Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -1554,6 +1567,11 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
+    "Application/1.0.0": {
+      "type": "project",
+      "path": "../Application/Application.csproj",
+      "msbuildProject": "../Application/Application.csproj"
+    },
     "Data/1.0.0": {
       "type": "project",
       "path": "../Data/Data.csproj",
@@ -1567,6 +1585,7 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "Application >= 1.0.0",
       "Data >= 1.0.0",
       "FluentAssertions >= 8.6.0",
       "Microsoft.EntityFrameworkCore.InMemory >= 9.0.8",
@@ -1608,6 +1627,9 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
+            "C:\\scGradsGithub\\C#\\FlightTest\\Application\\Application.csproj": {
+              "projectPath": "C:\\scGradsGithub\\C#\\FlightTest\\Application\\Application.csproj"
+            },
             "C:\\scGradsGithub\\C#\\FlightTest\\Data\\Data.csproj": {
               "projectPath": "C:\\scGradsGithub\\C#\\FlightTest\\Data\\Data.csproj"
             }
