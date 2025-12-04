@@ -35,8 +35,8 @@ ORDER BY CustomerID ASC;
 
 /*8*/
 SELECT CustomerID, SalesPersonID,
-AVG(SubTotal) AS AvgSubTotal,
-SUM(SubTotal) AS SumSubTotal
+	AVG(SubTotal) AS AvgSubTotal,
+	SUM(SubTotal) AS SumSubTotal
 FROM Sales.SalesOrderHeader
 GROUP BY CustomerID, SalesPersonID
 ORDER BY CustomerID DESC;
@@ -108,4 +108,68 @@ FROM Person.ContactType
 WHERE Name LIKE '%Manager'
 ORDER BY ContactTypeID DESC;
 
-/*20*/
+/*20*/ 
+SELECT   P.BusinessEntityID, P.FirstName, P.LastName
+FROM Person.Person AS P 
+	JOIN Person.BusinessEntityContact AS B ON P.BusinessEntityID = B.BusinessEntityID
+	JOIN Person.ContactType AS C ON B.ContactTypeID = C.ContactTypeID
+WHERE C.Name = 'Purchasing Manager'
+ORDER BY P.LastName ASC, P.FirstName ASC;
+
+/*21
+SELECT TOP(5) *
+FROM Sales.SalesPerson
+SELECT TOP(5) *
+FROM Person.Person
+SELECT TOP(5) *
+FROM Person.Address
+SELECT TOP(5) *
+FROM Person.BusinessEntityAddress*/
+
+SELECT ROW_NUMBER() OVER(PARTITION BY A.PostalCode ORDER BY SP.SalesYTD DESC) AS RowNum, 
+	P.LastName, SP.SalesYTD, A.PostalCode 
+FROM Sales.SalesPerson AS SP
+	JOIN Person.Person AS P ON SP.BusinessEntityID = P.BusinessEntityID
+	JOIN Person.BusinessEntityAddress AS BEA ON P.BusinessEntityID = BEA.BusinessEntityID
+	JOIN Person.Address AS A ON BEA.AddressID = A.AddressID
+ORDER BY SP.SalesYTD DESC, A.PostalCode ASC;
+
+/*22*/
+/*Select * from  Person.ContactType
+Select * from Person.BusinessEntityContact*/
+
+SELECT C.ContactTypeID, C.Name, COUNT(BC.ContactTypeID) AS NoContacts 
+FROM Person.ContactType C JOIN Person.BusinessEntityContact BC 
+ON C.ContactTypeID = BC.ContactTypeID
+GROUP BY C.ContactTypeID, C.Name
+HAVING COUNT(BC.ContactTypeID)>=100
+ORDER BY COUNT(BC.ContactTypeID) DESC
+
+/*23*/
+SELECT FORMAT(E.RateChangeDate, 'yyyy-MM-dd') AS FromDate,
+	CONCAT(  P.FirstName, ', ', P.MiddleName, ' ', LEFT(P.LastName,1)) AS NameInFull,
+	E.Rate * 40 AS SalaryInAWeek
+FROM HumanResources.EmployeePayHistory AS E
+	JOIN Person.Person AS P ON E.BusinessEntityID = P.BusinessEntityID
+ORDER BY NameInFull ASC;
+
+/*24*/
+SELECT FromDate, NameInFull, SalaryInAWeek FROM(
+	SELECT FORMAT(E.RateChangeDate, 'yyyy-MM-dd') AS FromDate,
+		CONCAT(  P.FirstName, ', ', P.MiddleName, ' ', LEFT(P.LastName,1)) AS NameInFull,
+		E.Rate * 40 AS SalaryInAWeek,
+		ROW_NUMBER() OVER( PARTITION BY E.BusinessEntityID ORDER BY E.RateChangeDate DESC) AS RN
+	FROM HumanResources.EmployeePayHistory AS E
+		JOIN Person.Person AS P ON E.BusinessEntityID = P.BusinessEntityID) AS PAY
+WHERE RN = 1
+ORDER BY NameInFull ASC;
+
+/*25*/
+SELECT S.SalesOrderID, S.ProductID, S.OrderQty,
+	SUM(S.OrderQty) OVER() AS TotalQuantity,
+	AVG(S.OrderQty) OVER() AS AvgQuantity,
+	COUNT(S.OrderQty) OVER()  AS NoOfOrders,
+	MIN(S.OrderQty) OVER() AS MinQuanity,
+	MAX(S.OrderQty) OVER() AS MaxQuantity
+FROM Sales.SalesOrderDetail S
+WHERE S.SalesOrderID IN (43659, 43664)
