@@ -160,13 +160,16 @@ GROUP BY SalesPersonID, YEAR(OrderDate)
 ORDER BY SalesPersonID, YEAR(OrderDate)
 
 /*47*/
-WITH SalesPerPerson AS (SELECT SalesPersonID, 
-	COUNT(SalesPersonID) AS TotalSales
-FROM Sales.SalesOrderHeader
-WHERE SalesPersonID IS NOT NULL
-GROUP BY SalesPersonID)
+WITH SalesPerPerson AS 
+(
+	SELECT SalesPersonID, 
+		COUNT(SalesPersonID) AS TotalSales
+	FROM Sales.SalesOrderHeader
+	WHERE SalesPersonID IS NOT NULL
+	GROUP BY SalesPersonID
+)
 
-SELECT AVG(TotalSales) FROM SalesPerPerson
+SELECT AVG(TotalSales) AS AverageSales FROM SalesPerPerson
 
 /*48*/
 SELECT * 
