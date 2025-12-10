@@ -125,6 +125,7 @@ SELECT TOP(5) *
 FROM Person.Address
 SELECT TOP(5) *
 FROM Person.BusinessEntityAddress*/
+SELECT * FROM Sales.SalesOrderHeader
 
 SELECT ROW_NUMBER() OVER(PARTITION BY A.PostalCode ORDER BY SP.SalesYTD DESC) AS RowNum, 
 	P.LastName, SP.SalesYTD, A.PostalCode 
@@ -132,7 +133,11 @@ FROM Sales.SalesPerson AS SP
 	JOIN Person.Person AS P ON SP.BusinessEntityID = P.BusinessEntityID
 	JOIN Person.BusinessEntityAddress AS BEA ON P.BusinessEntityID = BEA.BusinessEntityID
 	JOIN Person.Address AS A ON BEA.AddressID = A.AddressID
+WHERE 
+    SP.TerritoryID IS NOT NULL      -- must belong to a territory
+    AND SP.SalesYTD <> 0       
 ORDER BY SP.SalesYTD DESC, A.PostalCode ASC;
+
 
 /*22*/
 /*Select * from  Person.ContactType
